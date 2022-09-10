@@ -1,0 +1,196 @@
+body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  counter-reset: section exo defi prop theo rema exem;
+  font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.6;
+  --color-bg: #eee;
+  --color-section : darkred;
+  --color-subsection : darkgreen;
+  --color-subsubsection : darkviolet;
+  --color-exo: #103050;
+  --color-defi: #503010;
+  --color-bg-defi : #e0c0a0;
+  --color-bg-exo : #a0d0e0;
+  --color-bg-surl : #00FF00;
+  --margin : 0.3em;
+  background-color: var(--color-bg);
+}
+
+div:hover {
+    border: 0.5em solid;
+    border-color: purple;
+    box-shadow: 0.5em 0.5em 0.5em grey;
+    transition-duration: 1s;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+img {
+    max-width: 30%;
+    max-height: 100%;
+    transition-duration: 0.5s;
+}
+
+img:active {
+    background-color: var(--color-bg);
+    transform: scale(2, 2);
+    -ms-transform: scale(2, 2);
+    -webkit-transform: scale(2, 2);
+    transition-duration: 0.5s;
+}
+.titre {
+    text-align: center;
+    background: linear-gradient(45deg, var(--color-subsection) 25%, var(--color-subsubsection) 100%);
+    border: 0.2em solid;
+    box-shadow: 0.5em 0.5em 0.5em grey;
+    border-color: var(--color-section);
+    border-radius: 0.2em;
+    margin: var(--margin);
+}
+
+.section {
+    color: var(--color-section);
+    margin: var(--margin) ;
+    counter-reset: subsection subsubsection ;
+}
+.section::before {
+    counter-increment: section;
+    content: counter(section) ". ";
+}
+
+.subsection {
+    color: var(--color-subsection);
+    margin: var(--margin);
+    counter-reset: subsubsection ;
+}
+
+.subsection::before {
+    counter-increment: subsection;
+    content: counter(section) "." counter(subsection) ". "; 
+}
+
+.subsubsection {
+    color: var(--color-subsubsection);
+    margin: var(--margin);
+}
+.subsubsection::before {
+    counter-increment: subsubsection;
+    content: counter(section) "." counter(subsection) "." counter(subsubsection) ". "; 
+}
+
+.exo {
+    color: var(--color-exo);
+    background-color: var(--color-bg-exo);
+    padding: 0.5em;
+    margin: var(--margin);
+    border: solid 1px;
+    border-radius: 0.2em;
+    counter-increment: exo;
+}
+.exo::before {
+    font-weight: bold;
+    content: "Exercice " counter(exo) " : "; 
+}
+.defi {
+    color: var(--color-defi);
+    font-style: italic;
+    background-color: var(--color-bg-defi);
+    padding: 0.5em;
+    margin: var(--margin);
+    border: solid 1px;
+    border-radius: 0.2em;
+    counter-increment: defi;
+}
+
+.defi::before {
+    font-weight: bold;
+    content: "Définition " counter(defi) " : "; 
+}
+
+.prop{
+    counter-increment: prop;
+}
+
+.prop::before {
+    font-weight: bold;
+    content: "Proposition " counter(prop) " : "; 
+}
+
+.theo {
+    color: var(--color-defi);
+    background-color: var(--color-bg-defi);
+    padding: 0.5em;
+    margin: var(--margin);
+    border: solid 1px;
+    border-radius: 0.2em;
+    box-shadow: 0.5em 0.5em 0.5em gray;
+    counter-increment: theo;
+}
+
+.theo::before {
+    font-weight: bold;
+    content: "Théorème " counter(theo) " : ";
+}
+
+.rema {
+    counter-increment: rema;
+}
+
+.rema::before {
+    font-weight: bold;
+    content: "Remarque " counter(rema) " : "; 
+}
+
+.exem {
+    counter-increment: exem;
+}
+.exem::before {
+    font-weight: bold;
+    content: "Exemple " counter(exem) " : "; 
+}
+
+.meth {
+    color : darkgreen;
+    counter-increment: meth;
+}
+.meth::before {
+    font-weight: bold;
+    content: "Méthode " counter(meth) " : "; 
+}
+
+.surl {
+    background-color: var(--color-bg-surl) ;
+}
+
+
+
+@page {
+  size: A4;
+  margin: 0.9em;
+  }
+@media print {
+    html, body {
+        display: block;
+        font-family: 'Times New Roman', Times, serif, Verdana, Helvetica, sans-serif;
+        width: 210mm;
+        height: 297mm;
+        font-size: 10pt;
+    }
+    body {
+        margin-top: 5mm; margin-bottom: 5mm; margin-left: 5mm; margin-right: 5mm;
+    }
+    div {
+        break-inside: avoid;
+    }
+    
+    .surl {
+        border: solid 0.2em;
+        border-color: var(--color-bg-surl);
+        border-radius: 0.1em;
+    }
+    /* ... the rest of the rules ... */
+}
