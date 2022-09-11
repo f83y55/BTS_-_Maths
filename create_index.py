@@ -13,11 +13,15 @@ def file_save(filename:str, st:str):
  
 if __name__ == "__main__" :
     MAINROOT = '.'
+    BRIQUE = "brique_index.html"
     dc = {}
     for rep in [element for element in os.listdir(os.path.join(MAINROOT)) if os.path.isdir(os.path.join(MAINROOT, element))] :
-        for html in [element for element in os.listdir(os.path.join(MAINROOT, rep)) if element.endswith(".html")] :
-            dc[html[:-4]] = os.path.join(MAINROOT, rep, html)
-    file_save("index.html", file_load("brique.html").replace('#####', '\n'.join([f'<li> <a href="{y}"> {x} </a> </li>' for x, y in dc.items()])))
+        for name in [element for element in os.listdir(os.path.join(MAINROOT, rep)) if element.endswith(".html")] :
+            if os.path.exists(os.path.join(MAINROOT, rep, f"{name[:-5]}.name")) :
+                dc[name] = (file_load(os.path.join(MAINROOT, rep, f"{name[:-5]}.name")), rep)
+            else :
+                dc[name] = (name[:-5], rep)
+    file_save("index.html", file_load(os.path.join(MAINROOT, BRIQUE)).replace('#####', '\n'.join([f'<li> <a href="{os.path.join(MAINROOT, y[1], x)[:-5]}.html"> {y[0]} </a> </li>' for x, y in dc.items()])))
             
 
 
