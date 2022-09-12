@@ -2,27 +2,28 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  overflow-x: auto;
   counter-reset: section exo defi prop theo rema exem;
   font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.6;
   --color-bg: #eee;
+  --color-bg-hover: #fff;
   --color-section : darkred;
   --color-subsection : darkgreen;
   --color-subsubsection : darkviolet;
   --color-exo: #103050;
   --color-defi: #503010;
-  --color-bg-defi : #e0c0a0;
-  --color-bg-exo : #a0d0e0;
-  --color-bg-surl : #00FF00;
+  --color-bg-defi : #fbb332;
+  --color-bg-exo : #33a5ee;
+  --color-bg-surl : #00ff00;
   --margin : 0.3em;
   background-color: var(--color-bg);
 }
 
+
 div:hover {
-    border: 0.5em solid;
-    border-color: purple;
-    box-shadow: 0.5em 0.5em 0.5em grey;
-    transition-duration: 1s;
+    transition: background-image 1s ease-in-out;
+    background-image: linear-gradient(-90deg, rgba(255,255,255,0.5) 90%, rgba(255,255,255,0.9) 100%);
 }
 
 a {
@@ -44,7 +45,7 @@ img:active {
 }
 .titre {
     text-align: center;
-    background: linear-gradient(45deg, var(--color-subsection) 25%, var(--color-subsubsection) 100%);
+    background-image: linear-gradient(45deg, var(--color-subsection) 25%, var(--color-subsubsection) 100%);
     border: 0.2em solid;
     box-shadow: 0.5em 0.5em 0.5em grey;
     border-color: var(--color-section);
