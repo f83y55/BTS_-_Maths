@@ -1,11 +1,7 @@
-body {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  overflow-x: auto;
-  counter-reset: section exo defi prop theo rema exem;
-  font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
-  line-height: 1.6;
+:root {
+  /* Theme 1 */
+  --font-size-web: 16;
+  --font-size-print: 10;
   --color-bg: #eee;
   --color-bg-hover: #fff;
   --color-section : darkred;
@@ -17,6 +13,21 @@ body {
   --color-bg-exo : #33a5ee;
   --color-bg-surl : #00ff00;
   --margin : 0.3em;
+  --transition-speed: 700ms;
+}
+
+
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: auto;
+  counter-reset: section exo defi prop theo rema exem;
+  font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: var(--font-size-web);
+  line-height: 1.6;
   background-color: var(--color-bg);
 }
 
@@ -31,6 +42,7 @@ a {
     text-decoration: none;
 }
 img {
+    float: right;
     max-width: 30%;
     max-height: 100%;
     transition-duration: 0.5s;
@@ -41,7 +53,7 @@ img:active {
     transform: scale(2, 2);
     -ms-transform: scale(2, 2);
     -webkit-transform: scale(2, 2);
-    transition-duration: 0.5s;
+    transition-duration: var(--transition-speed);
 }
 .titre {
     text-align: center;
@@ -167,7 +179,16 @@ img:active {
     background-color: var(--color-bg-surl) ;
 }
 
-
+@media (max-width: 600px) {
+    img {
+        float: unset;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    img:active {
+        background: unset;
+    }
+}
 
 @page {
   size: A4;
@@ -179,7 +200,7 @@ img:active {
         font-family: 'Times New Roman', Times, serif, Verdana, Helvetica, sans-serif;
         width: 210mm;
         height: 297mm;
-        font-size: 10pt;
+        font-size: var(--font-size-print);
     }
     body {
         margin-top: 5mm; margin-bottom: 5mm; margin-left: 5mm; margin-right: 5mm;
