@@ -1,7 +1,7 @@
 :root {
   /* Theme 1 */
-  --font-size-web: 16;
-  --font-size-print: 10;
+  --font-size-web: 16pt;
+  --font-size-print: 10pt;
   --color-bg: #eee;
   --color-bg-hover: #fff;
   --color-section : darkred;
@@ -24,7 +24,6 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   overflow-x: auto;
-  counter-reset: section exo defi prop theo rema exem;
   font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
   font-size: var(--font-size-web);
   line-height: 1.6;
@@ -45,7 +44,7 @@ img {
     float: right;
     max-width: 30%;
     max-height: 100%;
-    transition-duration: 0.5s;
+    transition-duration: var(--transition-speed);
 }
 
 img:active {
@@ -63,6 +62,7 @@ img:active {
     border-color: var(--color-section);
     border-radius: 0.2em;
     margin: var(--margin);
+    counter-reset: section exo defi prop theo rema exem;
 }
 
 .section {
@@ -195,18 +195,24 @@ img:active {
   margin: 0.9em;
   }
 @media print {
+    .pagebreak { page-break-before: always; } /* page-break-after works, as well */
     html, body {
         display: block;
         font-family: 'Times New Roman', Times, serif, Verdana, Helvetica, sans-serif;
+        font-size: var(--font-size-print);
         width: 210mm;
         height: 297mm;
-        font-size: var(--font-size-print);
     }
     body {
         margin-top: 5mm; margin-bottom: 5mm; margin-left: 5mm; margin-right: 5mm;
     }
     div {
         break-inside: avoid;
+    }
+    img {
+    float: none;
+    max-width: 40%;
+    max-height: 100%;
     }
     
     .surl {
