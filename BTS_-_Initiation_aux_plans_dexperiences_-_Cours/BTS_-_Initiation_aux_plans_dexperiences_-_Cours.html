@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <a href="assets/print.pdf" download>
+    <h1 class="titre"> BTS - Initiation aux plans d'expériences - Cours</h1>
+    </a>
+
+<h2 class="section">Introduction</h2>
+<div class="defi">
+    Les <b>plans d'expériences</b>, en anglais : DOE pour design of experiments, désignent un <b>modèle mathématique et une méthode</b> associée développés par Ronald A. Fisher dans les années 1920.
+</div>
+<div class="prop">
+    <ul>
+        <li> <b>But : </b> obtenir un maximum de renseignements en un minimum d'essais expérimentaux.</li>
+        <li> <b>Avantage : </b> les calculs réalisés sont facilement programmables.</li>
+        <li> <b>Limite : </b> on n'obtient directement l'explication physico-chimique modélisé.</li>
+    </ul>
+</div>
+
+<h2 class="section">Le modèle mathématique</h2>
+<h3 class="subsection">Relation entrées/sorties</h3>
+<div class="defi"><b>Notations :</b>
+    <ul>
+        <li>les <b>facteurs d'entrée</b> \(X_k\) et les <b>réponses</b> \(Y_l\) sont des valeurs réelles (mesures) ; </li>
+        <li>On cherche à modéliser une des réponses en fonction des entrées. On la note \(Y\).</li>
+        <li>On note \(p\) le nombre d'entrées : \(X_1,\ldots,X_p\) .</li>
+        <li>Le nombre de mesures effectuées (expérimentalement) pour chaque entrée \(X_k\) est noté \(n_k\), pour <b>nombre de niveaux</b>.<br>
+            Le nombre total d'expériences réalisables est alors \(N=n_1\times\cdots\times n_p\) .<br>
+            Dans ce cours (et souvent), on utilise \(n=2\) ; on a alors \(2^p\) expériences possibles : on parle de <b>plan complet</b>.<br>
+        
+        </li>
+        <li>On prend acte des facteurs contrôlables (fixés) et des <b>perturbations ε</b>.</li>
+    </ul>
+
+
+    <img src="assets/fig1.svg">
+</div>
+
+</body>
+
+</html>

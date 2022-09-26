@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <a href="assets/print.pdf" download>
+    <h1 class="titre"> BTS - Équations Différentielles - TD1ch</h1>
+    </a>
+    <h2 class="section-nocounter">Introduction</h2>
+<div>
+Une entreprise d'<a href="https://www.youtube.com/watch?v=M1u6M-omYE4">injection plastique</a> est chargée de réaliser par moulage des hélices de mini-drones dans un nouveau matériau plastique. La fabrication s’effectue en deux temps :
+<ul>
+    <li><b>Phase 1 :</b> injection sous pression de la matière fondue à une température initiale de 240 °C et maintien sous pression de la matière pendant les 3 premières secondes du refroidissement.</li>
+    <li><b>Phase 2 :</b> poursuite du refroidissement et éjection de l’hélice.</li>
+</ul>
+À l’issue de ces deux étapes le moule est refermé et une nouvelle hélice est introduite.<br>
+Pour être utilisable, on estime que le matériau plastique ne doit pas avoir perdu plus de 20 % de sa température initiale lors des 3 premières secondes du refroidissement.<br>
+Lors de la fabrication, afin de maîtriser le refroidissement de l’hélice, on étudie la température \( T \) à laquelle le moule doit être maintenu. <br>
+En effet, pour garantir un remplissage homogène du moule, le matériau plastique ne doit pas refroidir trop vite lors de son injection dans le moule.
+</div>
+<h2 class="section-nocounter">Partie 1</h2>
+    <div>
+    Des séries de mesures ont permis de réaliser trois courbes de refroidissement. Elles représentent l’évolution de la température du matériau plastique (exprimée en degrés Celsius) en fonction du temps (exprimé en secondes), pour trois valeurs différentes de la température du moule, \(T_1\), \(T_2\) et \(T_3\).
+    </div>
+    <a href="https://www.geogebra.org/classic/gz9qjb4e">
+    <img src="assets/EqDiffTD1ch.svg" style="margin:auto; max-width: 80vw;"/>
+    </a>
+    <div class="exo"><ol>
+            <li>Les trois températures satisfont-elles aux conditions souhaitées de fabrication d’une hélice ? Détailler la réponse.</li>
+            <li>On estime de plus que le matériau a suffisamment durci et que l’hélice peut être éjectée sans risque de déformation lorsque sa température atteint les 100 degrés. <br>
+                Parmi les températures qui satisfont aux conditions de fabrication, quelle est la température du moule qui permet de fabriquer le plus d’hélices dans un temps donné ? Expliquer.</li>
+    </ol></div>
+    <h2 class="section-nocounter">Partie 2</h2>
+    <div>On décide de maintenir le moule à une température de 80 °C. On s’intéresse à la fonction donnant la température du matériau plastique (exprimée en degrés Celsius) en fonction du temps (exprimé en secondes). On admet que cette fonction est solution de l’équation différentielle \( (E) : y' + 0{,}1 y = 8 \) <br>
+Dans cette équation, \(y\) désigne une fonction de la variable réelle t, définie et dérivable sur \( \left[0 ; +\infty\right[ \).
+</div>
+<div class="exo">
+    <ol>
+        <li>Déterminer l’ensemble des solutions de l’équation différentielle \((E_0) : y' + 0{,}1 y = 0 \).</li>
+        <li>Déterminer le réel \(a\) tel que la fonction \(g\) définie sur \( \left[0 ; +\infty\right[ \) par \(g(t) = a\) soit une solution particulière de l’équation \( (E) \).</li>
+        <li>En déduire l’ensemble des solutions de l’équation différentielle \( (E) \).</li>
+        <li>Déterminer la fonction \( f \) définie sur \( \left[0 ; +\infty\right[ \), solution de l’équation différentielle \( (E) \) satisfaisant aux conditions de température du problème.</li>
+        </ol>
+    </div>
+<h2 class="section-nocounter">Partie 3</h2>
+<div>
+On considère la fonction f définie sur \( \left[0 ; +\infty\right[ \) par :
+\(f(t) = 80 (1 + 2 e – 0{,}1 t )\).
+Cette fonction \( f \) donne la température de l’hélice (en degrés Celsius) en fonction du temps \( t \) (en secondes) lorsque le moule est maintenu à une température de 80 °C.
+</div>
+<div class="exo">
+    <ol><li><ol>
+    <li>Justifier par le calcul le sens de variation de la fonction \( f \).</li>
+    <li>Calculer \( \lim_{t\to+\infty} f(t) \).</li>
+    <li>Interpréter ces deux résultats dans le contexte du problème.</li>
+    </ol>
+    <li><ol>
+            <li>Résoudre l’équation \( f(t) = 100 \) et donner une valeur approchée par excès à \(10^{-1} \) de la ou des solutions éventuelles.</li>
+    <li>Interpréter ce résultat dans le contexte du problème.</li>
+    </ol>
+    <li>On souhaite de plus que la température moyenne du matériau plastique durant la première phase de fabrication, c’est-à-dire durant les trois premières secondes, ne soit pas inférieure à 210 °C.
+        <ol><li>Calculer la valeur moyenne de \( f \) sur l’intervalle \( \left[0 ; 3\right] \). <br>
+                On rappelle que la valeur moyenne d’une fonction \(f\) sur un intervalle \( \left[a ; b\right] \) est égale à \( \displaystyle\frac{1}{b-a}\int_a^b\,f(t)\,\rm{d}t \).</li>
+            <li>La fonction \(f\) satisfait-elle la contrainte sur la température moyenne ?</li>
+            </ol>
+            </li>
+            </ol>
+        </div>
+
+
+</body>
+
+</html>
