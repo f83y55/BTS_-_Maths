@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <a href="assets/print.pdf" download>
+    <h1 class="titre"> BTS - Équations Différentielles - TD2</h1>
+    </a>
+    <h2 class="section">Situations analysées</h2>
+    <p>
+    Le but de ce TD est d'étudier l'évolution de phénomènes physiques décrits par des équations différentielles en découvrant et mettant en place des outils (demi-vie et constante de temps) appropriés.
+    </p>
+    <p><b>Situation 1 :</b> on étudie la désintégration radioactive de \(N(0)=1000\) noyaux de carbone 14, dont le nombre \(N(t)\), au cours du temps \(t\), en années, évolue selon :
+    \( \left\{\begin{array}{l} 8267 N'(t) + N(t) = 0 \\ N(0) = 1000 \\ \end{array} \right. \). </p>
+ <p><b>Situation 2 :</b> on étudie la tension \(u(t)\) en volt, au cours du temps \(t\) en milliseconde, aux bornes d'un condensateur C=500nF (déchargé), dans un circuit où il est associé en série à une résistance R=1kΩ, alimenté par une batterie de 12V.
+ Cette tension évolue selon :
+ \( \left\{\begin{array}{l} 0{,}5u'(t) + u(t) = 12 \\ u(0) = 0 \\ \end{array} \right. \). Remarque : le 0,5 est égal à \(R\times C\) exprimé en ms.</p>
+
+ 
+    <h2 class="section">Résoudre et tracer</h2>
+    <div class="exo"> Pour chaque problème :
+        <ol>
+            <li>Résoudre l'équation différentielle (avec la condition initiale donnée).</li>
+            <li>Tracer la courbe sur le papier et sur l'ordinateur/calculatrice. On pourra éventuellement visualiser le champ de tangentes associé.</li>
+            <li>Déterminer et tracer la tangente à la courbe en \(t=0\). </li>
+        </ol>
+   </div>
+
+   <table>
+       <tr>
+           <td>
+       <figure>
+        <img src="assets/fig1.svg"/>
+            <figcaption><a href="assets/fig1.html" target="_blank">
+                Courbe 1
+            </a></figcaption>
+    </figure> 
+</td><td>
+    vs
+</td><td>
+
+<figure>
+        <img src="assets/fig2.svg"/>
+            <figcaption><a href="assets/fig2.html" target="_blank">
+                Courbe 2
+            </a></figcaption>
+    </figure> 
+    </td>
+</tr>
+</table>
+<h2 class="section">Régimes transitoires et permanents, demi-vie</h2>
+    <div class="exo"> Pour chaque problème :
+        <ol>
+            <li>Calculer l'abscisse \(\tau\) du point d'intersection de la tangente en 0 avec l'axe horizontal (situation 1) et la droite horizontale passant par 12 (situation 2).
+                <div class="defi">Ce temps \(\tau\) est appelé <b>constante de temps</b> du problème.</div></li>
+            <li>Exprimer en pourcentage les valeurs \(\frac{N(t)}{N(0)}\) et \(\frac{u(t)}{12}\) pour \(t\in \left\{\tau; 2\tau; 3\tau; 4\tau; 5\tau\right\}\) . Que remarque-t-on ?
+                <div class="defi">La partie \(t\geqslant 5\tau\) est appelée <b>régime permanent</b> et celle entre 0 et \(5\tau\) est appelée <b>régime transitoire</b>.</div>
+            Justifier ces qualificatifs.</li>
+            <li>À quel pourcentage correspond un temps \(t_{\frac{1}{2}}=\tau\ln(2)\) ?
+                <div class="defi">
+                    \(t_{\frac{1}{2}}\) s'appelle <b>demi-vie</b>.
+                </div>
+            </li>
+            <li>Le césium 137 a une demi-vie de 30,2 ans. Écrire une équation différentielle décrivant la désintégration de cet isotope.</li>
+</ol>
+</div>
+
+
+
+ 
+
+</body>
+
+</html>
