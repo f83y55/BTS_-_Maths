@@ -12,6 +12,9 @@
   --color-bg-defi : #fbb332;
   --color-bg-exo : #33a5ee;
   --color-bg-surl : #00ff00;
+  --color-bg-table-1 : #bbb;
+  --color-bg-table-2 : #ccc;
+  --color-bg-table-3 : #ddd;
   --margin : 0.3em;
   --transition-speed: 700ms;
 }
@@ -36,7 +39,7 @@ body, .subbody{
 }
 
 div:hover:not(.subbody) {
-    transition: background-image 1s ease-in-out;
+    transition: background-image var(--transition-speed) ease-in-out;
     background-image: linear-gradient(-90deg, rgba(255,255,255,0.5) 90%, rgba(255,255,255,0.9) 100%);
 }
 
@@ -167,7 +170,7 @@ img:active {
 
 .prop::before {
     font-weight: bold;
-    content: "Proposition " counter(prop) " : "; 
+    content: "Propriété " counter(prop) " : "; 
 }
 
 .theo {
@@ -216,6 +219,28 @@ img:active {
     background-color: var(--color-bg-surl) ;
     padding: 0.5em;
 }
+
+.mytable{
+    border-collapse: collapse;
+}
+
+.mytable tr:nth-child(even) {background: var(--color-bg-table-2)}
+.mytable tr:nth-child(odd) {background: var(--color-bg-table-3)}
+
+.mytable th {
+    text-align: center;
+    background-color: var(--color-bg-table-1);
+    border: 2px solid black;
+    padding: 0.5em;
+}
+
+.mytable td{
+    text-align: center;
+    border: 1px solid black;
+    padding: 0.5em;
+}
+
+
 
 @media (max-width: 600px) {
     img, img:active {

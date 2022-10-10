@@ -1,0 +1,8 @@
+N° essai,Global,Pression \(P=X_1\),Température \(T=X_2\),Interaction T-P \(X_1X_2\),Rendement \(Y\)
+1,1,-1,-1,1,60
+2,1,1,-1,-1,78
+3,1,-1,1,-1,63
+4,1,1,1,1,89
+Coefficients,\(a_0\),\(a_1\),\(a_2\),,
+niveau -1,2 bars,50°C,,,
+niveau +1,4 bars,70°C,,,

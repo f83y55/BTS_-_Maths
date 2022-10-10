@@ -13,7 +13,7 @@
     <a href="assets/print.pdf" download>
     <h1 class="titre"> BTS - Équations Différentielles - TD2</h1>
     </a>
-    <h2 class="section">Situations analysées</h2>
+    <h2 class="section-nocounter">Situations analysées</h2>
     <p>
     Le but de ce TD est d'étudier l'évolution de phénomènes physiques décrits par des équations différentielles en découvrant et mettant en place des outils (demi-vie et constante de temps) appropriés.
     </p>
@@ -24,7 +24,7 @@
  \( \left\{\begin{array}{l} 0{,}5u'(t) + u(t) = 12 \\ u(0) = 0 \\ \end{array} \right. \). Remarque : le 0,5 est égal à \(R\times C\) exprimé en ms.</p>
 
  
-    <h2 class="section">Résoudre et tracer</h2>
+    <h2 class="section-nocounter">Résoudre et tracer</h2>
     <div class="exo"> Pour chaque problème :
         <ol>
             <li>Résoudre l'équation différentielle (avec la condition initiale donnée).</li>
@@ -55,7 +55,7 @@
     </td>
 </tr>
 </table>
-<h2 class="section">Régimes transitoires et permanents, demi-vie</h2>
+<h2 class="section-nocounter">Régimes transitoires et permanents, demi-vie</h2>
     <div class="exo"> Pour chaque problème :
         <ol>
             <li>Calculer l'abscisse \(\tau\) du point d'intersection de la tangente en 0 avec l'axe horizontal (situation 1) et la droite horizontale passant par 12 (situation 2).
@@ -72,9 +72,37 @@
 </ol>
 </div>
 
+<h2 class="section-nocounter">Loi thermique de Newton</h2>
+<div class="exo">
+    Loi termique de Newton : <span class="surl">\(T'(t)+cT(t)=cT_{\rm{ext}}\)</span> 
+<ul>
+    <li>(\T\) est la température en degrés Celsius ;</li>
+    <li>\(t\) le temps en minutes ;</li>
+    <li>\(T_{\rm{ext}}\) la température extérieure en degrés Celsius, généralement constante ; elle peut être variable si besoin ;</li> 
+    <li>\(c\) est une constante dépendant du matériau</li>
+</ul>
+On s'intéresse au refroidissement d'une casserole de semoule : à t=0 on stoppe le feu sous la casserole, alors à 100°C. Pour l'eau et les aliments, c=2. La température extérieure est 18°C.
+<ol>
+ <li>Écrire et résoudre l'équation différentielle vérifiée par la casserole (avec les conditions initiales).</li>
+ <li>Déterminer la limite de la fonction solution lorsque \(t\) tend vers l'infini. </li>
+ <li>Graphiquement, tracer la tangente en t=0 à la courbe et vérifier qu'elle passe par B.</li>
+ <li>En déduire la valeur de la constante de temps \(\tau\), en minutes.</li>
+ <li>Déterminer le temps correspondant à une demi-chute de la température, de deux manières :
+     <ul>
+         <li>
+             Par le calcul de \(t_{\frac{1}{2}}\)</li>
+         <li>En résolvant une équation en \(t\)</li>
+     </ul>
+ </li>
 
-
- 
+</ol>
+<figure>
+    <img src="assets/fig3.svg"/>
+            <figcaption><a href="assets/fig3.html" target="_blank">
+                Courbe donnant la température en fonction du temps
+            </a></figcaption>
+    </figure>
+</div>
 
 </body>
 
