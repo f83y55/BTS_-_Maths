@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <a href="assets/print.pdf" download>
+        <h1 class="titre">BTS - Équations Différentielles - TD3et</h1>
+</a>
+
+<h2 class="section">Les circuits séries simples</h2>
+<h3 class="subsection">En régime DC</h3>
+On s'intéresse à deux circuits série alimentés, dès t=0 secondes par une batterie en 12 V DC contenant :
+<ul>
+    <li> Circuit RL : une résistance R = 2 Ω et une inductance L = 20 mH.</li>
+    <li> Circuit RC : une résistance R = 2 Ω et un condensateur C = 5 mF.</li>
+</ul><p>
+
+On utilisera, sauf mention explicite, la milliseconde (ms) pour exprimer des temps.<br>
+On rappelle que, à n'importe quel instant : \(u_L = Li' \) ; \( u_C = \frac{q}{C} \) avec \( q' = i \) (la charge, primitive de l'intensité, est exprimée en Coulomb : C) et \( u_R = Ri \).
+
+</p>
+
+<div class="exo">
+  <ol>
+      <li>
+          Faire deux schémas pour les circuits, contenant chacun les composants et mentionnant les tensions et intensités.
+      </li>
+      <li>
+          En appliquant la loi des mailles et en exprimant les tensions en fonction de \(i\) dans le circuit RL et en fonction de \(q\) dans le circuit RC, établir les 2 équations différentielles <span class="surl">\( (E_{\rm{RL}}) ~:~~ Li'+Ri=12\)</span> et <span class="surl">\( (E_{\rm{RC}}) ~:~~ Rq'+\frac{q}{C}=12\)</span>.
+      </li>
+      <li>
+        Résoudre ces deux équations différentielles, en sachant qu'à \(t=0\), on a \(i(0)=q(0)=0\).
+      </li>
+      <li>
+        Tracer l'intensité dans le circuit RL, ainsi que la charge et l'intensité dans le circuit RC. Interpréter.
+      </li>
+      Repérer les constantes de temps \(\tau_{\rm{RL}}\) et \(\tau_{\rm{RC}}\) sur les deux schémas (sur l'axe du temps) et faire figurer le régime permanent.<br>
+      <b>Remarque : </b> Il est possible de calculer les coordonnées du point d'intersection de la tangente initiale avec l'asymptote, mais pour aller plus vite, on pourra considérer que \(\tau = \frac{-1}{r}\) où \(r\) est la solution de l'équation caractéristique.<br>
+      Établir qu'en général : \( \tau = \frac{L}{R}\) et \( \tau =  RC \) pour ces 2 circuits .</li></ol></div>
+<table><tr><style>td{margin: 1em;}</style>
+          <td>
+              <figure style="float:none;">
+        <img src="assets/fig1.svg" style="width:7cm;float:none;"/>
+            <figcaption><a href="assets/fig1.html" target="_blank">
+                \(i(t)\) dans le circuit RL
+            </a></figcaption>
+              </figure></td><td>
+                  <figure style="float:none;">
+        <img src="assets/fig2.png" style="width:7cm;float:none;"/>
+            <figcaption><a href="assets/fig1.html" target="_blank">
+                 \(q(t)\) dans le circuit RC
+            </a></figcaption>
+                  </figure></td></tr><tr><td>       
+            <figure style="float:none;">
+        <img src="assets/fig1.png" style="width:7cm;float:none;"/>
+            <figcaption><a href="assets/fig1.html" target="_blank">
+                 \(i(t)\) dans le circuit RC
+            </a></figcaption>
+    </figure>
+    </td>
+    </tr></table>
+
+
+    <div class="pagebreak"></div>
+    <h2 class="section">Prise d'initiative</h2>
+    <p>par groupe de 2 ou 3.</p>
+    <h3 class="subsection">En régime AC (sinusoïdal)</h3>
+
+    <p>Les deux mêmes circuits sont alimentés en régime sinusoïdal à partir de \(t=0\), par 
+    une tension \(u(t) = 240\sin(100\pi t) \).
+    </p>
+    <div class="meth">
+        Seul le second membre des équations différentielles va changer. <br>
+        La solution particulière est à recalculer : on utilise la méthode des impédances.
+    </div>
+    <div class="exo">
+        Mêmes questions qu'à l'exercice précédent. Tracer les courbes sur un logiciel.
+    </div>
+
+    <h3 class="subsection">Circuits RC et RL en dérivation</h3>
+
+    <div class="exo">
+        On souhaite étudier de la même façon les associations en parallèle.<br>
+        Mêmes questions qu'à l'exercice précédent. Tracer les courbes sur un logiciel.
+    </div>
+
+
+
+
+</body>
+
+</html>
