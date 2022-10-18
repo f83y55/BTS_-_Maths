@@ -148,6 +148,15 @@ img:active {
     font-weight: bold;
     content: "Exercice " counter(exo) " : "; 
 }
+.exo-nocounter {
+    color: var(--color-exo);
+    background-color: var(--color-bg-exo);
+    padding: 0.5em;
+    margin: var(--margin);
+    border: solid 1px;
+    border-radius: 0.2em;
+}
+
 .defi {
     color: var(--color-defi);
     font-style: italic;
