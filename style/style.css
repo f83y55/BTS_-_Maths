@@ -78,7 +78,7 @@ img:active {
     text-align: center;
     background-image: linear-gradient(45deg, var(--color-subsection) 25%, var(--color-subsubsection) 100%);
     border: 0.2em solid;
-    box-shadow: 0.5em 0.5em 0.5em grey;
+    box-shadow: 0.3em 0.3em 0.3em grey;
     border-color: var(--color-section);
     border-radius: 0.2em;
     margin: var(--margin);
@@ -230,13 +230,14 @@ img:active {
 }
 
 .mytable{
+    float: right;
     border-collapse: collapse;
 }
 
 .mytable tr:nth-child(even) {background: var(--color-bg-table-2)}
 .mytable tr:nth-child(odd) {background: var(--color-bg-table-3)}
 
-.mytable th {
+.mytable th{
     text-align: center;
     background-color: var(--color-bg-table-1);
     border: 2px solid black;
@@ -252,25 +253,30 @@ img:active {
 
 
 @media (max-width: 600px) {
-    img, img:active {
+    img, img:active, figure, .mytable {
         float: unset;
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 100vh;
+        max-height: 100vw;
         transform: none;
         -ms-transform: none;
         -webkit-transform: none;
         transition: none;
         background: none;
+        overflow-x: scroll;
     }
+    .mytable {
+        font-size:x-small;
+    }
+
 }
 
-@page {
-  size: A4;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 2em;
-  margin-right: 2em;
-  }
+@page { 
+    size: A4;
+    margin-top: 1em;
+    margin-bottom: 3em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
 @media print {
     html, body, .subbody {
         display: block;
@@ -295,14 +301,14 @@ img:active {
         page-break-after: avoid;
     }
 
-    table, figure {
+    .mytable, table, figure, img {
         page-break-inside: avoid;
-    }
-
-    img {
-    float: none;
-    max-width: 40%;
-    max-height: 50%;
+        display: inline-block;
+        float: none;
+        margin-left: 2em auto;
+        margin-right: 2em auto;
+        max-width: 30%;
+        max-height: 30%;
     }
     
     .surl {
