@@ -64,9 +64,8 @@ img {
 }
 
 img:active {
-    z-index: 1000;
-    max-height: 45vh;
-    max-width: 45vw;
+    max-height: 40vh;
+    max-width: 40vw;
     background-color: var(--color-bg);
     transform: scale(2, 2) translate(-25%, 0);
     -ms-transform: scale(2, 2) translate(-25%, 0);
@@ -273,10 +272,14 @@ img:active {
 @page { 
     size: A4;
     margin-top: 1em;
-    margin-bottom: 3em;
+    margin-bottom: 1em;
     margin-left: 1em;
     margin-right: 1em;
 }
+@page:after {
+    content: "Méthode " counter(meth) " : "; 
+}
+
 @media print {
     html, body, .subbody {
         display: block;
@@ -297,18 +300,20 @@ img:active {
         break-inside: avoid;
     }
 
-    h1, h2, h3, h4, h5 {
+    .titre, h1, h2, h3, h4, h5 {
         page-break-after: avoid;
     }
 
+    .titre {
+        margin-bottom: 2em;
+    }
+
     .mytable, table, figure, img {
+        background-color: white;
         page-break-inside: avoid;
         display: inline-block;
-        float: none;
-        margin-left: 2em auto;
-        margin-right: 2em auto;
-        max-width: 30%;
-        max-height: 30%;
+        max-width: 10cm;
+        max-height: 10cm;
     }
     
     .surl {

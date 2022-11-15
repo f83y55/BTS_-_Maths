@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <a href="assets/print.pdf" download>
+        <h1 class="titre">BTS - Équations Différentielles - TD4et</h1>
+    </a>
+    <h2 class="section">Révisions du 1er ordre, circuit RC</h2>
+    <div class="exo">
+        On a \(R=10\Omega\) ; \(C=40\)µF et \(u_G(t)=24\)V DC ; le condensateur est déchargé à t=0.
+        <figure>
+            <figcaption>Circuit RC</figcaption>
+            <img src="assets/RC.svg">
+        </figure>
+        <ol>
+            <li>
+                En utilisant vos connaissances sur les équations différentielles, calculer \(q(t)\) et en déduire \(i(t)\) dans ce circuit.       
+            </li>
+            <li>
+                En déduire la durée du régime transitoire (\(5\tau\)) et l'intensité dans le circuit une fois le régime permanent atteint.
+            </li>
+            <li>
+                Déterminer l'intensité moyenne durant le régime transitoire.
+            </li>
+            <li>
+                Déterminer le temps au bout duquel le condensateur est à moitié chargé.
+            </li>
+            <li>
+                **Reprendre l'exercice avec \(u_G(t)=240\sqrt{2}\sin(100\pi t)\) V (secteur).
+            </li>
+        </ol>
+    </div>
+    <h2 class="section">2nd ordre : circuit RLC série</h2>
+        <div class="exo">
+            En utilisant vos connaissances sur les équations différentielles, calculer les solutions générales  \(q(t)\) et en déduire \(i(t)\) dans ce circuit ; comparer la situation par rapport à l'exercice précédent.<br>
+            Les 3 premières séries de valeurs sont théoriques, pour faciliter les calculs.
+        <figure>
+            <figcaption>Circuit RLC</figcaption>
+            <img src="assets/RLC.svg">
+        </figure>
+        <ol>
+            <li> \(L=1\)H ; \(R=2\Omega\) ; \(C=1\)F et \(u_G(t)=24\)V DC</li>
+            <li> \(L=1\)H ; \(R=8\Omega\) ; \(C=\frac{1}{15}\)F et \(u_G(t)=24\)V DC</li>
+            <li> \(L=1\)H ; \(R=4\Omega\) ; \(C=\frac{1}{8}\)F et \(u_G(t)=24\)V DC</li>
+            <li> \(L=1\)mH ; \(R=10\Omega\) ; \(C=40\)µF et \(u_G(t)=24\)V DC</li>
+            <li>**Reprendre la question précédente avec \(u_G(t)=240\sqrt{2}\sin(100\pi t)\) V (secteur).</li>
+        </ol>
+    </div>
+
+    <h2 class="section">2nd ordre : circuit RLC série avec décharge d'un condensateur</h2>
+        <div class="exo">
+            On se place dans la situation où le condensateur est chargé à 50% (comme pour l'expérience 1). On le place dans le circuit ci-contre qui est fermé à t=0.
+        <figure>
+            <figcaption>Circuit RLC</figcaption>
+            <img src="assets/RLCsg.svg">
+        </figure>
+        <ol>
+            <li> Écrire une équation différentielle vérifiée par ce circuit.</li>
+            <li> Est-il possible de produire des oscillations, et quelle est la méthode à suivre ?</li>
+        </ol>
+    </div>
+    <div class="pagebreak"></div>
+    <h2 class="section-nocounter">Rappels</h2>
+    <h3 class="subsection-nocounter">Formules d'électricité</h3>
+    <div>
+    On utilisera : \(u_L(t) = Li'(t) \) ; \(u_R(t) = Ri(t)\) ; \(u_C(t)=\frac{q(t)}{C}\) ; \(q'(t)=i(t)\). <br>
+    On a aussi : \(\underline{Z}_L = L\omega j\) et \(\underline{Z}_C = \frac{1}{C\omega j}\)
+    Et aussi : \(\tau=\frac{1}{r}\) avec \(r\) solution de l'équation caractéristique.
+    </div>
+    <h3 class="subsection-nocounter">Formules de résolution des équations différentielles homogènes
+    </h3>
+    <div>
+<div class="prop">Solutions générales d'une équation <b>homogène</b> :
+
+<ul>
+    <li> 1er ordre : \((E^c)~:~~\) une solution \(r\), solution générale de \((E_1^*)\) : <span class="surl">\(K\rm{e}^{rt}\)</span>.</li>
+<li>2nd ordre :  \((E^c)~:~~ar^2+br+c=0\) ; 3 cas selon \(\Delta=b^2-4ac\) :
+    <ol><li> \(\Delta>0\) : \((E^c)\) a deux solutions \(r_1=\dfrac{-b-\sqrt{\Delta}}{2a}\) et \(r_2=\dfrac{-b+\sqrt{\Delta}}{2a}\) ;<br>
+            solution générale de \((E_2^*)\) : <span class="surl">\(K\rm{e}^{r_1t}+L\rm{e}^{r_2t}\)</span>.</li>
+        <li>\(\Delta=0\) : \((E^c)\) a une solution \(r_0=\dfrac{-b}{2a}\) ;
+            solution générale de \((E_2^*)\) : <span class="surl">\(K\rm{e}^{r_0t}+Lt\rm{e}^{r_0t}\)</span>.</li>
+        <li>\(\Delta<0\) : \((E^c)\) a deux solutions \(r_1=\dfrac{-b-i\sqrt{\Delta}}{2a}\) et \(r_2=\dfrac{-b+i\sqrt{\Delta}}{2a}\), complexes conjuguées de la forme \(\alpha\pm i\omega\) (on choisit \(\omega>0\)) ;
+            solution générale de \((E_2^*)\) : <span class="surl">\(K\rm{e}^{\alpha t}\cos(\omega t)+L\rm{e}^{\alpha t}\sin(\omega t)\)</span>.</li>
+    </ol>
+</li></ul>
+</div>
+
+    </div>
+
+
+
+</body>
+
+</html>
