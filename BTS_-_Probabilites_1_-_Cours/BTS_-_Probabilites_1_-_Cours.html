@@ -360,6 +360,8 @@ Lorsqu'on sait que \(A\) et \(B\) ne peuvent être réalisés simultanément ; \
     Utiliser les lois de Morgan pour exprimer \(\overline{(A\cap B)\cup C}\) en fonction des événements complémentaires de ces trois événements.
 </div>
 
+<div class="pagebreak"></div>
+
 <h2 class="section">Variables aléatoires (réelles)</h2>
 <h3 class="subsection">Définition</h3>
 <div class="defi">
@@ -367,7 +369,7 @@ Lorsqu'on sait que \(A\) et \(B\) ne peuvent être réalisés simultanément ; \
 </div>
 <div class="exem"> Souvent, une variable aléatoire est utilisée pour rendre compte des gains dans un jeu de hasard.<br>
 On lance un dé (6 faces, bien équilibré), puis une pièce (bien équilibrée) ;
- <figure width="32%">
+<figure width="32%" style="max-width:7cm;">
         <img src="assets/fig5.svg">
         <figcaption>Arbre à compléter</figcaption>
     </figure>
@@ -464,7 +466,7 @@ Quelle valeur doit-on donner à \(k\) pour que \(E(T)=0\) (jeu dit «équitable�
 </div>
 
 <h3 class="subsection">Variance</h3>
-<div class="defi">On note \(V(X)\) la <b>variance</b> d'une variable aléatoire \(X\) de valeurs \(x_1,ldots,x_n\) pondérée par les probabilités associées à chacunes de ces valeurs :
+<div class="defi">On note \(V(X)\) la <b>variance</b> d'une variable aléatoire \(X\) de valeurs \(x_1,\ldots,x_n\) pondérée par les probabilités associées à chacunes de ces valeurs :
     <span class="surl"> \( V(X)=\sum_{i=1}^{n} P(X=x_i)\times (x_i-E(X))^2 \) </span>
 </div>
 <div class="rema">
@@ -474,28 +476,73 @@ Plus la variance est importante, plus les valeurs de la variable aléatoire sont
 Calculer la variance des gains \(V(G)\) de notre jeu.
 </div>
 
-\prop Soient $a$ et $b$ deux constantes réelles. Soit $X$ une variable aléatoire sur $\Omega$, prenant les valeurs  $\left\{x_1;...;x_n\right\}$. Alors :
-$$V(aX+b)=a^2V(X)$$
-\exo{* Le démontrer.}\par
-\prop On rappelle la formule, bien utile, vue en statistiques :
-$$V(X)=E(X^2)-E(X)^2$$
-\exo{* Démontrer cette formule.}\par
+<div class="prop"> Soient \(a\) et \(b\) deux constantes réelles. Soit \(X\) une variable aléatoire sur \(\Omega\), prenant les valeurs  \(\left\{x_1;...;x_n\right\}\). Alors :
+    <span class="surl">\(V(aX+b)=a^2V(X)\)</span><br>
+    </div>
+    <div class="exo">Le démontrer.</div>
+    <div class="prop">On peut aussi exprimer la variance de cette manière :<br>
+        <b>Formule de Koenig : </b><span class="surl">\(V(X)=E(X^2)-E(X)^2\)</span>
+    </div>
+    <div class="exo">* Démontrer cette formule (développer l'expression donnant la variance)</div>
 
-\exo{Calculer la variance des gains $V(G)$ de notre jeu à l'aide de cette formule, après avoir complété le tableau suivant :\\
-~~~~~~~
-\begin{tabular}{|l||c|c|c|c|c|}\hline
-$G$ & ~~~~  & ~~~~  & $5$             & ~~~~ & ~~~~ \\ \hline
-$G^2$&      &      &    $25$          &      &      \\ \hline
-prob&      &     & $\frac{5}{12}$  &      &      \\ \hline
-\end{tabular}
-~~~~$V(G)=\ldots$
-}
+    <div class="exo">Calculer la variance des gains \(V(G)\) de notre jeu à l'aide de cette formule, après avoir complété le tableau suivant :<br>
+<table id="tab09" class="mytable" >
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">\(G\)</th>
+    <td class="table_row_0 table_column_2">&nbsp;&nbsp;...&nbsp;&nbsp;</td>
+    <td class="table_row_0 table_column_3">&nbsp;&nbsp;...&nbsp;&nbsp;</td>
+    <td class="table_row_0 table_column_4">&nbsp;5&nbsp;</td>
+    <td class="table_row_0 table_column_5">&nbsp;&nbsp;...&nbsp;&nbsp;</td>
+    <td class="table_row_0 table_column_6">&nbsp;&nbsp;...&nbsp;&nbsp;</td>
+  </tr>
+  <tr class="table_row_tr_1">
+    <th class="table_row_1 table_column_1">\(G^2\)</th>
+    <td class="table_row_1 table_column_2">&nbsp;&nbsp;...&nbsp;&nbsp;</td>
+    <td class="table_row_1 table_column_3">&nbsp;&nbsp;...&nbsp;&nbsp;</td>
+    <td class="table_row_1 table_column_4">&nbsp;&nbsp;...&nbsp;&nbsp;</td>
+    <td class="table_row_1 table_column_5">&nbsp;&nbsp;...&nbsp;&nbsp;</td>
+    <td class="table_row_1 table_column_6">&nbsp;&nbsp;...&nbsp;&nbsp;</td>
+  </tr>
+  <tr> 
+  <tr class="table_row_tr_2">
+    <th class="table_row_2 table_column_1">prob</th>
+    <td class="table_row_2 table_column_2"></td>
+    <td class="table_row_2 table_column_3"></td>
+    <td class="table_row_2 table_column_4">\(\frac{5}{12}\)</td>
+    <td class="table_row_2 table_column_5"></td>
+    <td class="table_row_2 table_column_6"></td>
+  </tr>
+</table>
+</div>
+
+<h3 class="subsection">Écart-type</h3>
+<div class="defi"> L'<b>écart-type</b> est la racine carrée de la variance : 
+<span class="surl">\(\sigma(X)=\sqrt{V(X)}\)</span>
+</div>
+<div class="rema">Il mesure la dispertion, comme la variance dont il est issu, mais présente l'avantage d'être dans la même unité que la variable.</div>
+<div class="exo">Calculer l'écart-type de \(G\). \(\sigma(G)=\ldots\)</div>
+<div class="prop">\(\sigma(aX+b)=|a|\sigma(X)\)</div>
+
+<h3 class="subsection">Exercices</h3>
+<div class="exo"><b>loi de la somme sur deux dés</b><br>
+    On lance deux dés à 6 faces bien équilibrés et on note \(S\) la somme des deux nombres obtenus.<br>
+    Déterminer la loi de \(S\), son espérance et son écart-type.
+</div>
+
+<div class="exo"><b>Loi de Bernoulli</b><br>
+    Il s'agit du modèle basique de type succès/échec :
+    On note \(X\) la variable aléatoire qui vaut 1 avec une probabilité \(p\) (\(p\) est un paramètre dans [0;1]) et 0 sinon.<br>
+    Donner la loi de \(X\), son espérance et son écart-type. Pour quelle(s) valeur(s) de \(p\) l'écart-type est-il maximal ?
+</div>
+
+<div class="exo"><b>Paradoxe du Duc de Toscane</b><br>
+    On lance trois dés à 6 faces bien équilibrés et on note \(S\) la somme des deux nombres obtenus.<br>
+    9=1+2+6=1+3+5=1+4+4=2+2+5=2+3+4=3+3+3 (6 décompositions)<br>
+    10=1+3+6=1+4+5=2+2+6=2+3+5=2+4+4=3+3+4 (6 décompositions)<br>
+    Pourtant, en pratique, \(S=10\) est obtenue plus souvent ! Expliquer...
+</div>
 
 
-\subsection{Écart-type}
-\defi{$\sigma(X)=\sqrt{V(X)}$}\par
-\exo{Calculer l'écart-type de $G$. $G=\ldots$ }\par
-\prop $\sigma(aX+b)=|a|\sigma(X)$
 
 
 <h2 class="section">Probabilités conditionnelles</h2>
@@ -511,41 +558,120 @@ les moyennes de ce trimestre sont 1, 2, 3, 4 pour le groupe A et 5, 6, 7, 8, 9 p
 </div>
 
 <h3 class="subsection">Définition et propriétés</h3>
-<div class="defi"> $A$, $B$ sont deux événements avec \(P(A)\neq0\).<br>
+<div class="defi"> \(A\), \(B\) sont deux événements avec \(P(A)\neq0\).<br>
     On note \(P_A(B)\) la «<b>probabilité de \(B\) sachant \(A\)</b>» le nombre \(\displaystyle\frac{P(A\cap B)}{P(A)}\).<br>
-        <figure width="32%">
+    <figure width="32%" style="max-width:6cm;">
         <img src="assets/fig4.svg">
         <figcaption>Représentation des probabilités<br>
         conditionnelles sur un arbre</figcaption>
     </figure>
     </div>
 
+    <div class="exo"><b>Contrôle qualité :</b><br>
+        Une production en très grande série contient 90% de pièces conformes et 10% de pièces défectueuses. Un contrôle de qualité accepte les pièces conformes dans 92% des cas et rejette les pièces défectueuses dans 94% des cas.<br>
+On tire une pièce au hasard dans la production, après le contrôle qualité.
+On note :
+    <ul>
+        <li> \(C\) : «la pièce tirée est conforme» ; </li>
+        <li> \(A\) : «la pièce tirée est acceptée au contrôle». </li>
+    </ul>
+    <ol>
+    <li>Construire l'arbre des possibilités.</li>
+    <li>En déduire les probabilités des 4 issues possibles.</li>
+    <li>En déduire la probabilité que la pièce prélevée ait subi une erreur de contrôle.</li>
+    </ol>
+</div>
+
+<div class="exo">
+    À la suite de la découverte dans un pays A des premiers cas d'une maladie contagieuse non mortelle M, il a été procédé dans ce pays à une importante campagne de navigation : 70% des habitants ont été vaccinés.<br>
+Une étude a révélé que 5% des vaccinés ont été touchés à des degrés divers par la maladie, pourcentage qui s'est élevé à 60% chez les non-vaccinés.
+<table id="tab10" class="mytable" >
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">\(V\) \ \(M\)</th>
+    <th class="table_row_0 table_column_2">\(M\)</th>
+    <th class="table_row_0 table_column_3">\(\overline{M}\)</th>
+    <th class="table_row_0 table_column_4">total</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <th class="table_row_1 table_column_1">\(V\)</th>
+    <td class="table_row_1 table_column_2">&nbsp;&nbsp;...&nbsp;&nbsp;</td>
+    <td class="table_row_1 table_column_3">&nbsp;&nbsp;...&nbsp;&nbsp;</td>
+    <td class="table_row_1 table_column_4">&nbsp;&nbsp;...&nbsp;&nbsp;</td>
+  </tr>
+  <tr> 
+  <tr class="table_row_tr_2">
+      <th class="table_row_2 table_column_1">\(\overline{V}\)</th>
+    <td class="table_row_2 table_column_2"></td>
+    <td class="table_row_2 table_column_3"></td>
+    <td class="table_row_2 table_column_4"></td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <th class="table_row_3 table_column_1">total</th>
+    <td class="table_row_3 table_column_2"></td>
+    <td class="table_row_3 table_column_3"></td>
+    <td class="table_row_3 table_column_4"></td>
+  </tr>
+
+</table>
 
 
-\defi{Soit $A$, $B$ deux événements de probabilité non nulle.\\
-On dit que $A$ et $B$ sont \underline{indépendants} s'ils vérifient une de ces trois affirmations équivalentes :}\\
-\prop\begin{eqnarray*}
+<ol>
+    <li> Calculer la probabilité qu'un individu pris au hasard dans la population ait été touché par la maladie. </li>
+    <li> Calculer la probabilité pour qu'un individu ait été vacciné, sachant qu'il a été atteint par la maladie. </li>
+    <li>Commenter les pourcentages manipulés : peut-on en faire de bonnes/mauvaises interprétations ?</li>
+    <li>Il est parfois plus judicieux d'essayer d'éviter de présenter des probabilités conditionnelles : on peut présenter les intersections, qui ont l'avantage d'être immédiatement comparables entre elles, mais il peut y avoir de gros écarts.<br>
+    Présenter les données sous la forme d'un tableau à double entrée.</li>
+</ol>
+
+</div>
+
+    <div class="defi">
+         \(A\) et \(B\) sont deux événements de probabilité non nulle.<br>
+         On dit que \(A\) et \(B\) sont <b>indépendants</b> s'ils vérifient une de ces trois affirmations équivalentes :
+         \(\begin{array}{cl}
                      & P_A(B)=P(B) \\
 \Leftrightarrow      & P(A\cap B)=P(A)\times P(B) \\
 \Leftrightarrow      & P_B(A)=P(A) \\
-\end{eqnarray*}
-\demo On passe de la première ligne à la deuxième en multipliant par $P(A)$ et de la deuxième à la troisième en divisant par $P(B)$.\par
+\end{array}\)<br>
+<b>Explication : </b>On passe de la première ligne à la deuxième en multipliant par \(P(A)\) et de la deuxième à la troisième en divisant par \(P(B)\).
+</div>
 
-\rema Lorsque $A$ et $B$ sont indépendants, $A$ et $\overline{B}$ le sont aussi, ainsi que $\overline{A}$ et $B$, et aussi $\overline{A}$ et $\overline{B}$.\par
+<div class="rema">Lorsque \(A\) et \(B\) sont indépendants, \(A\) et \(\overline{B}\) le sont aussi, ainsi que \(\overline{A}\) et \(B\), et aussi \(\overline{A}\) et \(\overline{B}\).
+</div>
+<div class="exo">On a \(P(A)=0{,}4\), \(P(B)=0{,}5\) et \(P(A\cap B)=0{,}2\).
+    \(A\) et \(B\) sont-ils indépendants ?<br>
+    En calculant, vérifier si \(\overline{A}\) et \(\overline{B}\) le sont.
+</div>
 
-\exo{On a $P(A)=0,4$, $P(B)=0,5$ et $P(A\cap B)=0,2$.\\
-$A$ et $B$ sont-ils indépandants ?}\par
+<div class="exo">
+Un même individu peut être atteint de surdité unilatérale ou bilatérale (mais pas plus). \\
+On note \(G\) et \(D\) les deux événements «être atteint de surdité à l'oreille gauche/droite».<br>
+\(G\) et \(D\) sont indépendants, et \(P(G)=P(D)=5\%\). On note :
+     \(B\) : «surdité bilatérale» ;
+     \(U\) : «surdité unilatérale» ; 
+     \(S\) : «surdité» (une oreille au moins).
+<ol>
+    <li>Calculer les probabilités de ces événements.</li>
+    <li>Sachant qu'un individu pris au hasard dans la population est atteint de surdité, quelle est la probabilité pour qu'il soit atteint de surdité à droite ? Pour qu'il soit atteint de surdité bilatérale ?</li>
+</ol>
 
-\prop \textbf{Formule des probabilités totales :}
-Soit $C_1, C_2, \ldots,C_k$ des événements de probabilité non nulle formant une partition de $\Omega$ (tous les $C_i$ sont disjoints et recouvrent $\Omega$ : ils représentent des cas différents). Alors on a :
-$$P(A)=P(A\cap C_1)+P(A\cap C_2)+\cdots+P(A\cap C_k)$$
-Qui peut aussi s'écrire :
-$$P(A)=P(C_1)P_{C_1}(A)+P(C_2)P_{C_2}(A)+\cdots+P(C_k)P_{C_k}(A)$$
+</div>
 
-\rema $B\neq\emptyset$ et $\overline{B}$ formant une partition de $\Omega$, on a :
+<div class="prop"><b>Formule des probabilités totales :</b><br>
+    Soit \(C_1, C_2, \ldots,C_k\) des événements de probabilité non nulle formant une <b>partition</b> de \(\Omega\) (tous les \(C_i\) sont disjoints et recouvrent entièrement \(\Omega\) : ils représentent des cas différents). <br>
+    Alors, on a :
+    \(P(A)=P(A\cap C_1)+P(A\cap C_2)+\cdots+P(A\cap C_k)\)<br>
+    Qui peut aussi s'écrire :<br>
+\(P(A)=P(C_1)P_{C_1}(A)+P(C_2)P_{C_2}(A)+\cdots+P(C_k)P_{C_k}(A)\)
+</div>
 
-$$P(A)=P(B)P_{B}(A)+P(\overline{B})P_{\overline{B}}(A)$$
-
+<div class="rema">
+Si \(B\neq\emptyset\), \(B\) et \(\overline{B}\) formant naturellement une partition de \(\Omega\), on a : \(P(A)=P(B)P_{B}(A)+P(\overline{B})P_{\overline{B}}(A)\)
+</div>
+<div class="exo">
+    On lance un dé tétraédrique (4 faces) bien équilibré : on multiplie le résultat \(R\) par 2 s'il est pair. On lance ensuite une pièce bien équilibrée ; dans le cas pile, on multiplie \(R\) par 2.<br>
+    Utiliser un arbre pour déterminer la loi de \(R\) (dire où apparaît une partition) et calculer son espérance et son écart-type.
+</div>
 
 </body>
 
