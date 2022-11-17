@@ -45,7 +45,7 @@ div:hover:not(.subbody) {
 
 a {
     color: inherit;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 figure {
@@ -284,10 +284,10 @@ img:active {
         font-family: 'Times New Roman', Times, serif, Verdana, Helvetica, sans-serif;
         font-size: var(--font-size-print);
     }
-    body {
+    /*body {
         max-width: 210mm;
         max-height: 297mm;
-    }
+    }*/
     .pagebreak { 
         page-break-before: always; 
     }
