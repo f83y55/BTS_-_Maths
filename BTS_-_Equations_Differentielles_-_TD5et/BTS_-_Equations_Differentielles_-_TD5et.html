@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <a href="assets/print.pdf" download>
+        <h1 class="titre">BTS - Équations Différentielles - TD5et</h1>
+    </a>
+
+    <h2 class="section">Circuit RC et puissance</h2>
+    On s'intéresse à un circuit RC série avec R=200Ω et C=5mF alimenté par une batterie (
+    DC) de 12V. Pour les questions 1 à 3, on travaillera en calcul littéral (sans les valeurs particulières données).
+    <div class="exo">
+        <ol>
+        <li>Faire un schéma du circuit.</li>
+        <li>Exprimer \(q\) en fonction de \(u_C\), et \(i\) en fonction de \(u_R\).</li>
+        <li>En déduire que \(u_R = RCu_C'\)</li>
+        <li>En déduire que le circuit conduit à l'équation différentielle : \(RCu_C'+u_C=12\)</li>
+        <li>Résoudre cette équation différentielle.</li>
+        <li>En déduire \(u_R(t)\) et tracer \(u_R(t)\) sur \([0;6]\).</li>
+        </ol>
+        </div>
+        <div class="exo">
+        <ol>
+        <li>En utilisant la formule donnant la puissance \(P(t)=\frac{u_R(t)^2}{R}\), Calculer l'énergie dispersée par la résistance sur \(\left[0;+\infty\right[\).</li>
+        <li>Calculer \(I_{\textrm{eff}}\)</li>
+        <li>Sachant que la résistance fait 40g et que son coefficient calorique est 400J/kg/K, observe-t-on un échauffement significatif de la ŕésistance ? Expliquer.</li>
+    </ol>
+    </div>
+
+
+    <h2 class="section">Modulation d'un signal</h2>
+    <div class="exo">
+        <ol>
+            <li>
+            Tracer le signal créneau \(f(t)\) sur \([0;1]\) défini par : \(f(t) = \left\{ \begin{array}{l} 5 \textrm{ sur } \left[0;\frac{1}{2}\right] \\  0 \textrm{ sur } \left]\frac{1}{2};1\right] \\ \end{array} \right.\)<br>
+            On pourra utiliser la commande Geogebra : <code>f(t) = Si(0<=t<=1/2, 5, 0) </code>
+            </li>
+            <li>Calculer la valeur moyenne et la valeur efficace de \(f\) sur [0;1].</li>
+            <li>Tracer les fonctions suivantes et calculer les intégrales : </li>
+            <ul>
+            <li>\(g(t)=f(t)\times \cos(2\pi t)\) et \(h(t)=f(t)\times \sin(4\pi t)\).</li>
+            <li>\(a_1=\displaystyle\int_0^1\,g(t)\,\textrm{d}t\) et \(b_2=\displaystyle\int_0^1\,h(t)\,\textrm{d}t\)</li>
+            </ul>
+        </ol>
+
+        </div>
+</body>
+
+</html>
