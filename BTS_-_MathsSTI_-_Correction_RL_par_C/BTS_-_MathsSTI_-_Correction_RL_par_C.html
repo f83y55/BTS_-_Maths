@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <a href="assets/print.pdf" download>
+        <h1 class="titre">BTS - Maths+STI - Correction RL par C</h1>
+    </a>
+    <h2 class="section">Vue d'ensemble</h2>
+    <div>
+        <p>
+        Ce circuit est constitué d'un moteur modélisé par une inductance L = 36 mH et une résistance R = 20 Ω (branche 1) associé en dérivation à un condensateur C = 68µF et un interrupteur (branche 2). <br> L'ensemble est alimenté par une source de tension sinusoïdale secteur \(u(t) = 240\sqrt{2}\sin(100\pi t) \), modélisée par un vecteur de Fresnel \(\underline{u}=240\) (en V).<br>
+        avant le temps \(t=0\), l'interrupteur est ouvert et le régime permanent est établi. On ferme l'interrupteur à \(t=0\).<br>
+        On arrondira les résultats à un chiffre après la virgule et au degrès près.
+        </p>
+        <img src="assets/RLC.svg" style="max-width: 4cm;"/>
+    </div>
+    <div class="exo">
+        <ol>
+            <li>Quelle pratique en électricité consiste à utiliser un condensateur en parallèle d'un circuit inductif, et pourquoi ?</li>
+            <li>Justifier que le facteur de puissance du moteur est 87%.</li>
+        </ol>
+    </div>
+
+
+    <h2 class="section">Impédances et intensités</h2>
+    <div class="exo"> On se place en régime permanent sinusoïdal.
+        <ol>
+            <li>Calculer l'impédance équivalente dans le moteur (branche 1) et en déduire que \(\underline{i_1}=10{,}5\rm{e}^{j(-30^\circ)}\) A, et tracer cette intensité.</li>
+            <li>Calculer l'impédance équivalente du condensateur (branche 2), en déduire \(\underline{i_2}\) et la tracer.</li>
+            <li>En déduire que l'intensité débitée par le générateur est \(\underline{i}=9{,}1\) A, et la tracer.</li>
+            <li>Est-ce en accord avec les intensités mesurées (cf capture) avant et après la fermeture de l'interrupteur ?</li>
+        </ol>
+        <table><tr><td>
+        <img src="assets/diag.svg" style="max-width: 12cm;"/>
+                </td><td>
+        <img src="assets/graphe2.svg" style="max-width: 5cm;"/>
+        </td></tr></table>
+    </div>
+
+    <div class="pagebreak"></div>
+
+    <h2 class="section">Le régime transitoire</h2>
+        <div class="exo">
+            <ol>
+                <li>En appliquant la loi des mailles avec la branche 1, établir que <span class="surl">\(u=Li_1'+Ri_1\)</span> .</li>
+                <li>En appliquant la loi des mailles avec la branche 2, établir que \(i_2=Cu'\) .</li>
+                <li>À partir de la relation \(i_2=Cu'\), déduire, en précisant les opérations mathématiques utilisées, que  <span class="surl">\(Ri_2=RCu'\)</span> et que  <span class="surl">\(Li_2'=LCu''\)</span>.</li>
+                <li> En combinant les réponses entourées en vert, conclure (avec la loi des nœuds) que dans ce circuit : \(Li'+Ri = LCu''+RCu'+u\) .
+                </li>
+                <li>
+                    L'équation homogène associée à cette dernière équation différentielle est \(Li'+Ri = 0\). La résoudre.
+                </li>
+                <li>
+                    Quelle est la durée du régime transitoire ?
+                </li>
+                <li>
+                    En déduire que les solutions générales sont : \(K\rm{e}^{-556t}+9{,}1\sin(100\pi t)\)
+                </li>
+                <li>
+                    En donnant les conditions juste avant la fermeture de l'interrupteur, expliquer que \(K=-7{,}4\).
+                </li>
+            </ol>
+            <img src="assets/graphe.svg" style="max-width: 18cm;"/>
+        </div>
+
+
+
+</body>
+
+</html>

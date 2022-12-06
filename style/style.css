@@ -274,9 +274,6 @@ img:active {
     margin-top: 2em;
     margin-bottom: 2em;
 }
-@page:after {
-    content: "Méthode " counter(meth) " : "; 
-}
 
 @media print {
     html, body, .subbody {
