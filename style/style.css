@@ -249,6 +249,10 @@ img:active {
     padding: 0.5em;
 }
 
+.mytable td>ol, .mytable td>ul, .mytable td>img, .mytable td>figure {
+    text-align: left;
+    float: none;
+}
 
 
 @media (max-width: 600px) {
@@ -304,10 +308,13 @@ img:active {
     .mytable, table, figure, img {
         background-color: white;
         page-break-inside: avoid;
-        display: inline-block;
-        max-width: 10cm;
-        max-height: 10cm;
     }
+
+    .mytable td>ol, .mytable td>ul, .mytable td>img, .mytable td>figure {
+    text-align: left;
+    float: none;
+}
+
     
     .surl {
         border: solid 0.2em;
