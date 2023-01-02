@@ -25,10 +25,12 @@ def json_save(filename:str, data:dict):
 
 
 if __name__ == "__main__" :
-    MAINROOT = '.'
-    BRIQUE = "brique_index.html"
-    dc = {}
-    for rep in [element for element in os.listdir(os.path.join(MAINROOT)) if os.path.isdir(os.path.join(MAINROOT, element))] :
+    MAINROOT:str = '.'
+    BRIQUE:str = "brique_index.html"
+    dc:dict = {}
+    ls:list = [element for element in os.listdir(os.path.join(MAINROOT)) if os.path.isdir(os.path.join(MAINROOT, element))]
+    ls.sort()
+    for rep in ls :
         for name in [element for element in os.listdir(os.path.join(MAINROOT, rep)) if element.endswith(".html")] :
             if os.path.exists(os.path.join(MAINROOT, rep, f"{name[:-5]}.json")) :
                 dc[name] = (json_load(os.path.join(MAINROOT, rep, f"{name[:-5]}.json"))["name"], rep)
