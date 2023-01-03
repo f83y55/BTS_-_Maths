@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <a href="assets/print.pdf" download>
+        <h1 class="titre">BTS - MathsSTI - TD Spectre</h1>
+    </a>
+    <h2 class="section">Harmoniques et valeurs efficaces</h2>
+    <div class="defi">
+        Un <b>développement en série de Fourier</b> d'un signal périodique s'écrit :
+        \(f(t) = a_0 + a_1\cos(\omega t) + b_1\sin(\omega t) + \cdots + a_n\cos(n\omega t) + b_n\sin(n\omega t) = a_0+\displaystyle\sum_{n=1}^{+\infty}\left(a_n\cos(n\omega t) + b_n\sin(n\omega t)\right)\)
+        <ul>
+            <li> \(a_0\) représente la composante continue du signal ;</li>
+            <li> les autres coefficients \(a_n\) et \(b_n\) sont rattachés à \(\cos\) et \(\sin\) ; ils indiquent la valeur max de l'harmonique de rang n ;</li>
+            <li> ils peuvent être en nombre infini (mais ils tendent à devenir de plus en plus petits lorsque n grandit, globalement)</li>
+            </ul>
+    </div>
+    <div class="prop">
+        <ul>
+            <li>L'harmonique de rang n : \(h_n(t)=a_n\cos(n\omega t) + b_n\sin(n\omega t)\);</li>
+            <li>a pour valeur max <span class="surl">\(\sqrt{a_n^2+b_n^2}\)</span> ;</li>
+            <li>comme c'est une sinusoïde, elle a pour valeur efficace <span class="surl">\(H_n=\sqrt{\dfrac{a_n^2+b_n^2}{2}}\)</span> ;</li>
+            </ul>
+    </div>
+
+    <div class="meth">
+        On trace le spectre sous la forme d'un diagramme bâtons qui indique la valeur efficace \(H_n\) en fonction de n.
+    </div>
+    <img src="assets/fig1.svg" style="float:none;display:block;width:50%;max-width: fit-content;"/>
+    <div class="exem">
+        Le diagramme donne le spectre de \(f(t) = 1 + 4\cos(t) + 3\sin(t) + 2\sin(3t) - \cos(5t)\) ; on voit sur l'expression que \(\omega=1\) rad/s.
+    </div>
+    <div class="exo">
+        Pour chaque signal donné, près avoir indiqué \(\omega\) tracer les spectres dans les diagrammes suivants (compléter l'axe vertical).
+    <ol>
+        <li>\(g(t) = 1 + 4\cos(t) + 3\sin(t) + 2\sin(3t) - \cos(5t)\) ; \( \omega = \ldots\) rad/s</li>
+        <li>\(u(t) = 10 + 40\cos(2t) + 35\sin(4t) + 20\sin(18t) - 5\cos(18t)\) ; \( \omega = \ldots \neq 1\) rad/s</li>
+        <li>\(v(t) = 5 + 240\sqrt{2}\cos(100\pi t) + 90\sin(500\pi t) + 20\sin(200\pi t) - \cos(800\pi t)\) ; \( \omega = \ldots\) rad/s</li>
+    </ol>
+    </div>
+
+    <img src="assets/fig2.svg" style="float:none;display:block;width:100%;max-width: fit-content;"/>
+    <div class="pagebreak"></div>
+    <img src="assets/fig2.svg" style="float:none;display:block;width:100%;max-width: fit-content;"/>
+    <img src="assets/fig2.svg" style="float:none;display:block;width:100%;max-width: fit-content;"/>
+
+    <div class="exo">
+        Deux signaux différents peuvent-ils avoir le même spectre ?<br>
+        Si oui, quelles sont les informations manquantes dans un spectre ?
+    </div>
+
+<h2 class="section">Valeurs efficaces</h2>
+    <div class="defi">
+        Deux signaux \(f\) et \(g\) sont dits <b>orthogonaux</b> lorsque la valeur efficace \((f+g)_{\rm{eff}}\) de \(f+g\) sont liées par l'expression quadratique de Pythagore :
+        <span class="surl">\((f+g)_{\rm{eff}}^2=f_{\rm{eff}}^2+g_{\rm{eff}}^2\)</span>
+    </div>
+
+    <div class="prop">
+        Deux harmoniques de rangs différents, ainsi que la composante continue d'un signal sont chacunes orthogonales entre elles.
+    </div>
+    <div class="prop">
+        On en déduit : <span class="surl">\(f_{\rm{eff}}^2 = a_0^2 + \displaystyle\sum_{n=1}^{+\infty} H_n^2 \) </span>
+    </div>
+    <div class="exo">
+        Calculer les valeurs efficaces des signaux étudiés dans la partie précédente.
+    </div>
+    
+
+<h2 class="section">Enquête</h2>
+    <div class="exo">
+    On a relevé le spectre suivant pour un signal pair :
+    \(a_0=216\) ; \(a_2=144\) ; \(a_4=-29\) ; \(a_6=12\) ;
+    Quel montage permet d'obtenir un signal de ce type ?<br>
+    Indice : <a href="assets/fig3.html" target="_blank">tracer</a> la série.
+    </div>
+
+</body>
+
+
+</html>

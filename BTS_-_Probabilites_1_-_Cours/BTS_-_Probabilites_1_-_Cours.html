@@ -673,6 +673,181 @@ Si \(B\neq\emptyset\), \(B\) et \(\overline{B}\) formant naturellement une parti
     Utiliser un arbre pour déterminer la loi de \(R\) (dire où apparaît une partition) et calculer son espérance et son écart-type.
 </div>
 
+<h2 class="section">Vers la loi binomiale</h2>
+<h3 class="subsection">Schéma de Bernoulli</h3>
+<div class="defi">On appelle <b>n-schéma de Bernoulli</b> ou <b>Schéma de Bernoulli d'ordre n</b> une répétition de n expériences aléatoires de Bernoulli <b>identiques</b> (ce qui veut dire qu'elles ont le même paramètre p donnant la probabilité d'un succès, un échec ayant ainsi pour probabilité 1-p).</div>
+
+<div class="exo">
+ On lance un dé équilibré n=3 fois de suite, on gagne (succès) si le dé donne 6 (on peut donc gagner de 0 à 3 fois).
+ <ol>
+<li>Construire un arbre correspondant à la situation. Combien de branches portent-elles 0 succès ? 3 succès ? 2 succès ?</li>
+<li>Calculer la probabilité de suivre une branche à 2 succès. Est-ce toujours la même ? En déduire la probabilité de gagner 2 fois.</li>
+<li>On note \(X\) la variable aléatoire comptant le nombre de succès. Donner la loi de probabilité de \(X\).</li>
+</ol>
+        <table id="tab08" class="mytable" >
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">\(X\)</th>
+    <td class="table_row_0 table_column_2">&nbsp;&nbsp;0&nbsp;&nbsp;</td>
+    <td class="table_row_0 table_column_3">&nbsp;&nbsp;1&nbsp;&nbsp;</td>
+    <td class="table_row_0 table_column_4">&nbsp;&nbsp;2&nbsp;&nbsp;</td>
+    <td class="table_row_0 table_column_5">&nbsp;&nbsp;3&nbsp;&nbsp;</td>
+  </tr>
+  <tr class="table_row_tr_1">
+    <th class="table_row_1 table_column_1">prob</th>
+    <td class="table_row_1 table_column_2"></td>
+    <td class="table_row_1 table_column_3"></td>
+    <td class="table_row_1 table_column_4"></td>
+    <td class="table_row_1 table_column_5"></td>
+  </tr>
+</table>
+</div>
+
+<h3 class="subsection">Coefficient binomial</h3>
+<div class="defi">
+On considère un n-schéma de bernouilli de paramètre 1&lt;p&lt;.
+On note \({n\choose k}\) («k parmi n») <b>le nombre de chemins</b> de l'arbre réalisant k succès lors des n répétitions.
+</div>
+
+<div class="rema">
+ C'est en fait le nombre de façons possibles de placer k succès parmi n emplacements.</div>
+
+<div class="rema">
+ Par convention, on pose \({0\choose0}=1\).
+ </div>
+
+<div class="exem">
+ Dans l'exemple précédent, on a vu que : 
+ \({3\choose0}=1\) ; \(3\choose3\)=1 ; \({3\choose2}=3\)
+</div>
+
+<div class="meth"><b>Calculatrice : </b>
+<ul>
+  <li> TI : <code>Math/PRB/Combinaison</code>. Écrire \(6\)Combinaison\(4\) pour \(6\choose4\).
+  </li>
+  <li> Casio : <code>/PRB/nCr</code>. Écrire \(6\)C\(4\) pour \(6\choose4\).
+  </li>
+</ul></div>
+
+<div class="prop">
+    <ul>
+        <li>
+ Comme il n'y a qu'une branche qui ne porte que des succès sur n étapes, on a \({n\choose n}=1\).</li>
+        <li>Comme il n'y a qu'une branche qui ne porte que des échecs sur n étapes, on a \({n\choose 0}=1\).</li>
+        <li>Comme l'arbre est symétrique, il y a autant de façon de placer k échecs (c'est à dire n-k succès) que de placer k succès : \({n \choose {n-k}}={n\choose k}\).</li>
+        </ul>
+<b>À retenir :</b>
+\({n\choose 0\textrm{~ou~}n}=1\) et \({n \choose {n-k}}={n\choose k}\)
+</div>
+
+<div class="prop">
+ pour \(1\leqslant k\leqslant n-1\) :
+ <span class="surl">\({n\choose k}={{n-1}\choose {k-1}}+{{n-1}\choose k}\)</span>
+</div>
+
+<div class="demo">
+ les chemins comportant k succès sur n emplacement sont de deux types distincts :
+<ul>
+  <li> ceux qui ont succès sur le n-ième emplacement : il y en a autant que \(\displaystyle{{n-1}\choose {k-1}}\) ;
+  </li>
+  <li> ceux qui ont échec sur le n-ième emplacement : il y en a autant que \(\displaystyle{{n-1}\choose k}\) ;
+  </li>
+</ul>
+</div>
+
+<h3 class="subsection">Petites valeurs des \({n\choose k}\)</h3>
+<div class="meth">
+En utilisant la formule précédente, on peut calculer les \(n\choose k\) pour de petites valeurs de \(n\), en utilisant le «motif» suivant :
+\(\displaystyle\begin{array}{ccc}
+ \displaystyle{{n-1}\choose{k-1}} &amp; + &amp; \displaystyle{{n-1}\choose{k-1}}  \\ 
+&amp; = &amp; \displaystyle{n\choose k}  \\
+\end{array}\)
+</div>
+<div class="exo">Compléter le <b>Triangle de Pascal</b> suivant :
+    \(\begin{array}{|c||c|c|c|c|c|c|c|c|}\hline
+n\downarrow~~k\rightarrow
+      & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline\hline
+0     & 1 &   &   &   &   &   &   &   \\ \hline
+1     & 1 & 1 &   &   &   &   &   &   \\ \hline
+2     & 1 &...& 1 &   &   &   &   &   \\ \hline
+3     & 1 &...& 3 & 1 &   &   &   &   \\ \hline
+4     & 1 &...&...&...& 1 &   &   &   \\ \hline
+5     & 1 &...&...&...&...& 1 &   &   \\ \hline
+6     & 1 &...&...&...& 15&...& 1 &   \\ \hline
+7     & 1 &...&...&...&...&...&...& 1 \\ \hline
+\end{array}\)
+</div>
+
+<div class="prop">
+ On a aussi \({n \choose k}=\dfrac{n!}{k!(n-k)!}\) où pour tout entier n, \(n!=1\times2\times\cdots\times n\)
+ </div>
+
+<h2 class="section">Loi binomiale</h2>
+La loi binomiale s'utilise dans le cas suivant :<br>
+On a un \(n\)-schéma de Bernoulli de paramètre \(p\).<br>
+(Comprendre une répétition de \(n\) expériences aléatoires de type succès avec une probabilité \(p\), échec avec une probabilité \(1-p\) à chaque étape, et les \(n\) étapes sont identiques.)<br>
+On s'intéresse à la variable aléatoire \(X\) qui compte le nombre de succès obtenus après les \(n\) étapes. Ses valeurs vont de \(0\) succès à \(n\) succès ; déterminons \(P(X=k)\) pour un \(k\) entre \(0\) et \(n\) fixé :
+<ul>
+  <li> Il y a \(n\choose k\) chemins distincts qui portent \(k\) succès (et \(n-k\) échecs).
+  </li>
+  <li> Chacun de ces chemin a une même probabilité : \(p^k(1-p)^{n-k}\) (probabilité de \(k\) succès et de \(n-k\) échecs).
+</li></ul>
+D'où :
+<h3 class="subsection">Énoncé de la loi binomiale</h3>
+
+<div class="prop">
+!!!!!!</div>
+ <b>(Théorème : loi binomiale)</b> Dans un \(n\)-schéma de Bernoulli de paramètre \(p\), la variable aléatoire \(X\) qui compte le nombre de succès a pour loi de probabilité :
+\[P(X=k)={n\choose k}p^k(1-p)^{n-k}\]
+<div class="defi">On dit que \(X\) suit une <b>loi binomiale</b> <b>de paramètres \(n\) et \(p\)</b>, et on note :</div>
+\[X \sim \mathcal{B}(n;p)\]
+
+<div class="prop">
+!!!!!!</div>
+ (admis) Lorsque \(X \sim \mathcal{B}(n;p)\) :
+\[\begin{array}{|c|c|c|}\hline
+E(X)=np & V(X)=np(1-p) & \sigma(X)=\sqrt{np(1-p)} <br> \hline 
+\end{array}\]
+
+
+
+
+
+
+<h3 class="subsection">Exercice type</h3>
+<div class="exo">Débila passe un examen sous forme de \(QCM\). Il y a \(8\) questions successives. Pour chaque question, une seule réponse sur les \(4\) proposées est correcte. Elle est reçue (événement \(I\)) si elle obtient au moins \(4\) réponses correctes. On note \(H\) la variable aléatoire qui compte le nombre de bonnes réponses données.<br>
+On suppose qu'elle sache tenir un stylo et cocher au hasard une case par réponse. Et qu'elle le fasse !
+<ol>
+  <li> Quelle est la loi suivie par \(H\) ? <b>Justifier</b>.
+  </li>
+  <li> Déterminer (utiliser les bonnes notations) la probabilité que Débila ait réussi à \(100\%\) ce test.
+  </li>
+  <li> Déterminer la probabilité que Débila ait \(0\) réponses correctes.
+  </li>
+  <li> Déterminer la probabilité que Débila ait exactement \(2\) bonnes réponses.
+  </li>
+  <li> Déterminer la probabilité que Débila ait strictement moins de \(3\) bonnes réponses.
+  </li>
+  <li> Calculer \(P(I)\) et \(P\left(\overline{I</div>\right)\).
+  </li>
+  <li> Quel nombre de bonnes réponses Débila peut-elle espérer obtenir, en moyenne ?
+</li></ol> }
+<b>Aide : </b> <br>
+\(P(X\leq2)=P(X=0)+P(X=1)+P(X=2)\)
+
+<h3 class="subsection">Calculatrice</h3>
+Si \(X\sim\mathcal{B}(n,p)\) :
+<ul>
+  <li> TI : dans <span class="surl">Distrib</span>(2nde-Var) : <br>
+Écrire binomFdp(\(k,n,p\)) pour \(P(X=k)\).
+Écrire binomRep(\(k,n,p\)) pour \(P(X\leq k)\).
+  </li>
+  <li> Casio : <span class="surl">OPTN</span> / STATS / DIST / Bpd ou Bcd <br>
+Écrire binomPD(\(k,n,p\)) pour \(P(X=k)\).
+Écrire binomCD(\(k,n,p\)) pour \(P(X\leq k)\).
+  </li>
+</ul>
+
+
 </body>
 
 </html>
