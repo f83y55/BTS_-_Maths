@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <a href="assets/print.pdf" download>
+        <h1 class="titre">BTS - Initiation aux plans d'expériences - TD</h1>
+    </a>
+
+    <h2 class="section-nocounter">Étude expérimentale d'une colle à prise chimique</h2>
+
+    <div>Un fabricant met au point une nouvelle colle à prise chimique (par polymérisation). Durant la phase de collage, la résistance à la traction de la colle augmente de façon significative jusqu'à une valeur maximale. Le fabricant veut étudier la \og durée de prise \fg, c'est à dire la durée nécessaire pour que la résistance de la colle atteigne les trois quarts de sa valeur maximale.</div>
+
+
+    <h3 class="subsection-nocounter">Partie A</h3>
+<div>
+    Le fabricant étudie l'influence de deux facteurs, la température et l'humidité ambiantes, sur la durée de prise de la colle.<br>
+
+    Il note \(X_{1}\) (resp. \(X_{2}\)) la variable qui associe au facteur température (resp. humidité) son niveau, et \(Y\) la durée de prise étudiée (exprimée en minutes).<br>
+
+Il procède à un plan d'expérience factoriel $2^2$ dont les résultats figurent ci-dessous.
+</div>
+  
+<table class="mytable">
+    <tr>
+        <th>Température \(X_{1}\)</th>
+        <th>Humidité \(X_{2}\)   </th>
+        <th>Durée de prise (en min) \(Y\)</th>
+    </tr>
+    <tr>
+        <td>18°C</td>
+        <td>faible</td>
+        <td>11</td>
+    </tr>
+       <tr>
+        <td>22°C</td>
+        <td>faible</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>18°C</td>
+        <td>forte</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>22°C</td>
+        <td>forte</td>
+        <td>13</td>
+    </tr>
+</table>
+<div>
+Le modèle retenu pour \(Y\) est un modèle polynomial du type :
+\(Y = a_{0} + a_{1} X_{1} + a_{2} X_{2} + a_{12} X_{1}X_{2} + \epsilon\)
+</div>
+<div class="exo">
+    <ol>
+        <li>Déterminer les niveaux +1 et -1 pour chaque facteur.</li>
+        <li>Dresser la matrice complète des expériences et des effets, construite selon l'algorithme de Yates.</li>
+        <li>Calculer les estimations ponctuelles des effets principaux et de l'interaction.</li>
+        <li>Écrire l'équation du modèle de \(Y\) en fonction de \(X_{1}\) et \(X_{2}\).</li>
+        <li>Interprétation des effets :
+            <ul>
+                <li>Peut-on négliger l'interaction ?</li>
+                <li>À la température de 20°C (T = 0), Comment varie la durée de prise lorsque l'humidité varie du niveau faible à fort ?</li>
+            </ul>
+        </li>
+        </ol>
+        </div>
+
+        <h3 class="subsection-nocounter">Partie B</h3>
+        <div>
+Le fabricant effectue une deuxième campagne de mesures : il fait réaliser 100 collages indépendants, dans des conditions de température variables entre 18°C et 22°C. Les résultats sont donnés ci-dessous.
+    </div>
+    <table class="mytable">
+        <tr>
+            <th>Durée de prise en min</th>
+            <td>[8,5 ; 9[</td>
+            <td>[9 ; 9,5[</td>
+            <td>[9,5 ; 10[</td>
+            <td>[10 ; 10,5[</td>
+            <td>[10,5 ; 11[</td>
+            <td>[11 ; 11,5[</td>
+            <td>[11,5 ; 12[</td>
+            <td>[12 ; 12,5[</td>
+            <td>[12,5 ; 13[</td>
+        </tr>
+        <tr>
+            <th>Effectif</th>
+            <td>0 </td>
+            <td>6 </td>
+            <td>9 </td>
+            <td>17 </td>
+            <td>22</td>
+            <td>27</td>
+            <td>13</td>
+            <td>4</td>
+            <td>2</td>
+        </tr>
+    </table>
+    <div class="exo">
+        <ol>
+            <li>Calculer la moyenne \(\overline{x}\) et l'écart-type \(s\) de la série de mesures (on donnera les valeurs au centième).</li>
+            <li>On admet ici que la durée de prise est une variable aléatoire \(X\) suivant une loi normale de moyenne \(\mu\) inconnue et d'écart-type \(\sigma = 0{,}8\).<br>
+                On note \(\overline{X}\) la variable aléatoire qui à une série quelconque de 100 collages indépendants associe sa durée moyenne de prise.<br>
+Donner la loi de probabilité de \(\overline{X}\) en fonction de \(\mu\) et \(\sigma\).
+</li>
+</ol>
+</div>
+
+</body>
+
+</html>
