@@ -11,12 +11,15 @@
 
 <body>
     <a href="assets/print.pdf" download>
-        <h1 class="titre">BTS - MathsSTI - TD Spectre</h1>
+        <h1 class="titre">BTS - Maths+STI - TD Spectre</h1>
     </a>
     <h2 class="section">Harmoniques et valeurs efficaces</h2>
     <div class="defi">
         Un <b>développement en série de Fourier</b> d'un signal périodique s'écrit :
-        \(f(t) = a_0 + a_1\cos(\omega t) + b_1\sin(\omega t) + \cdots + a_n\cos(n\omega t) + b_n\sin(n\omega t) = a_0+\displaystyle\sum_{n=1}^{+\infty}\left(a_n\cos(n\omega t) + b_n\sin(n\omega t)\right)\)
+        \(  \displaystyle\begin{array}{ccl}
+          f(t) &amp;=&amp; a_0 + a_1\cos(\omega t) + b_1\sin(\omega t) + \cdots + a_n\cos(n\omega t) + b_n\sin(n\omega t) + \cdots \\
+               &amp;=&amp; a_0+\displaystyle\sum_{n=1}^{+\infty}\left(a_n\cos(n\omega t) + b_n\sin(n\omega t)\right) \\
+          \end{array} \)
         <ul>
             <li> \(a_0\) représente la composante continue du signal ;</li>
             <li> les autres coefficients \(a_n\) et \(b_n\) sont rattachés à \(\cos\) et \(\sin\) ; ils indiquent la valeur max de l'harmonique de rang n ;</li>
@@ -26,15 +29,15 @@
     <div class="prop">
         <ul>
             <li>L'harmonique de rang n : \(h_n(t)=a_n\cos(n\omega t) + b_n\sin(n\omega t)\);</li>
-            <li>a pour valeur max <span class="surl">\(\sqrt{a_n^2+b_n^2}\)</span> ;</li>
-            <li>comme c'est une sinusoïde, elle a pour valeur efficace <span class="surl">\(H_n=\sqrt{\dfrac{a_n^2+b_n^2}{2}}\)</span> ;</li>
+            <li>a pour valeur max <span class="surl">\(A_n = \sqrt{a_n^2+b_n^2}\)</span> ;</li>
+            <li>comme c'est une sinusoïde, elle a pour valeur efficace <span class="surl">\(H_n=\dfrac{A_n}{\sqrt{2}}=\sqrt{\dfrac{a_n^2+b_n^2}{2}}\)</span> ;</li>
             </ul>
     </div>
 
     <div class="meth">
-        On trace le spectre sous la forme d'un diagramme bâtons qui indique la valeur efficace \(H_n\) en fonction de n.
+        On trace le spectre sous la forme d'un diagramme bâtons qui indique la valeur efficace \(A_n\) en fonction de n.
     </div>
-    <img src="assets/fig1.svg" style="float:none;display:block;width:50%;max-width: fit-content;"/>
+    <img src="assets/fig1.svg" style="float:none;display:block;width:40%;max-width: fit-content;"/>
     <div class="exem">
         Le diagramme donne le spectre de \(f(t) = 1 + 4\cos(t) + 3\sin(t) + 2\sin(3t) - \cos(5t)\) ; on voit sur l'expression que \(\omega=1\) rad/s.
     </div>
@@ -48,7 +51,6 @@
     </div>
 
     <img src="assets/fig2.svg" style="float:none;display:block;width:100%;max-width: fit-content;"/>
-    <div class="pagebreak"></div>
     <img src="assets/fig2.svg" style="float:none;display:block;width:100%;max-width: fit-content;"/>
     <img src="assets/fig2.svg" style="float:none;display:block;width:100%;max-width: fit-content;"/>
 
