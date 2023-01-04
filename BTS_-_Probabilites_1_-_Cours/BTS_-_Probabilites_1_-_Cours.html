@@ -682,7 +682,10 @@ Si \(B\neq\emptyset\), \(B\) et \(\overline{B}\) formant naturellement une parti
  <ol>
 <li>Construire un arbre correspondant à la situation. Combien de branches portent-elles 0 succès ? 3 succès ? 2 succès ?</li>
 <li>Calculer la probabilité de suivre une branche à 2 succès. Est-ce toujours la même ? En déduire la probabilité de gagner 2 fois.</li>
-<li>On note \(X\) la variable aléatoire comptant le nombre de succès. Donner la loi de probabilité de \(X\).</li>
+</ol>
+</div>
+<div class="exo">
+On note \(X\) la variable aléatoire comptant le nombre de succès. Donner la loi de probabilité de \(X\).
 </ol>
         <table id="tab08" class="mytable" >
   <tr class="table_row_tr_0">
@@ -782,71 +785,79 @@ n\downarrow~~k\rightarrow
  </div>
 
 <h2 class="section">Loi binomiale</h2>
-La loi binomiale s'utilise dans le cas suivant :<br>
-On a un \(n\)-schéma de Bernoulli de paramètre \(p\).<br>
-(Comprendre une répétition de \(n\) expériences aléatoires de type succès avec une probabilité \(p\), échec avec une probabilité \(1-p\) à chaque étape, et les \(n\) étapes sont identiques.)<br>
-On s'intéresse à la variable aléatoire \(X\) qui compte le nombre de succès obtenus après les \(n\) étapes. Ses valeurs vont de \(0\) succès à \(n\) succès ; déterminons \(P(X=k)\) pour un \(k\) entre \(0\) et \(n\) fixé :
+<div class="rema">
+    La loi binomiale s'utilise dans le cas suivant : 
+On a un n-schéma de Bernoulli de paramètre p.
+(Comprendre une répétition de n expériences aléatoires de type succès avec une probabilité \(p\), échec avec une probabilité 1-p à chaque étape, et les n étapes sont identiques.)<br>
+On s'intéresse à la variable aléatoire \(X\) qui compte le nombre de succès obtenus après les n étapes. Ses valeurs vont de 0 succès à n succès ; déterminons \(P(X=k)\) pour un k entre 0 et n fixé :
 <ul>
-  <li> Il y a \(n\choose k\) chemins distincts qui portent \(k\) succès (et \(n-k\) échecs).
+  <li> Il y a \(n\choose k\) chemins distincts qui portent k succès, et donc n-k échecs.
   </li>
-  <li> Chacun de ces chemin a une même probabilité : \(p^k(1-p)^{n-k}\) (probabilité de \(k\) succès et de \(n-k\) échecs).
-</li></ul>
-D'où :
+  <li> Chacun de ces chemin a une même probabilité : \(p^k(1-p)^{n-k}\) (probabilité de k succès et de n-k échecs).
+  </li>
+</ul>
+
+</div>
 <h3 class="subsection">Énoncé de la loi binomiale</h3>
 
-<div class="prop">
-!!!!!!</div>
- <b>(Théorème : loi binomiale)</b> Dans un \(n\)-schéma de Bernoulli de paramètre \(p\), la variable aléatoire \(X\) qui compte le nombre de succès a pour loi de probabilité :
-\[P(X=k)={n\choose k}p^k(1-p)^{n-k}\]
-<div class="defi">On dit que \(X\) suit une <b>loi binomiale</b> <b>de paramètres \(n\) et \(p\)</b>, et on note :</div>
-\[X \sim \mathcal{B}(n;p)\]
+<div class="theo"> <b>Loi binomiale : </b><br>
+    Dans un n-schéma de Bernoulli de paramètre p, la variable aléatoire \(X\) qui compte le nombre de succès a pour loi de probabilité :
+    <span class="surl">\(P(X=k)={n\choose k}p^k(1-p)^{n-k}\)</span>
+</div>
+<div class="defi">On dit que \(X\) suit une <b>loi binomiale</b> <b>de paramètres \(n\) et \(p\)</b>, et on note :
+\(X \sim \mathcal{B}(n;p)\)
+</div>
 
-<div class="prop">
-!!!!!!</div>
- (admis) Lorsque \(X \sim \mathcal{B}(n;p)\) :
-\[\begin{array}{|c|c|c|}\hline
-E(X)=np & V(X)=np(1-p) & \sigma(X)=\sqrt{np(1-p)} <br> \hline 
-\end{array}\]
-
+<div class="prop"> (admis) Lorsque \(X \sim \mathcal{B}(n;p)\) :
+<ul>
+    <li><span class="surl">\(E(X)=np\)</span></li>
+    <li>\(V(X)=np(1-p)\)</li>
+    <li>\(\sigma(X)=\sqrt{np(1-p)}\)</li>
+</ul>
+</div>
 
 
 
 
 
 <h3 class="subsection">Exercice type</h3>
-<div class="exo">Débila passe un examen sous forme de \(QCM\). Il y a \(8\) questions successives. Pour chaque question, une seule réponse sur les \(4\) proposées est correcte. Elle est reçue (événement \(I\)) si elle obtient au moins \(4\) réponses correctes. On note \(H\) la variable aléatoire qui compte le nombre de bonnes réponses données.<br>
+<div class="exo">Une personne pas tellement orientée vers le travail passe un examen sous forme de QCM. Il y a 8 questions successives. Pour chaque question, une seule réponse sur les 4 proposées est correcte. Elle est reçue (événement I) si elle obtient au moins 4 réponses correctes. On note \(H\) la variable aléatoire qui compte le nombre de bonnes réponses données.<br>
 On suppose qu'elle sache tenir un stylo et cocher au hasard une case par réponse. Et qu'elle le fasse !
 <ol>
-  <li> Quelle est la loi suivie par \(H\) ? <b>Justifier</b>.
+  <li> Quelle est la loi suivie par \(H\) ? Justifier.
   </li>
-  <li> Déterminer (utiliser les bonnes notations) la probabilité que Débila ait réussi à \(100\%\) ce test.
+  <li> Déterminer (utiliser les bonnes notations) la probabilité que cette personne ait réussi à 100% ce test.
   </li>
-  <li> Déterminer la probabilité que Débila ait \(0\) réponses correctes.
+  <li> Déterminer la probabilité d'avoir 0 réponses correctes, et la probabilité d'avoir exactement 2 bonnes réponses.
   </li>
-  <li> Déterminer la probabilité que Débila ait exactement \(2\) bonnes réponses.
-  </li>
-  <li> Déterminer la probabilité que Débila ait strictement moins de \(3\) bonnes réponses.
-  </li>
-  <li> Calculer \(P(I)\) et \(P\left(\overline{I</div>\right)\).
-  </li>
-  <li> Quel nombre de bonnes réponses Débila peut-elle espérer obtenir, en moyenne ?
-</li></ol> }
-<b>Aide : </b> <br>
+  <li> Déterminer la probabilité d'avoir strictement moins de 4 bonnes réponses (\(P(I)\)).
+      </li>
+  <li> Quel nombre de bonnes réponses que cette personne peut espérer obtenir, en moyenne ?
+</li></ol>
+</div>
+<div class="rema">
+<b>Aide : </b>
 \(P(X\leq2)=P(X=0)+P(X=1)+P(X=2)\)
+</div>
 
 <h3 class="subsection">Calculatrice</h3>
+<div>
 Si \(X\sim\mathcal{B}(n,p)\) :
 <ul>
-  <li> TI : dans <span class="surl">Distrib</span>(2nde-Var) : <br>
-Écrire binomFdp(\(k,n,p\)) pour \(P(X=k)\).
-Écrire binomRep(\(k,n,p\)) pour \(P(X\leq k)\).
+  <li> TI : dans <code>Distrib</code>(2nde-Var) : 
+      <ul>
+          <li>Écrire <code>binomFdp(k,n,p)</code> pour \(P(X=k)\).</li>
+          <li>Écrire <code>binomRep(k,n,p)</code> pour \(P(X\leq k)\).</li>
+        </ul>
   </li>
-  <li> Casio : <span class="surl">OPTN</span> / STATS / DIST / Bpd ou Bcd <br>
-Écrire binomPD(\(k,n,p\)) pour \(P(X=k)\).
-Écrire binomCD(\(k,n,p\)) pour \(P(X\leq k)\).
+  <li> Casio : <code>OPTN / STATS / DIST / Bpd ou Bcd</code> :
+      <ul>
+          <li>Écrire <code>BPD(k,n,p)</code> pour \(P(X=k)\).</li>
+          <li>Écrire <code>BCD(k,n,p)</code> pour \(P(X\leq k)\).</li>
+    </ul>
   </li>
 </ul>
-
+</div>
 
 </body>
 
