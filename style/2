@@ -16,9 +16,7 @@
   --color-bg-table-2 : #ccc8;
   --color-bg-table-3 : #ddd8;
   --margin : 0em;
-  --padding : 0.5em;
   --transition-speed: 700ms;
-  --float : right;
 }
 
 body, .subbody{
@@ -35,29 +33,40 @@ body, .subbody{
   background-color: var(--color-bg);
   counter-reset: section exo defi prop theo rema exem;
 }
-.subbody:hover {transition: none;}
 
-mjx-container {margin: 0;}
+.subbody:hover {
+  transition: none;
+}
+
+mjx-container {
+    margin:0;
+}
+
 
 div:hover:not(.subbody) {
     transition: background-image var(--transition-speed) ease-in-out;
     background-image: linear-gradient(-90deg, rgba(255,255,255,0.5) 90%, rgba(255,255,255,0.9) 100%);
 }
 
-h1, h2, h3, h4, h5, h6 {font-family: Impact;}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Impact;
+}
 
-a {color: inherit; text-decoration: underline;}
+a {
+    color: inherit;
+    text-decoration: underline;
+}
 
 figure {
-    float: var(--float);
     backdrop-filter: blur(1em);
     text-align: center;
+    float: right;
     font-size: smaller;
     font-style: italic;
 }
 
 img {
-    float: var(--float);
+    float: right;
     max-height: 45vh;
     max-width: 30vw;
     transition-duration: var(--transition-speed);
@@ -74,62 +83,112 @@ img:active {
 }
 
 .titre {
+    text-align: center;
     background-image: linear-gradient(45deg, #aaa 25%, #ccc 100%);
     border: 0.1em solid;
     box-shadow: 0.3em 0.3em 0.3em grey;
     border-color: var(--color-section);
     border-radius: 0.2em;
-    text-align: center;
-    padding: var(--padding);
     margin: var(--margin);
     counter-reset: section exo defi prop theo rema exem;
 }
 
-.section-nocounter, .section, section {
-    color: var(--color-section); 
-    margin: var(--margin);
+.section, section {
+    color: var(--color-section);
+    margin: var(--margin) ;
+    counter-reset: subsection subsubsection ;
 }
-.section, section {counter-reset: subsection subsubsection ;}
-.section::before, section::before {counter-increment: section;content: counter(section) ". ";}
+.section::before, section::before {
+    counter-increment: section;
+    content: counter(section) ". ";
+}
 
-.subsection, .subsection-nocounter {
+.section-nocounter {
+    color: var(--color-section);
+    margin: var(--margin) ;
+}
+
+.section::before, section::before {
+    counter-increment: section;
+    content: counter(section) ". ";
+}
+
+.subsection {
     color: var(--color-subsection);
     margin: var(--margin);
+    counter-reset: subsubsection ;
 }
-.subsection         {counter-reset: subsubsection ;}
-.subsection::before {counter-increment: subsection;content: counter(section) "." counter(subsection) ". ";}
 
-.subsubsection, .subsection-nocounter{
+.subsection::before {
+    counter-increment: subsection;
+    content: counter(section) "." counter(subsection) ". "; 
+}
+
+.subsection-nocounter {
+    color: var(--color-subsection);
+    margin: var(--margin) ;
+}
+
+.subsubsection {
     color: var(--color-subsubsection);
     margin: var(--margin);
 }
-.subsubsection::before {counter-increment: subsubsection; content: counter(section) "." counter(subsection) "." counter(subsubsection) ". ";}
+.subsubsection::before {
+    counter-increment: subsubsection;
+    content: counter(section) "." counter(subsection) "." counter(subsubsection) ". "; 
+}
 
-.exo, .exo-nocounter {
+.subsubsection-nocounter {
+    color: var(--color-subsubsection);
+    margin: var(--margin) ;
+}
+
+.exo {
     color: var(--color-exo);
     background-color: var(--color-bg-exo);
-    padding: var(--padding);
+    padding: 0.5em;
     margin: var(--margin);
     border: solid 20px rgba(#000, .2);;
     border-radius: 0.2em;
+    counter-increment: exo;
 }
-.exo         {counter-increment: exo;}
-.exo::before {font-weight: bold; content: "Exercice " counter(exo) " : "; }
+.exo::before {
+    font-weight: bold;
+    content: "Exercice " counter(exo) " : "; 
+}
+.exo-nocounter {
+    color: var(--color-exo);
+    background-color: var(--color-bg-exo);
+    padding: 0.5em;
+    margin: var(--margin);
+    border: solid 1px;
+    border-radius: 0.2em;
+}
 
 .defi {
     color: var(--color-defi);
     font-style: italic;
     background-color: var(--color-bg-defi);
-    padding: var(--padding);
+    padding: 0.5em;
     margin: var(--margin);
     border: solid 1px;
     border-radius: 0.2em;
     counter-increment: defi;
 }
-.defi::before   {font-weight: bold; content: "Définition " counter(defi) " : ";}
 
-.prop           {counter-increment: prop;}
-.prop::before   {font-weight: bold; content: "Propriété " counter(prop) " : ";}
+.defi::before {
+    font-weight: bold;
+    content: "Définition " counter(defi) " : "; 
+}
+
+.prop{
+    counter-increment: prop;
+}
+
+.prop::before {
+    font-weight: bold;
+    content: "Propriété " counter(prop) " : "; 
+}
 
 .theo {
     color: var(--color-defi);
@@ -141,68 +200,97 @@ img:active {
     box-shadow: 0.5em 0.5em 0.5em gray;
     counter-increment: theo;
 }
-.theo::before   {font-weight: bold; content: "Théorème " counter(theo) " : ";}
 
-.rema           {counter-increment: rema;}
-.rema::before   {font-weight: bold; content: "Remarque " counter(rema) " : ";}
+.theo::before {
+    font-weight: bold;
+    content: "Théorème " counter(theo) " : ";
+}
 
-.exem           {counter-increment: exem;}
-.exem::before   {font-weight: bold; content: "Exemple " counter(exem) " : ";}
+.rema {
+    counter-increment: rema;
+}
 
-.meth           {color : darkgreen; counter-increment: meth;}
-.meth::before   {font-weight: bold; content: "Méthode " counter(meth) " : ";}
+.rema::before {
+    font-weight: bold;
+    content: "Remarque " counter(rema) " : "; 
+}
 
-.surl {background-color: var(--color-bg-surl); height: max-content;}
+.exem {
+    counter-increment: exem;
+}
+.exem::before {
+    font-weight: bold;
+    content: "Exemple " counter(exem) " : "; 
+}
+
+.meth {
+    color : darkgreen;
+    counter-increment: meth;
+}
+.meth::before {
+    font-weight: bold;
+    content: "Méthode " counter(meth) " : "; 
+}
+
+.surl {
+    background-color: var(--color-bg-surl) ;
+}
 
 .mytable{
-    --mytable-border-radius: 1em;
-    --mytable-padding: 0.5em;
-    float: var(--float);
-    /*border-collapse: collapse;*/
-    border-spacing: 0;
-    border: 1px solid black;
-    border-radius: var(--mytable-border-radius);
+    float: right;
+    border-collapse: collapse;
+    border: 1px solid red;
+    border-radius: 0.3em;
 }
 
-.mytable th, td {
+.mytable tr             {border: 1px solid grey;}
+.mytable th:         {border-left: 1px solid grey; border-right: 1px solid grey;}
+.mytable tr:first-child {border-top: none;}
+.mytable th:first-child {border-left: none;}
+.mytable td:first-child {border-left: none;}
+.mytable tr:nth-child(even) {background: var(--color-bg-table-2)}
+.mytable tr:nth-child(odd) {background: var(--color-bg-table-3)}
+.mytable th:last-child {border-right: none;}
+.mytable td:last-child {border-right: none;}
+.mytable tr:last-child {border-bottom: none;}
+
+.mytable th{
     text-align: center;
-    border: 1px solid grey;
-    padding: var(--mytable-padding);
+    background-color: var(--color-bg-table-1);
+    /*border: 1px solid grey;*/
+    padding: 0.5em;
 }
 
-.mytable tr:first-child>th:first-child, .mytable tr:first-child>td:first-child 
-                                {border-top-left-radius: var(--mytable-border-radius);}
-.mytable tr:first-child>th:last-child, .mytable tr:first-child>td:last-child  
-                                {border-top-right-radius: var(--mytable-border-radius);}
-.mytable tr:last-child>th:first-child, .mytable tr:last-child>td:first-child 
-                                {border-bottom-left-radius: var(--mytable-border-radius);}
-.mytable tr:last-child>th:last-child, .mytable tr:last-child>td:last-child 
-                                {border-bottom-right-radius: var(--mytable-border-radius);}
-.mytable th                     {background-color: var(--color-bg-table-1);}
-.mytable tr:nth-child(even)>td  {background: var(--color-bg-table-2);}
-.mytable tr:nth-child(odd)>td   {background: var(--color-bg-table-3);}
-.mytable td>ol, .mytable td>ul  {text-align: left;}
-.mytable td>img, .mytable td>figure  {float: none;}
+.mytable td{
+    text-align: center;
+    /*border: 1px solid grey;*/
+    padding: 0.5em;
+}
+
+.mytable td>ol, .mytable td>ul {
+    text-align: left;
+}
+
+.mytable td>img, .mytable td>figure {
+    float: none;
+}
 
 
 
 @media (max-width: 600px) {
-
-    body {
+    img, img:active, figure, .mytable {
+        float: unset;
         max-width: 100vh;
-        overflow-x: hidden;
-    }
-    .mytable, img, img:active, figure {
-        --float: unset;
-        width: 100%;
-        max-height: 100%;
+        max-height: 100vw;
         transform: none;
         -ms-transform: none;
         -webkit-transform: none;
         transition: none;
         background: none;
         overflow-x: scroll;
-        font-size: smaller;
+    }
+    .mytable {
+        font-size:x-small;
     }
 
 }
@@ -214,6 +302,9 @@ img:active {
 }
 
 @media print {
+    :root {
+        --color-bg-surl : #0000ff55;
+    }
     html, body, .subbody {
         display: block;
         font-family: 'Times New Roman', Times, serif, Verdana, Helvetica, sans-serif;
