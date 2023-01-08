@@ -186,7 +186,7 @@ img:active {
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
     body {
         max-width: 100vh;
@@ -202,7 +202,7 @@ img:active {
         transition: none;
         background: none;
         overflow-x: scroll;
-        font-size: smaller;
+        font-size: x-small;
     }
 
 }
