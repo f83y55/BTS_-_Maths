@@ -16,7 +16,7 @@
 
     <h2 class="section">Modéliser</h2>
     <div class="rema">
-        Même si des calculs concernant des risques ou des jeux de hasard ont été faits depuis l'antiquité, on date le début de la théorie des probabilités de la correspondance entre Blaise Pascal et Pierre de Fermat (1654) à propos du «<a href="https://fr.wikipedia.org/wiki/Probl%C3%A8me_des_partis">problèmes des paris</a>».
+        Même si des calculs concernant des risques ou des jeux de hasard ont été faits depuis l'antiquité, on date le début de la théorie des probabilités de la correspondance entre Blaise Pascal et Pierre de Fermat (1654) à propos du «<a class="href-print" href="https://fr.wikipedia.org/wiki/Probl%C3%A8me_des_partis">problèmes des paris</a>».
     </div>
     <h3 class="subsection">Notion de modèle</h3>
     <div class="exem">
@@ -109,7 +109,7 @@ Quelle est la probabilité de tomber au hasard sur un élève qui ne le soit pas
 <li> On ne peut rien dire, car personne n'est sûr du moment où un tremblement de terre se produit.
 </ul>
         </div>
-
+        <div class="pagebreak"></div>
         <h3 class="subsection">Construire un modèle</h3>
         <div class="prop">
 Dans la grande majorité des cas, on utilise l'une de ces deux façons de déterminer les probabilités \(p_i\) associées aux issues \(x_i\) :
@@ -276,19 +276,23 @@ On <b>décide</b> alors que l'on a expérimenté un nombre suffisant de lancers 
     Reproduire le tableau dans le cas d'un dé octaèdrique (8 faces).
 </div>
 <div class="prop"> Soit \(A\) et \(B\) deux événements :<br>
-    <figure width="32%"  style="float:none;">
-        <img src="assets/fig1.svg" style="float:none;">
-        <figcaption>Événement complémentaire : <br> \(P(\overline{A})=1-P(A)\)</figcaption>
+    <div style="display: flex;">
+    <figure style="width:25%; float: none;">
+        <img src="assets/fig1.svg" style="float: none;">
+        <figcaption>Événement complémentaire : <br>
+            \(P(\overline{A})=1-P(A)\)</figcaption>
     </figure>
-    <figure width="32%" style="float:none;">
-        <img src="assets/fig2.svg" style="float:none;">
-        <figcaption>Union quelconque : <br>\(P(A\cup B)=P(A)+P(B)-P(A\cap B)\)</figcaption>
+    <figure style="width:25%; float: none;">
+        <img src="assets/fig2.svg" style="float: none;">
+        <figcaption>Union quelconque : <br>
+            \(P(A\cup B)=P(A)+P(B)-P(A\cap B)\)</figcaption>
     </figure>
-    <figure width="32%" style="float:none;">
-        <img src="assets/fig3.svg" style="float:none;">
+    <figure style="width:25%; float: none;">
+        <img src="assets/fig3.svg" style="float: none;">
         <figcaption>Union disjointe : <br>
-         Si \(P(A\cap B)=0\), alors \(P(A\cup B)=P(A)+P(B)\)</figcaption>
+            Si \(P(A\cap B)=0\), alors \(P(A\cup B)=P(A)+P(B)\)</figcaption>
     </figure>
+    </div>
 </div>
 <div class="defi">
 Lorsqu'on sait que \(A\) et \(B\) ne peuvent être réalisés simultanément ; \(A\) et \(B\) sont dits <b>incompatibles</b> ; dans ce cas on a \(P(A\cap B)=0\).
@@ -359,8 +363,6 @@ Lorsqu'on sait que \(A\) et \(B\) ne peuvent être réalisés simultanément ; \
 <div class="exo">
     Utiliser les lois de Morgan pour exprimer \(\overline{(A\cap B)\cup C}\) en fonction des événements complémentaires de ces trois événements.
 </div>
-
-<div class="pagebreak"></div>
 
 <h2 class="section">Variables aléatoires (réelles)</h2>
 <h3 class="subsection">Définition</h3>
@@ -557,6 +559,8 @@ les moyennes de ce trimestre sont 1, 2, 3, 4 pour le groupe A et 5, 6, 7, 8, 9 p
     Il est donc fondamental de savoir si l'on calcule sur la population globale (\(\Omega\) entier) ou bien si l'on est restreint à une partie seulement de cette population.
 </div>
 
+<div class="pagebreak"></div>
+
 <h3 class="subsection">Définition et propriétés</h3>
 <div class="defi"> \(A\), \(B\) sont deux événements avec \(P(A)\neq0\).<br>
     On note \(P_A(B)\) la «<b>probabilité de \(B\) sachant \(A\)</b>» le nombre \(\displaystyle\frac{P(A\cap B)}{P(A)}\).<br>
@@ -672,7 +676,7 @@ Si \(B\neq\emptyset\), \(B\) et \(\overline{B}\) formant naturellement une parti
     On lance un dé tétraédrique (4 faces) bien équilibré : on multiplie le résultat \(R\) par 2 s'il est pair. On lance ensuite une pièce bien équilibrée ; dans le cas pile, on multiplie \(R\) par 2.<br>
     Utiliser un arbre pour déterminer la loi de \(R\) (dire où apparaît une partition) et calculer son espérance et son écart-type.
 </div>
-
+<div class="pagebreak"></div>
 <h2 class="section">Vers la loi binomiale</h2>
 <h3 class="subsection">Schéma de Bernoulli</h3>
 <div class="defi">On appelle <b>n-schéma de Bernoulli</b> ou <b>Schéma de Bernoulli d'ordre n</b> une répétition de n expériences aléatoires de Bernoulli <b>identiques</b> (ce qui veut dire qu'elles ont le même paramètre p donnant la probabilité d'un succès, un échec ayant ainsi pour probabilité 1-p).</div>
