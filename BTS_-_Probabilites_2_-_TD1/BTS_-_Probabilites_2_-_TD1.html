@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <a href="assets/print.pdf" download>
+        <h1 class="titre">BTS - Probabilités 2 - TD1</h1>
+    </a>
+
+    <h2 class="section-nocounter">Geogebra</h2>
+    <div class="rema">
+        On pourra utiliser 
+        <a href="https://www.geogebra.org/classic">GeoGebra Classic (en ligne)</a><br>
+        <code>☰ / Affichage / Calcul de probabilités</code> (on peut décocher l'affichage des autres fenêtres).
+    </div>
+    
+    <h2 class="section">Espérance d'une loi exponentielle</h2>
+    <div class="exo">
+        On rappelle que :
+        <ul>
+            <li>l'espérance \(E(X)\) d'une variable aléatoire \(X\) à valeurs dans un intervalle réel \(I\) et provenant d'une densité \(p\) (définie sur \(I\)) est donnée par \(E(X)=\displaystyle\int_I\,xp(x)\,\textrm{d} x\).</li>
+            <li>\(X\) étant une variable aléatoire à valeurs dans \(\left]0;+\infty\right[\), elle suit une loi exponentielle de paramètre \(\lambda\) lorsque sa densité est \(p(x)=\lambda\rm{e}^{-\lambda x}\).</li>
+        </ul>
+        Question :
+        <ol>
+            <li>\(a, b, \lambda\) étant des constantes, calculer la dérivée de \((ax+b)\textrm{e}^{-\lambda x}\).</li>
+            <li>En déduire les valeurs de \(a\) et \(b\) pour que l'expression calculée soit égale à \(x\lambda\textrm{e}^{-\lambda x}\).</li>
+            <li>En déduire que l'espérance d'une loi exponentielle est bien \(\dfrac{1}{\lambda}\).</li>
+        </ol>
+        </div>
+        
+    <h2 class="section">Durée de vie</h2>
+    <div class="exo">
+        La durée de vie, exprimée en <b>mois</b>, d'un ordinateur portable est modélisée par une variable aléatoire \(X\) qui  suit une loi exponentielle.
+        <ol>
+            <li>On suppose que l'espérance de vie d'un ordinateur de ce modèle est de 5 ans.<br>
+            Déterminer la valeur du paramètre \(\lambda\)</li>
+            <li>Calculer \(P(X\leqslant 60)\) et \(P(X\geqslant 60)\) et interpréter.</li>
+            <li>Calculer \(P(X\leqslant 30)\) et \(P(X\geqslant 30)\) et interpréter.</li>
+            <li>Calculer la probabilité qu'un ordinateur tombe en panne avant la fin de la période de garantie de deux ans.</li>
+            <li>Sachant qu'un de ces ordinateurs a fonctionné 3 ans, déterminer la probabilité qu'il tombe en panne dans les 2 années suivantes.</li>
+        </ol>
+    </div>
+
+    <h2 class="section">Loi à déterminer</h2>
+    <div class="exo">
+        Les questions sont indépendantes.
+        <ol>
+            <li>On choisit, uniformément au hasard, le côté d'un carré entre 0 et 10 cm.<br>
+                Quelle est la probabilité que son aire soit inférieure à 50 cm<sup>2</sup> ? Quel côté correspond à une probabilité médiane ?</li>
+            <li>Soit n un entier strictement positif fixé. On prend un nombre \(x\) aléatoirement dans \(\left[0;n\right]\). On note \(F(x)\) la partie entière de \(x\) (c'est l'arrondi à l'entier immédiatement inférieur). <br>
+                Quelle est la loi de la variable aléatoire \(F\) ?<br>
+                Même question si l'on prend la première décimale d'un nombre pris au hasard entre 0 et 1.
+            </li>
+        </ol>
+    </div>
+    <h2 class="section">Question d'Halmos</h2>
+    <div class="rema">
+        On pourra untiliser les fonctions <code>random()</code> et <code>somme()</code> sur un tableur.
+    </div>
+    <div class="exo">
+        On tire de manière indépendante une suite de nombres entre 0 et 1. En moyenne, quel est le plus petit nombre de tirages nécessaires pour que la somme de ces nombres dépasse 1 ? Dépasse 2 ? 10 ?
+        </div>
+
+</body>
+
+</html>
