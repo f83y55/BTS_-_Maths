@@ -16,17 +16,16 @@
 
 <h2 class="section">Les circuits séries simples</h2>
 <h3 class="subsection">En régime DC</h3>
+<div class="none">
 On s'intéresse à deux circuits série alimentés, dès t=0 secondes par une batterie en 12 V DC contenant :
 <ul>
     <li> Circuit RL : une résistance R = 2 Ω et une inductance L = 20 mH.</li>
     <li> Circuit RC : une résistance R = 2 Ω et un condensateur C = 5 mF.</li>
-</ul><p>
+</ul>
 
 On utilisera, sauf mention explicite, la milliseconde (ms) pour exprimer des temps.<br>
 On rappelle que, à n'importe quel instant : \(u_L = Li' \) ; \( u_C = \frac{q}{C} \) avec \( q' = i \) (la charge, primitive de l'intensité, est exprimée en Coulomb : C) et \( u_R = Ri \).
-
-</p>
-
+</div>
 <div class="exo">
   <ol>
       <li>
@@ -44,38 +43,42 @@ On rappelle que, à n'importe quel instant : \(u_L = Li' \) ; \( u_C = \frac{q}{
       Repérer les constantes de temps \(\tau_{\rm{RL}}\) et \(\tau_{\rm{RC}}\) sur les deux schémas (sur l'axe du temps) et faire figurer le régime permanent.<br>
       <b>Remarque : </b> Il est possible de calculer les coordonnées du point d'intersection de la tangente initiale avec l'asymptote, mais pour aller plus vite, on pourra considérer que \(\tau = \frac{-1}{r}\) où \(r\) est la solution de l'équation caractéristique.<br>
       Établir qu'en général : \( \tau = \frac{L}{R}\) et \( \tau =  RC \) pour ces 2 circuits .</li></ol></div>
-<table><tr><style>td{margin: 1em;}</style>
-          <td>
-              <figure style="float:none;">
-        <img src="assets/fig1.svg" style="width:7cm;float:none;"/>
-            <figcaption><a href="assets/fig1.html" target="_blank">
+
+<div class="arrangement">
+    <figure>
+        <img src="assets/fig1.svg" style="--float:none;"/>
+        <figcaption>
+            <a href="assets/fig1.html" target="_blank">
                 \(i(t)\) dans le circuit RL
-            </a></figcaption>
-              </figure></td><td>
-                  <figure style="float:none;">
-        <img src="assets/fig2.png" style="width:7cm;float:none;"/>
-            <figcaption><a href="assets/fig1.html" target="_blank">
-                 \(q(t)\) dans le circuit RC
-            </a></figcaption>
-                  </figure></td></tr><tr><td>       
-            <figure style="float:none;">
-        <img src="assets/fig1.png" style="width:7cm;float:none;"/>
-            <figcaption><a href="assets/fig1.html" target="_blank">
-                 \(i(t)\) dans le circuit RC
-            </a></figcaption>
+            </a>
+        </figcaption>
     </figure>
-    </td>
-    </tr></table>
-
-
-    <div class="pagebreak"></div>
+    <figure>
+        <img src="assets/fig2.svg"/>
+        <figcaption>
+            <a href="assets/fig1.html" target="_blank">
+                \(q(t)\) dans le circuit RC
+            </a>
+        </figcaption>
+    </figure>  
+    <figure>
+        <img src="assets/fig1.svg"/>
+        <figcaption>
+             <a href="assets/fig1.html" target="_blank">
+                \(i(t)\) dans le circuit RC
+            </a>
+        </figcaption>
+    </figure>
+    
+</div>
+    
     <h2 class="section">Prise d'initiative</h2>
-    <p>par groupe de 2 ou 3.</p>
+    <div class="none">par groupe de 2 ou 3.</div>
     <h3 class="subsection">En régime AC (sinusoïdal)</h3>
 
-    <p>Les deux mêmes circuits sont alimentés en régime sinusoïdal à partir de \(t=0\), par 
+    <div class="none">Les deux mêmes circuits sont alimentés en régime sinusoïdal à partir de \(t=0\), par 
     une tension \(u(t) = 240\sin(100\pi t) \).
-    </p>
+    </div>
     <div class="meth">
         Seul le second membre des équations différentielles va changer. <br>
         La solution particulière est à recalculer : on utilise la méthode des impédances.

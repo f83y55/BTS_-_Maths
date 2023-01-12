@@ -5,11 +5,11 @@
   --font-family-titles: Impact;
   --font-size: 16pt; /*10pt*/
   --line-height: 1.6;
-  --color-bg: #eee;
-  --color-bg-hover: #fff;
+  --color-bg: #ccc;
+  --color-bg-hover: #eee;
   --color-bg-title: #503010;
-  --color-section: #ff3333;
-  --color-subsection: #33aa33;
+  --color-section: #d03030;
+  --color-subsection: #309030;
   --color-subsubsection: #3333ff;
   --color-exo: #103050;
   --color-defi: #503010;
@@ -32,7 +32,7 @@
   --transition-speed: 700ms;
   --float: right;
   --width: 32vw;
-  --height: 45vh;
+  --height: auto;
 }
 
 body, .subbody{
@@ -59,6 +59,12 @@ div:hover:not(.subbody) {
 h1, h2, h3, h4, h5, h6 {font-family: var(--font-family-titles); padding: 0 var(--padding)}
 ul, ol {margin: 0;}
 a {color: inherit; text-decoration: underline;}
+
+/*A Revoir*/
+li li::before {
+    color : lighter;
+    }
+
 
 figure {
     float: var(--float);
@@ -108,7 +114,7 @@ img:active {
 .subsection         {counter-reset: subsubsection ;}
 .subsection::before {counter-increment: subsection;content: counter(section) "." counter(subsection) ". ";}
 
-.subsubsection, .subsection-nocounter{
+.subsubsection, .subsubsection-nocounter{
     color: var(--color-subsubsection);
     margin: var(--margin);
 }
@@ -159,7 +165,7 @@ img:active {
 .meth::before   {font-weight: bold; content: "Méthode " counter(meth) " : ";}
 
 
-.titre, .prop, .rema, .exem, .meth, .theo, .defi, .exo, .exo-nocounter {margin: var(--margin); padding: var(--padding);}
+.titre, .prop, .rema, .exem, .meth, .theo, .defi, .exo, .exo-nocounter, .none {margin: var(--margin); padding: var(--padding);}
 
 .surl {background-color: var(--color-bg-surl); height: max-content; padding: var(--padding)0.1em;}
 
@@ -185,6 +191,7 @@ img:active {
     border: 1px solid;
     border-color: rgba(0, 0, 0, min(calc(3*var(--border-opacity)),1));
     padding: var(--mytable-padding);
+    overflow-x: scroll;
 }
 
 .mytable tr:first-child>th:first-child, .mytable tr:first-child>td:first-child 
@@ -201,7 +208,14 @@ img:active {
 .mytable td>ol, .mytable td>ul  {text-align: left;}
 .mytable td>img, .mytable td>figure  {float: none;}
 
-
+.arrangement {
+    margin: 0;
+    padding: 0;
+    display:flex;
+    --float:none;
+    --width:100%;
+    overflow-x: scroll;
+}
 
 @media (max-width: 800px) {
     
@@ -224,6 +238,9 @@ img:active {
         font-size: smaller;
     }
 
+    .arrangement {
+        flex-direction: column;
+    }
 }
 
 @page { 
@@ -263,6 +280,8 @@ img:active {
       --margin : 0.2em;
       --padding : 0.5em;
       --float : right;
+      --width-print: auto;
+      --height-print: auto;
     }
 
     html, body, .subbody {
@@ -273,7 +292,7 @@ img:active {
 
     /*body                           {max-width: 210mm; max-height: 297mm;}*/
     .pagebreak                       {page-break-before: always;}
-    .subbody                         {page-break-after: always;}
+    .subbody+.subbody                {page-break-after: always;}
     .titre, .section, .section-nocounter, .subsection, .subsection-nocounter, .subsubsection                                    {page-break-after: avoid!important;}
     .titre+div, .section+div, .section-nocounter+div, .subsection+div, .subsection-nocounter+div, .subsubsection+div            {page-break-before: avoid!important;}
     .mytable, table, figure, img     {page-break-inside: avoid!important;}
@@ -281,10 +300,10 @@ img:active {
     .mytable td>ol, .mytable td>ul, .mytable td>img, .mytable td>figure 
                                      {text-align: left;float: none;}
 
-    .mytable, img, img:active {
-        --float-print: right;
-        --width-print: 45%;
-        --height-print: 45%;
+    .mytable, img, img:active, figcaption {
+        --float-print: var(--float);
+        --width-print: auto;
+        --height-print: auto;
         --cell-width-print: auto;
         --cell-height-print: auto;
         float: var(--float-print);
@@ -348,7 +367,13 @@ img:active {
         border-color: var(--color-title);
     }
 
-    .titre, .prop, .rema, .exem, .meth, .theo, .defi, .exo, .exo-nocounter {margin: var(--margin); padding: var(--padding);}
+    .titre, .prop, .rema, .exem, .meth, .theo, .defi, .exo, .exo-nocounter {margin: var(--margin); padding: var(--padding);
+    }
+
+    .arrangement {
+        flex-direction: row;
+    }
+
 
     .href-print::after{
         content: " (url : " attr(href) ")";

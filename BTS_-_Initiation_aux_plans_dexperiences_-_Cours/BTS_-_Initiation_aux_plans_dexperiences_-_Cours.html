@@ -29,7 +29,7 @@
 <h2 class="section">Le modèle mathématique</h2>
 <h3 class="subsection">Relation entrées/sorties</h3>
 <div class="defi"><b>Notations :</b>
-    <img src="assets/fig1.svg">
+    <img src="assets/fig1.svg" style="--width-print:7cm;">
     <ul>
         <li>les <b>facteurs d'entrée</b> \(X_k\) et les <b>réponses</b> \(Y_l\) sont des valeurs réelles (mesures) ; </li>
         <li>On cherche à modéliser <b>une des réponses</b> en fonction des entrées. On la note \(Y\).</li>
@@ -70,7 +70,7 @@
 <div class="exo">
     <p>
     <figure>
-        <img src="assets/fig2.png"/>
+        <img src="assets/fig2.png" style="--width-print:7cm;"/>
             <figcaption><a href="assets/fig2.html" target="_blank">
                 Surface Y en fonction de T et P
             </a></figcaption>
@@ -83,7 +83,7 @@
 
     <ol>
         <figure>
-        <img src="assets/fig3.svg"/>
+        <img src="assets/fig3.svg" style="--width-print:7cm;"/>
         <figcaption><a href="assets/fig3.html" target="_blank">
                 Courbes isoréponses T-P pour Y=63
         </a></figcaption>
@@ -102,7 +102,6 @@
         <div class="defi">
                 Une telle courbe s'appelle <b>courbe isoréponse</b> (cf figure ci-dessus).</div>
 
-        <div class="pagebreak"></div>
 
         <div class="rema">
             Les modèles étudiés correspondent à des développements limités, au voisinage de 0, d'ordre 1 pour ceux sans interaction. Si on tient compte d'interactions, on rajoute des termes (d'ordre 2 pour \(X_kX_l\) et 3 pour \(X_kX_lX_m\) ) à ce développement en 0. D'où l'idée de coder les valeurs des entrées par l'intervalle [-1;1] :
@@ -110,7 +109,7 @@
         <h3 class="subsection">Codage affine des entrées (de Yates)</h3>
         <div class="defi">
             <figure>
-        <img src="assets/fig4.svg"/>
+        <img src="assets/fig4.svg" style="--width-print:7cm;"/>
             <figcaption><a href="assets/fig4.html" target="_blank">
                 Codage de Yates
             </a></figcaption>
@@ -178,6 +177,7 @@ Déterminer le codage de Yates, de la forme \(X=ax+b\) pour les grandeurs suivan
 </div>
 
 <h2 class="subsection">Plan factoriel 2<sup>2</sup> avec interaction</h2>
+<div class="none">
     On étudie le rendement d'une réaction chimique en fonction de la température et de la pression.
 <table id="table1" class="mytable">
   <tr class="table_row_tr_0">
@@ -245,7 +245,7 @@ Déterminer le codage de Yates, de la forme \(X=ax+b\) pour les grandeurs suivan
     <td class="table_row_7 table_column_6"></td>
   </tr>
 </table>
-
+</div>
 <div class="prop">
     En remplaçant les valeurs des entrées \(X_1\) et \(X_2\) pour chaque ligne (expérience) dans le modèle utilisé ici : \(a_0+a_1X_1+a_2X_2+a_{1\,2}X_1X_2 = Y\)  (on néglige les perturbations \(\varepsilon\)) ; on voit que cette matrice équivaut au système 
     \( \left\{ \begin{array}{l} 
@@ -376,7 +376,6 @@ Vrai ou faux (justifier) ? «Pour une ouverture de 2,5 crans et une pression de 
 
 
 </div>
-<div class="pagebreak"></div>
 <h3 class="subsection">Plan factoriel 2<sup>3</sup> avec interaction</h3>
 
 <div class="exo">

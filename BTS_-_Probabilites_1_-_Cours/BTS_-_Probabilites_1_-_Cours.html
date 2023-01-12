@@ -276,19 +276,19 @@ On <b>décide</b> alors que l'on a expérimenté un nombre suffisant de lancers 
     Reproduire le tableau dans le cas d'un dé octaèdrique (8 faces).
 </div>
 <div class="prop"> Soit \(A\) et \(B\) deux événements :<br>
-    <div style="display: flex;">
-    <figure style="width:25%; float: none;">
-        <img src="assets/fig1.svg" style="float: none;">
+    <div class="arrangement">
+    <figure>
+        <img src="assets/fig1.svg">
         <figcaption>Événement complémentaire : <br>
             \(P(\overline{A})=1-P(A)\)</figcaption>
     </figure>
-    <figure style="width:25%; float: none;">
-        <img src="assets/fig2.svg" style="float: none;">
+    <figure>
+        <img src="assets/fig2.svg">
         <figcaption>Union quelconque : <br>
             \(P(A\cup B)=P(A)+P(B)-P(A\cap B)\)</figcaption>
     </figure>
-    <figure style="width:25%; float: none;">
-        <img src="assets/fig3.svg" style="float: none;">
+    <figure>
+        <img src="assets/fig3.svg">
         <figcaption>Union disjointe : <br>
             Si \(P(A\cap B)=0\), alors \(P(A\cup B)=P(A)+P(B)\)</figcaption>
     </figure>
@@ -371,8 +371,8 @@ Lorsqu'on sait que \(A\) et \(B\) ne peuvent être réalisés simultanément ; \
 </div>
 <div class="exem"> Souvent, une variable aléatoire est utilisée pour rendre compte des gains dans un jeu de hasard.<br>
 On lance un dé (6 faces, bien équilibré), puis une pièce (bien équilibrée) ;
-<figure width="32%" style="max-width:7cm;">
-        <img src="assets/fig5.svg">
+<figure>
+    <img src="assets/fig5.svg" style="--width-print:7cm;">
         <figcaption>Arbre à compléter</figcaption>
     </figure>
 <ul>
@@ -400,7 +400,7 @@ On lance un dé (6 faces, bien équilibré), puis une pièce (bien équilibrée)
     </ol>
 </div>
     <h3 class="subsection"> Loi de probabilité</h3>
-    <div>
+    <div class="none">
 Notons \(I=\left\{x_1;...;x_n\right\}\) l'ensemble des valeurs, rangées par ordre croissant, prises par une variable aléatoire \(X\) sur un univers \(\Omega\).
     </div>
     <div class="rema">On manie ici des variables aléatoires ayant un nombre fini de valeurs (variables aléatoires discrètes). En utilisant des intégrales, plus tard, on pourra manier des variables alétoires dites continues, possédant un nombre infini de valeurs.
@@ -548,7 +548,7 @@ Calculer la variance des gains \(V(G)\) de notre jeu.
 
 
 <h2 class="section">Probabilités conditionnelles</h2>
-<div>
+<div class="none">
 On cherche souvent à analyser la dépendance d'un événement par rapport à un autre, ou bien comprendre des phénomènes numériques paradoxaux... Les probabilités conditionnelles offrent un cadre simple qui peut aider.
 </div>
 <div class="exo"><b>exemple de paradoxe apparent : phénomène de Rogers</b><br>
@@ -559,13 +559,12 @@ les moyennes de ce trimestre sont 1, 2, 3, 4 pour le groupe A et 5, 6, 7, 8, 9 p
     Il est donc fondamental de savoir si l'on calcule sur la population globale (\(\Omega\) entier) ou bien si l'on est restreint à une partie seulement de cette population.
 </div>
 
-<div class="pagebreak"></div>
 
 <h3 class="subsection">Définition et propriétés</h3>
 <div class="defi"> \(A\), \(B\) sont deux événements avec \(P(A)\neq0\).<br>
     On note \(P_A(B)\) la «<b>probabilité de \(B\) sachant \(A\)</b>» le nombre \(\displaystyle\frac{P(A\cap B)}{P(A)}\).<br>
-    <figure width="32%" style="max-width:6cm;">
-        <img src="assets/fig4.svg">
+    <figure style="float: right;">
+        <img src="assets/fig4.svg" style="--width-print: 5cm;"><br>
         <figcaption>Représentation des probabilités<br>
         conditionnelles sur un arbre</figcaption>
     </figure>
@@ -676,7 +675,6 @@ Si \(B\neq\emptyset\), \(B\) et \(\overline{B}\) formant naturellement une parti
     On lance un dé tétraédrique (4 faces) bien équilibré : on multiplie le résultat \(R\) par 2 s'il est pair. On lance ensuite une pièce bien équilibrée ; dans le cas pile, on multiplie \(R\) par 2.<br>
     Utiliser un arbre pour déterminer la loi de \(R\) (dire où apparaît une partition) et calculer son espérance et son écart-type.
 </div>
-<div class="pagebreak"></div>
 <h2 class="section">Vers la loi binomiale</h2>
 <h3 class="subsection">Schéma de Bernoulli</h3>
 <div class="defi">On appelle <b>n-schéma de Bernoulli</b> ou <b>Schéma de Bernoulli d'ordre n</b> une répétition de n expériences aléatoires de Bernoulli <b>identiques</b> (ce qui veut dire qu'elles ont le même paramètre p donnant la probabilité d'un succès, un échec ayant ainsi pour probabilité 1-p).</div>
@@ -934,7 +932,7 @@ On suppose qu'elle sache tenir un stylo et cocher au hasard une case par répons
 </div>
 
 <h3 class="subsection">Calculatrice</h3>
-<div>
+<div class="none">
 Si \(X\sim\mathcal{B}(n,p)\) :
 <ul>
   <li> TI : dans <code>Distrib</code>(2nde-Var) : 
