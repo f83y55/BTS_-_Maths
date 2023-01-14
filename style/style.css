@@ -283,6 +283,8 @@ img:active {
       --width-print: auto;
       --height-print: auto;
     }
+    
+    nav {display: none;}
 
     html, body, .subbody {
         display: block;

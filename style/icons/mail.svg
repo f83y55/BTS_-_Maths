@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="32px"
+   height="32px"
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg9"
+   sodipodi:docname="mail.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs13" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="660"
+     inkscape:window-height="480"
+     id="namedview11"
+     showgrid="false"
+     inkscape:zoom="7.375"
+     inkscape:cx="16"
+     inkscape:cy="16"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg9" />
+  <title
+     id="title2" />
+  <g
+     data-name="Layer 6"
+     id="Layer_6"
+     style="fill:#ffffff">
+    <path
+       d="M16,14.77,28.15,6.1A2.38,2.38,0,0,0,27.5,6H4.5a2.38,2.38,0,0,0-.65.1Z"
+       id="path4"
+       style="fill:#ffffff" />
+    <path
+       d="M17.45,18.83a1,1,0,1,1,1.1-1.66l11.18,7.45A2.5,2.5,0,0,0,30,23.5V8.5a2.5,2.5,0,0,0-.26-1.09l-13.16,9.4-.09.05-.09.05A1.11,1.11,0,0,1,16,17h0a1.11,1.11,0,0,1-.4-.09l-.09-.05-.09-.05L2.26,7.41A2.5,2.5,0,0,0,2,8.5v15a2.5,2.5,0,0,0,.27,1.12l11.18-7.45a1,1,0,1,1,1.1,1.66L3.92,25.92A2.2,2.2,0,0,0,4.5,26h23a2.2,2.2,0,0,0,.58-.08Z"
+       id="path6"
+       style="fill:#ffffff" />
+  </g>
+</svg>

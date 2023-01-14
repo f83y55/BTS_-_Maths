@@ -1,0 +1,106 @@
+.navbar {
+  font-size: 16px;
+  font-family: 'Ubuntu';
+  --text: #fff;
+  --bg-1: #35a320;
+  --bg-2: #e2b5e2;
+  --navbar-direction: row;    /* row, column */
+  --item-direction: column;    /* row, column */
+  --item-align: center;    /* start, end, center */
+  --navbar-size-min: min(10vw, 10vh);
+  --navbar-size-max-x: 100vw;
+  --navbar-size-max-y: var(--navbar-size-min);
+  --transition-speed: 700ms;
+}
+
+.navbar::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/**/
+.navbar{
+    max-width: 100vw;
+    position: fixed;
+    display: flex;
+    flex-direction: var(--navbar-direction);
+    align-items: var(--item-align);
+    align-content: stretch;
+    justify-content: start;
+    text-align: center;
+    overflow: hidden;
+    background-color: var(--bg-1);
+    filter: opacity(90%);
+}
+
+.navbar-logo *{
+    width: var(--navbar-size-min);
+    height: var(--navbar-size-min);
+}
+
+.navbar-collapse {
+    display: flex;
+    align-items: var(--item-align);
+    width: calc(100vw - var(--navbar-size-min));
+    flex-direction: var(--navbar-direction);
+    align-items: var(--item-align);
+    justify-content: space-between;
+    transition-duration: var(--transition-speed);
+}
+
+#menu-switch:checked ~ .navbar-collapse {
+    display: flex;
+    height: var(--navbar-size-min);
+    width: 0;
+    align-items: var(--item-align);
+    transform: translateX(100vw);
+    transition-duration: var(--transition-speed);
+}
+
+.navbar-group {
+    display: flex;
+    flex-direction: var(--navbar-direction);
+    align-items: var(--item-align);
+    justify-content: center;
+}
+
+.navbar-icon{
+    padding: 1rem;
+    background-image: var(--icon, none);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.navbar-item {
+    max-height: var(--navbar-size);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: var(--item-direction);
+    align-items: center;
+    align-content: stretch;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.navbar a:hover{
+    transition-duration: var(--transition-speed);
+    background-color: var(--bg-2) ;
+    color: var(--bg-1);
+}
+
+@media (max-width: 600px) {
+.navbar-text {
+    display: none;
+}
+
+.navbar-collapse {
+    overflow: scroll;
+}
+
+}
+

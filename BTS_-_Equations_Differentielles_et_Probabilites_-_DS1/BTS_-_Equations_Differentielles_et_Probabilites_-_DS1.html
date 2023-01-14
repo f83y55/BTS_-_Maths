@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <a href="assets/print.pdf" download>
+        <h1 class="titre">BTS - Équations Différentielles et Probabilités - DS1</h1>
+    </a>
+        <h2 class="section-nocounter">Rappels</h2>
+    <h3 class="subsection-nocounter">Formules d'électricité</h3>
+    <div>
+    Formules d'électricité : \(u_L(t) = Li'(t) \) ; \(u_R(t) = Ri(t)\) ; \(u_C(t)=\frac{q(t)}{C}\) ; \(q'(t)=i(t)\). <br>
+    Constante de temps : \(\tau=\frac{-1}{r}\) avec \(r\) solution de l'équation caractéristique pour une équation différentielle d'ordre 1.
+    </div>
+    <h3 class="subsection-nocounter">Formules de résolution des équations différentielles homogènes
+    </h3>
+    <div>
+<div class="prop">Solutions générales d'une équation <b>homogène</b> du 2nd ordre :
+
+2nd ordre :  \((E^c)~:~~ar^2+br+c=0\) ; 3 cas selon \(\Delta=b^2-4ac\) :
+    <ol><li> \(\Delta>0\) : \((E^c)\) a deux solutions \(r_1=\dfrac{-b-\sqrt{\Delta}}{2a}\) et \(r_2=\dfrac{-b+\sqrt{\Delta}}{2a}\) ;<br>
+            solution générale de \((E_2^*)\) : <span class="surl">\(K\rm{e}^{r_1t}+L\rm{e}^{r_2t}\)</span>.</li>
+        <li>\(\Delta=0\) : \((E^c)\) a une solution \(r_0=\dfrac{-b}{2a}\) ;
+            solution générale de \((E_2^*)\) : <span class="surl">\(K\rm{e}^{r_0t}+Lt\rm{e}^{r_0t}\)</span>.</li>
+        <li>\(\Delta<0\) : \((E^c)\) a deux solutions \(r_1=\dfrac{-b-i\sqrt{|\Delta|}}{2a}\) et \(r_2=\dfrac{-b+i\sqrt{|\Delta|}}{2a}\), complexes conjuguées de la forme \(\alpha\pm i\omega\) (on choisit \(\omega>0\)) ;
+            solution générale de \((E_2^*)\) : <span class="surl">\(K\rm{e}^{\alpha t}\cos(\omega t)+L\rm{e}^{\alpha t}\sin(\omega t)\)</span>.</li>
+    </ol>
+
+</div>
+
+    </div>
+
+
+    <h2 class="section-nocounter">Ex 1 : 1er ordre : circuit RC (7 points)</h2>
+    <div class="exo">
+        On a \(R=5\Omega\) ; \(C=20\)µF et \(u_G(t)=12\)V DC ; le condensateur est déchargé à t=0.
+        <figure>
+            <figcaption>Circuit RC série</figcaption>
+            <img src="assets/RC.svg">
+        </figure>
+        <ol>
+            <li>
+                En utilisant vos connaissances sur les équations différentielles, calculer \(q(t)\).
+            <li>En déduire \(i(t)\) dans ce circuit.</li>
+            </li>
+            <li>
+                En déduire la durée du régime transitoire (\(5\tau\)) et l'intensité dans le circuit une fois le régime permanent atteint.
+            </li>
+            <li>
+                Déterminer le temps au bout duquel le condensateur est à moitié chargé.
+            </li>
+        </ol>
+    </div>
+
+
+    <h2 class="section-nocounter">Ex 2 : 2nd ordre : circuit RLC série (5 points)</h2>
+        <div class="exo">
+            En utilisant vos connaissances sur les équations différentielles, calculer les <b>solutions générales</b>  \(q(t)\) dans ce circuit.<br>
+            <figure>
+            <figcaption>Circuit RLC</figcaption>
+            <img src="assets/RLC.svg">
+        </figure><br>
+        <b>Données :</b> \(L=1\)H ; \(R=4\Omega\) ; \(C=0{,}2\)F et \(u_G(t)=12\)V DC
+    </div>
+    <div class="pagebreak"></div>
+     <h2 class="section-nocounter">Ex 3 : Probabilités : événements (4 points)</h2>
+     <div class="exo"> 
+         Compléter le tableau suivant, chaque ligne représentant une situation indépendante.<br>
+         <table id="tab01" class="mytable" style="display:block; float:none;">
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">\(A\)</th>
+    <th class="table_row_0 table_column_2">\(B\)</th>
+    <th class="table_row_0 table_column_3">\(\overline{A}\)</th>
+    <th class="table_row_0 table_column_4">\(\overline{B}\)</th>
+    <th class="table_row_0 table_column_5">\(A \cap B\)</th>
+    <th class="table_row_0 table_column_6">\(A \cup B \)</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">0,2</td>
+    <td class="table_row_1 table_column_2">0,4</td>
+    <td class="table_row_1 table_column_3"></td>
+    <td class="table_row_1 table_column_4"></td>
+    <td class="table_row_1 table_column_5">0,1</td>
+    <td class="table_row_1 table_column_6"></td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">0,6</td>
+    <td class="table_row_2 table_column_2"></td>
+    <td class="table_row_2 table_column_3"></td>
+    <td class="table_row_2 table_column_4">0,8</td>
+    <td class="table_row_2 table_column_5">0</td>
+    <td class="table_row_2 table_column_6"></td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <td class="table_row_3 table_column_1"></td>
+    <td class="table_row_3 table_column_2"></td>
+    <td class="table_row_3 table_column_3">0,7</td>
+    <td class="table_row_3 table_column_4">0,7</td>
+    <td class="table_row_3 table_column_5"></td>
+    <td class="table_row_3 table_column_6">0,5</td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <td class="table_row_4 table_column_1"></td>
+    <td class="table_row_4 table_column_2"></td>
+    <td class="table_row_4 table_column_3"></td>
+    <td class="table_row_4 table_column_4">0,85</td>
+    <td class="table_row_4 table_column_5">0,1</td>
+    <td class="table_row_4 table_column_6">0,4</td>
+  </tr>
+</table>
+</div>
+
+<h2 class="section-nocounter">Ex 4 : Probabilités : variable aléatoire (4 points)</h2>
+     <div class="exo"> 
+         On lance simultanément deux dés à six faces, bien équilibrés.<br>
+On note l'écart absolu (= différence entre le plus grand nombre et le plus petit)  entre les deux nombres donnés par les deux faces des dés lancés. Par exemple si le dé 1 donne 6 et le dé 2 donne 4, l'écart sera de 2.
+<ol>
+    <li>Compléter le tableau suivant par les écarts absolus :<br>
+        <table id="table02" class="mytable" style="display:block; float:none;">
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">dé1↓  E↘ dé2→</th>
+    <th class="table_row_0 table_column_2">&nbsp;&nbsp;1&nbsp;&nbsp;</th>
+    <th class="table_row_0 table_column_3">&nbsp;&nbsp;2&nbsp;&nbsp;</th>
+    <th class="table_row_0 table_column_4">&nbsp;&nbsp;3&nbsp;&nbsp;</th>
+    <th class="table_row_0 table_column_5">&nbsp;&nbsp;4&nbsp;&nbsp;</th>
+    <th class="table_row_0 table_column_6">&nbsp;&nbsp;5&nbsp;&nbsp;</th>
+    <th class="table_row_0 table_column_7">&nbsp;&nbsp;6&nbsp;&nbsp;</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">1</td>
+    <td class="table_row_1 table_column_2"></td>
+    <td class="table_row_1 table_column_3"></td>
+    <td class="table_row_1 table_column_4"></td>
+    <td class="table_row_1 table_column_5"></td>
+    <td class="table_row_1 table_column_6"></td>
+    <td class="table_row_1 table_column_7"></td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">2</td>
+    <td class="table_row_2 table_column_2"></td>
+    <td class="table_row_2 table_column_3"></td>
+    <td class="table_row_2 table_column_4"></td>
+    <td class="table_row_2 table_column_5"></td>
+    <td class="table_row_2 table_column_6"></td>
+    <td class="table_row_2 table_column_7"></td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <td class="table_row_3 table_column_1">3</td>
+    <td class="table_row_3 table_column_2"></td>
+    <td class="table_row_3 table_column_3"></td>
+    <td class="table_row_3 table_column_4"></td>
+    <td class="table_row_3 table_column_5"></td>
+    <td class="table_row_3 table_column_6"></td>
+    <td class="table_row_3 table_column_7"></td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <td class="table_row_4 table_column_1">4</td>
+    <td class="table_row_4 table_column_2"></td>
+    <td class="table_row_4 table_column_3"></td>
+    <td class="table_row_4 table_column_4"></td>
+    <td class="table_row_4 table_column_5"></td>
+    <td class="table_row_4 table_column_6"></td>
+    <td class="table_row_4 table_column_7">2</td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">5</td>
+    <td class="table_row_5 table_column_2"></td>
+    <td class="table_row_5 table_column_3"></td>
+    <td class="table_row_5 table_column_4"></td>
+    <td class="table_row_5 table_column_5"></td>
+    <td class="table_row_5 table_column_6"></td>
+    <td class="table_row_5 table_column_7"></td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">6</td>
+    <td class="table_row_6 table_column_2"></td>
+    <td class="table_row_6 table_column_3"></td>
+    <td class="table_row_6 table_column_4"></td>
+    <td class="table_row_6 table_column_5">2</td>
+    <td class="table_row_6 table_column_6"></td>
+    <td class="table_row_6 table_column_7"></td>
+  </tr>
+        </table></li>
+    <li>Dresser un tableau donnant la loi de \(E\).</li>
+    <li>Calculer l'espérance de \(E\).</li>
+    <li>Calculer l'écart-type de \(E\).</li>
+</ol>
+</div>
+
+
+
+</body>
+
+</html>
