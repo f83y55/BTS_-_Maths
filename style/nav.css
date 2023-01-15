@@ -2,8 +2,8 @@
   font-size: 16px;
   font-family: 'Ubuntu';
   --text: #fff;
-  --bg-1: #35a320;
-  --bg-2: #e2b5e2;
+  --bg-1: #fbb33250;
+  --bg-2: #00ff0050;
   --navbar-direction: row;    /* row, column */
   --item-direction: column;    /* row, column */
   --item-align: center;    /* start, end, center */
@@ -11,6 +11,10 @@
   --navbar-size-max-x: 100vw;
   --navbar-size-max-y: var(--navbar-size-min);
   --transition-speed: 700ms;
+}
+
+nav+* {
+    padding-bottom: 10vh;
 }
 
 .navbar::before {
@@ -31,6 +35,7 @@
     justify-content: start;
     text-align: center;
     overflow: hidden;
+    background-image: linear-gradient(46deg, var(--bg-1) 25%, var(--bg-2) 100%);
     background-color: var(--bg-1);
     filter: opacity(90%);
 }
@@ -104,3 +109,7 @@
 
 }
 
+@media print {
+    .navbar {display: none;};
+
+}
