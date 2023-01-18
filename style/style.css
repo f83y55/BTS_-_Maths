@@ -8,7 +8,7 @@
   --color-bg: #ccc;
   --color-bg-hover: #eee;
   --color-bg-title: #503010;
-  --color-section: #d03030;
+  --color-section: #d70;
   --color-subsection: #309030;
   --color-subsubsection: #3333ff;
   --color-exo: #103050;
@@ -18,7 +18,7 @@
   --color-bg-title: #fbb332;
   --color-bg-defi: #fbb332;
   --color-bg-theo: #fbb332;
-  --color-bg-exo: #33a5ee;
+  --color-bg-exo: #3ae;
   --color-bg-surl: #00ff0055;
   --color-bg-table-1: #bbb8;
   --color-bg-table-2: #ccc8;
@@ -268,7 +268,7 @@ img:active {
       --color-bg-title: #fbb332;
       --color-bg-defi : #fbb332;
       --color-bg-theo : #fbb332;
-      --color-bg-exo : #33a5ee;
+      --color-bg-exo : #3ae;
       --color-bg-surl : #00ff0055;
       --color-bg-table-1 : #bbb8;
       --color-bg-table-2 : #ccc8;
