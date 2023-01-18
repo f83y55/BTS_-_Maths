@@ -49,10 +49,10 @@ body, .subbody{
   background-color: var(--color-bg);
   counter-reset: section exo defi prop theo rema exem;
 }
-.subbody:hover {transition: none;}
 
-div:hover:not(.subbody, nav) {
-    transition: background-image var(--transition-speed) ease-in-out;
+
+.none:hover, .defi:hover, .theo:hover, .prop:hover, .meth:hover, .exem:hover, .exo:hover, .exo-nocounter:hover {
+    transition: background-image var(--transition-speed);
     background-image: linear-gradient(-90deg, rgba(255,255,255,0.5) 90%, rgba(255,255,255,0.9) 100%);
 }
 

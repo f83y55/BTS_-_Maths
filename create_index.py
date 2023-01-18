@@ -34,9 +34,7 @@ if __name__ == "__main__" :
         for name in [element for element in os.listdir(os.path.join(MAINROOT, rep)) if element.endswith(".html")] :
             if os.path.exists(os.path.join(MAINROOT, rep, f"{name[:-5]}.json")) :
                 dc[name] = (json_load(os.path.join(MAINROOT, rep, f"{name[:-5]}.json"))["name"], rep)
-            else :
-                dc[name] = (name[:-5], rep)
-    file_save("index.html", file_load(os.path.join(MAINROOT, BRIQUE)).replace('#####', '\n'.join([f'<li> <a href="{os.path.join(MAINROOT, y[1], x)[:-5]}.html"> {y[0]} </a> </li>' for x, y in dc.items()])))
+            file_save("index.html", file_load(os.path.join(MAINROOT, BRIQUE)).replace('#####', '\n'.join([f'<li> <a href="{os.path.join(MAINROOT, y[1], x)[:-5]}.html"> {y[0]} </a> </li>' for x, y in dc.items()])))
             
 
 
