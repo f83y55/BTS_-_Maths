@@ -24,6 +24,9 @@
 
 /**/
 .navbar{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     max-width: 100vw;
     min-width: var(--navbar-size-min);
     position: fixed;
@@ -36,7 +39,7 @@
     overflow: hidden;
     background-image: linear-gradient(46deg, var(--navbar-bg-1) 25%, var(--navbar-bg-2) 100%);
     background-color: var(--navbar-bg-1);
-    filter: opacity(70%);
+    filter: opacity(80%);
 }
 
 .navbar-logo {
@@ -89,6 +92,11 @@
     justify-content: center;
     text-decoration: none;
     color: var(--text);
+}
+
+a .navbar-item:hover {
+    background-color: var(--navbar-bg-2);
+    transition-duration: var(--transition-speed);
 }
 
 .navbar-text {
