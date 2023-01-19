@@ -11,7 +11,7 @@
   --item-align: center;    /* start, end, center */
   --navbar-size-min: 3em;
   --navbar-size-max-x: 100vw;
-  --navbar-size-max-y: var(--navbar-size-min);
+  --navbar-size-max-y: auto;
   --transition-speed: 700ms;
 }
 
