@@ -35,12 +35,12 @@ if __name__ == "__main__" :
         for name in [element for element in os.listdir(os.path.join(MAINROOT, rep)) if element.endswith(".html")] :
             if os.path.exists(os.path.join(MAINROOT, rep, f"{name[:-5]}.json")) :
                 dc[name] = (json_load(os.path.join(MAINROOT, rep, f"{name[:-5]}.json"))["name"], rep)
-            html = file_load(os.path.join(MAINROOT, BRIQUE))
-            html.replace('#####list#####', '\n'.join([f'<li> <a href="{os.path.join(MAINROOT, y[1], x)[:-5]}.html"> {y[0]} </a> </li>' for x, y in dc.items()]))
-            nav = file_load(os.path.join(MAINROOT, NAV))
-            nav.replace("@import \"../style/nav.css", "@import \"./style/nav.css")
-            html.replace('#####nav#####', nav)
-            file_save("index.html", html)
+    html = file_load(os.path.join(MAINROOT, BRIQUE))
+    html = html.replace('#####list#####', '\n'.join([f'<li> <a href="{os.path.join(MAINROOT, y[1], x)[:-5]}.html"> {y[0]} </a> </li>' for x, y in dc.items()]))
+    nav = file_load(os.path.join(MAINROOT, NAV))
+    nav = nav.replace("@import \"../style/nav.css", "@import \"./style/nav.css")
+    html = html.replace('#####nav#####', nav)
+    file_save("index.html", html)
             
 
 
