@@ -9,7 +9,7 @@
   --navbar-direction: row;    /* row, column */
   --item-direction: column;    /* row, column */
   --item-align: center;    /* start, end, center */
-  --navbar-size-min: 3em;
+  --navbar-size-min: 5em;
   --navbar-size-max-x: 100vw;
   --navbar-size-max-y: auto;
   --transition-speed: 700ms;
