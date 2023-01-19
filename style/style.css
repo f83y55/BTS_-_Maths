@@ -1,6 +1,6 @@
 :root {
   /* Theme WEB */
-
+  --navbar-size : min(7vw, 7vh);
   --font-family: Helvetica, Ubuntu, Verdana, Geneva, Tahoma, sans-serif; /*'Times New Roman', Times, serif, Verdana, Helvetica, sans-serif;*/
   --font-family-titles: Impact;
   --font-size: 16pt; /*10pt*/
@@ -91,6 +91,7 @@ img:active {
 }
 
 .titre {
+    margin-top: var(--navbar-size);
     background-image: linear-gradient(46deg, var(--color-bg-title) 25%, var(--color-bg-surl) 100%);
     box-shadow: var(--shadow) var(--shadow) var(--shadow) grey;
     border-color: rgba(0,0,0,var(--border-opacity));
@@ -364,6 +365,7 @@ img:active {
     }
 
     .titre {
+        margin-top: 0;
         margin-bottom: 1em; 
         color: var(--color-title); 
         border-color: var(--color-title);

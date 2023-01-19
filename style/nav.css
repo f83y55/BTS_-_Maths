@@ -1,10 +1,11 @@
 .navbar {
   font-size: 16px;
-  font-family: 'Ubuntu';
+  font-family: Helvetica, Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+
   --navbar-text: #fff;
   --navbar-padding:0.5em;
-  --bg-1: #fbb33250;
-  --bg-2: #00ff0050;
+  --navbar-bg-1: #fbb33250;
+  --navbar-bg-2: #00ff0050;
   --navbar-direction: row;    /* row, column */
   --item-direction: column;    /* row, column */
   --item-align: center;    /* start, end, center */
@@ -12,10 +13,6 @@
   --navbar-size-max-x: 100vw;
   --navbar-size-max-y: var(--navbar-size-min);
   --transition-speed: 700ms;
-}
-
-nav+* {
-    padding-bottom: var(--navbar-size-min);
 }
 
 .navbar::before {
@@ -36,8 +33,8 @@ nav+* {
     justify-content: start;
     text-align: center;
     overflow: hidden;
-    background-image: linear-gradient(46deg, var(--bg-1) 25%, var(--bg-2) 100%);
-    background-color: var(--bg-1);
+    background-image: linear-gradient(46deg, var(--navbar-bg-1) 25%, var(--navbar-bg-2) 100%);
+    background-color: var(--navbar-bg-1);
     filter: opacity(90%);
 }
 
@@ -98,11 +95,6 @@ nav+* {
     margin: 0;
     }
 
-.navbar a:hover{
-    transition-duration: var(--transition-speed);
-    background-color: var(--bg-2) ;
-    color: var(--bg-1);
-}
 
 @media (max-width: 600px) {
 .navbar-text {
