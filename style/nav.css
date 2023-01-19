@@ -9,7 +9,7 @@
   --navbar-direction: row;    /* row, column */
   --item-direction: column;    /* row, column */
   --item-align: center;    /* start, end, center */
-  --navbar-size-min: min(7vw, 7vh);
+  --navbar-size-min: 2em;
   --navbar-size-max-x: 100vw;
   --navbar-size-max-y: var(--navbar-size-min);
   --transition-speed: 700ms;
@@ -35,10 +35,10 @@
     overflow: hidden;
     background-image: linear-gradient(46deg, var(--navbar-bg-1) 25%, var(--navbar-bg-2) 100%);
     background-color: var(--navbar-bg-1);
-    filter: opacity(90%);
+    filter: opacity(70%);
 }
 
-.navbar-logo *{
+.navbar-logo {
     width: var(--navbar-size-min);
     height: var(--navbar-size-min);
 }
@@ -77,7 +77,7 @@
     background-position: center;
 }
 
-.navbar-item {
+.navbar-item, .navbar-logo {
     max-height: var(--navbar-size);
     padding-left: var(--navbar-padding);
     padding-right: var(--navbar-padding);

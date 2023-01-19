@@ -1,6 +1,6 @@
 :root {
   /* Theme WEB */
-  --navbar-size : min(7vw, 7vh);
+  --navbar-size : min(3em, 7vw, 7vh);
   --font-family: Helvetica, Ubuntu, Verdana, Geneva, Tahoma, sans-serif; /*'Times New Roman', Times, serif, Verdana, Helvetica, sans-serif;*/
   --font-family-titles: Impact;
   --font-size: 16pt; /*10pt*/
@@ -90,8 +90,11 @@ img:active {
     transition-duration: var(--transition-speed);
 }
 
-.titre {
+.section::before {
     margin-top: var(--navbar-size);
+}
+
+.titre {
     background-image: linear-gradient(46deg, var(--color-bg-title) 25%, var(--color-bg-surl) 100%);
     box-shadow: var(--shadow) var(--shadow) var(--shadow) grey;
     border-color: rgba(0,0,0,var(--border-opacity));
