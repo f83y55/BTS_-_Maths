@@ -39,6 +39,7 @@ if __name__ == "__main__" :
     html = html.replace('#####list#####', '\n'.join([f'<li> <a href="{os.path.join(MAINROOT, y[1], x)[:-5]}.html"> {y[0]} </a> </li>' for x, y in dc.items()]))
     nav = file_load(os.path.join(MAINROOT, NAV))
     nav = nav.replace("@import \"../style/nav.css", "@import \"./style/nav.css")
+    nav = nav.replace("src=\"../icons", "src=\"./icons")
     html = html.replace('#####nav#####', nav)
     file_save("index.html", html)
             

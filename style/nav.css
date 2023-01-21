@@ -73,7 +73,8 @@
 .navbar-icon{
     font-size: calc(2*var(--navbar-font-size));
     height: calc(2*var(--navbar-font-size));
-    background-image: var(--icon);
+    width: calc(2*var(--navbar-font-size));
+    object-fit: contain;
 }
 
 .navbar-logo {
@@ -82,14 +83,16 @@
 }
 
 .navbar-item, .navbar-logo {
-    max-height: var(--navbar-size);
+    display: flex;
+    max-height: var(--navbar-size-max-y);
     padding-left: var(--navbar-padding);
     padding-right: var(--navbar-padding);
     flex-direction: var(--item-direction);
-    align-items: center;
+    align-items: var(--item-align);
     align-content: stretch;
     justify-content: center;
     text-decoration: none;
+    text-align: var(--item-align);
     color: var(--text);
 }
 
