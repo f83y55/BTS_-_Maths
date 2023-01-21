@@ -1,7 +1,7 @@
 .navbar {
-  font-size: 16px;
+  --navbar-font-size: 16pt;
   font-family: Helvetica, Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
-
+  font-size: var(--navbar-font-size);
   --navbar-text: #fff;
   --navbar-padding:0.5em;
   --navbar-bg-1: #fbb33250;
@@ -9,20 +9,12 @@
   --navbar-direction: row;    /* row, column */
   --item-direction: column;    /* row, column */
   --item-align: center;    /* start, end, center */
-  --navbar-size-min: 5em;
+  --navbar-size-min: auto;
   --navbar-size-max-x: 100vw;
   --navbar-size-max-y: auto;
   --transition-speed: 700ms;
 }
 
-.navbar::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-/**/
 .navbar{
     margin: 0;
     padding: 0;
@@ -36,7 +28,7 @@
     align-content: stretch;
     justify-content: start;
     text-align: center;
-    overflow: hidden;
+    overflow-y: hidden;
     background-image: linear-gradient(46deg, var(--navbar-bg-1) 25%, var(--navbar-bg-2) 100%);
     background-color: var(--navbar-bg-1);
     filter: opacity(90%);
@@ -56,11 +48,18 @@
     align-items: var(--item-align);
     justify-content: space-between;
     transition-duration: var(--transition-speed);
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #menu-switch:checked ~ .navbar-collapse {
-    width: calc(100vw - var(--navbar-size-min));
+    width: 100vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
+
+#menu-switch:checked + label[for="menu-switch"]::after {content: "◁";}
+#menu-switch:not(:checked) + label[for="menu-switch"]::after {content: "☰";}
 
 
 
@@ -72,18 +71,20 @@
 }
 
 .navbar-icon{
-    font-size: xx-large;
-    content: var(--icon, none);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    font-size: calc(2*var(--navbar-font-size));
+    height: calc(2*var(--navbar-font-size));
+    background-image: var(--icon);
+}
+
+.navbar-logo {
+    width: var(--navbar-size-min);
+    height: var(--navbar-size-min);
 }
 
 .navbar-item, .navbar-logo {
     max-height: var(--navbar-size);
     padding-left: var(--navbar-padding);
     padding-right: var(--navbar-padding);
-    display: flex;
     flex-direction: var(--item-direction);
     align-items: center;
     align-content: stretch;
@@ -97,13 +98,18 @@ a:hover {
     transition-duration: var(--transition-speed);
 }
 
+a {  
+    transition-duration: var(--transition-speed);
+    text-decoration: none;
+}
+
 .navbar-text {
     padding: 0;
     margin: 0;
     }
 
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 .navbar-text {
     display: none;
 }

@@ -3,13 +3,7 @@
             @import "../style/nav.css";
         </style>
         <input type="checkbox" id="menu-switch" style="display:none;"/>
-        <label for="menu-switch">
-            <div class="navbar-logo">
-                <div class="navbar-icon">
-                    ▷
-                </div>
-            </div>
-        </label>
+        <label for="menu-switch" class="navbar-icon navbar-logo"></label>
         <div class="navbar-collapse">
             <div class="navbar-group">
                 <div class="navbar-item">
@@ -22,20 +16,20 @@
             </div>
             <div class="navbar-group">
                 <a class="navbar-item" id="navbar-index" href="../index.html">
-                    <div class="navbar-icon">⌂</div>
+                    <div class="navbar-icon">🏠</div>
                     <div class="navbar-text">home</div>
                 </a>
                 <a class="navbar-item" href="https://www.geogebra.org/classic" target="blanck">
-                    <div class="navbar-icon">🖩</div>
+                    <img class="navbar-icon" src="../icons/geogebra.svg">
                     <div class="navbar-text">GeoGebra</div>
                 </a>
                 <a class="navbar-item" href="assets/print.pdf"  target="blanck">
-                    <div class="navbar-icon">🗎</div>
+                    <img class="navbar-icon" src="../icons/pdf.svg">
                     <div class="navbar-text">pdf</div>
                 </a>
 
                 <a class="navbar-item" href="#" onclick="window.print();return false;">
-                    <div class="navbar-icon">⎙</div>
+                    <div class="navbar-icon">🖨</div>
                     <div class="navbar-text">print</div>
                 </a>
             </div>
