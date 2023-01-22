@@ -1,6 +1,6 @@
 .navbar {
 /*  THEME  */
-    --navbar-font-size: 16pt;
+    --navbar-font-size: 1em;
     --navbar-font: Helvetica, Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
     --navbar-text: #fff;
     --navbar-padding:0.5em;
@@ -83,8 +83,8 @@
     margin: 0;
     padding: 0;
     font-size: calc(2*var(--navbar-font-size));
-    height: calc(2*var(--navbar-font-size));
-    width: calc(2*var(--navbar-font-size));
+    height: var(--navbar-font-size);
+    width: var(--navbar-font-size);
     object-fit: contain;
 }
 
@@ -121,6 +121,9 @@ a {
 
 @media (max-width: 800px) {
     
+.navbar-logo {
+    padding-top: 0.2em;
+}
 
 .navbar-text {
     display: none;
