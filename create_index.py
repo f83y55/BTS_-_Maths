@@ -40,6 +40,9 @@ if __name__ == "__main__" :
     nav = file_load(os.path.join(MAINROOT, NAV))
     nav = nav.replace("@import \"../style/nav.css", "@import \"./style/nav.css")
     nav = nav.replace("src=\"../icons", "src=\"./icons")
+    nav = nav.replace("src=\"../icons", "src=\"./icons")
+    nav = nav.replace("href=\"../index.html", "href=\"./index.html")
+    nav = nav.replace("href=\"../links", "href=\"./links")
     html = html.replace('#####nav#####', nav)
     file_save("index.html", html)
             
