@@ -127,6 +127,8 @@ a {
 
 .navbar-text {
     display: none;
+    height: 0;
+    width: 0;
 }
 
 

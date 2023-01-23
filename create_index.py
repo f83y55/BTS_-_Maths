@@ -28,8 +28,9 @@ if __name__ == "__main__" :
     MAINROOT:str = '.'
     BRIQUE:str = "brique_index.html"
     NAV:str = os.path.join("nav", "nav.html")
+    EXT:tuple = ("fu", "hid")
     dc:dict = {}
-    ls:list = [element for element in os.listdir(os.path.join(MAINROOT)) if os.path.isdir(os.path.join(MAINROOT, element))]
+    ls:list = [element for element in os.listdir(os.path.join(MAINROOT)) if os.path.isdir(os.path.join(MAINROOT, element)) and not(element.endswith(EXT))]
     ls.sort()
     for rep in ls :
         for name in [element for element in os.listdir(os.path.join(MAINROOT, rep)) if element.endswith(".html")] :
