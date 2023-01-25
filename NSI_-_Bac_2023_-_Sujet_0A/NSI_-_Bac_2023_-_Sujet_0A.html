@@ -8,14 +8,862 @@
     <link rel="icon" href="../icons/logo.svg">
     <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
     <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/prism.css" rel="stylesheet" type="text/css"/>
     <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+    <script id="Prism-script" async src="../scripts/prism/prism.js"></script>
 </head>
 
 <body>
 <script id="replace_with_navbar" src="../scripts/fetch/fetch.js"></script>
+<div class="subbody">
         <h1 class="titre">NSI - Bac 2023 - Sujet 0A</h1>
 
+        <h2 class="section-nocounter">Exercice 1 (3 points)</h2>
+<div class="none">
+L’exercice porte sur les bases de données et les types construits de données.
+On pourra utiliser les mots clés SQL suivants : <code>AND, FROM, INSERT, INTO, JOIN, OR,
+ON, SELECT, SET, UPDATE, VALUES, WHERE</code>.<br>
+On étudie une base de données permettant la gestion de l’organisation d’un festival
+de musique de jazz, dont voici le schéma relationnel comportant trois relations :
+<ul>
+    <li>la relation <code>groupes (idgrp, nom, style, nb_pers)</code></li>
+    <li>la relation <code>(idmus, nom, prenom, instru, #idgrp)</code></li>
+    <li>la relation <code>concerts (idconc, scene, heure_debut, heure_fin, #idgrp)</code></li>
+</ul>
+Dans ce schéma relationnel :
+<ul>
+    <li>les clés primaires sont soulignées ;</li>
+    <li>les clés étrangères sont précédées d’un #.</li>
+</ul>
+Ainsi <code>concerts.idgrp</code> est une clé étrangère faisant référence à <code>groupes.idgrp</code>.
+Voici un extrait des tables <code>groupes</code>, <code>musiciens</code> et <code>concerts</code> :
+</div>
+<div class="arrangement">
+<style scoped>table{margin:1em;font-family:'Courier New', Courier, monospace;}</style>
+<table id="musiciens" class="mytable">
+    <caption>
+    musiciens
+    </caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">idmus</th>
+    <th class="table_row_0 table_column_2">nom</th>
+    <th class="table_row_0 table_column_3">prenom</th>
+    <th class="table_row_0 table_column_4">instru</th>
+    <th class="table_row_0 table_column_5">idgrp</th>
+  </tr>
+   <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">12</td>
+    <td class="table_row_1 table_column_2">'Parker'</td>
+    <td class="table_row_1 table_column_3">'Charlie'</td>
+    <td class="table_row_1 table_column_4">'trompette'</td>
+    <td class="table_row_1 table_column_5">96</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">13</td>
+    <td class="table_row_2 table_column_2">'Parker'</td>
+    <td class="table_row_2 table_column_3">'Charlie'</td>
+    <td class="table_row_2 table_column_4">'trombone'</td>
+    <td class="table_row_2 table_column_5">25</td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <td class="table_row_3 table_column_1">58</td>
+    <td class="table_row_3 table_column_2">'Dufler'</td>
+    <td class="table_row_3 table_column_3">'Candy'</td>
+    <td class="table_row_3 table_column_4">'saxophone'</td>
+    <td class="table_row_3 table_column_5">96</td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <td class="table_row_4 table_column_1">97</td>
+    <td class="table_row_4 table_column_2">'Miles'</td>
+    <td class="table_row_4 table_column_3">'Davis'</td>
+    <td class="table_row_4 table_column_4">'saxophone'</td>
+    <td class="table_row_4 table_column_5">87</td>
+  </tr>
+</table>
 
+<table id="groupes" class="mytable">
+    <caption>
+    groupes
+    </caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">idgrp</th>
+    <th class="table_row_0 table_column_2">nom</th>
+    <th class="table_row_0 table_column_3">style</th>
+    <th class="table_row_0 table_column_4">nb_pers</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">12</td>
+    <td class="table_row_1 table_column_2">'Weather Report'</td>
+    <td class="table_row_1 table_column_3">'Latin Jazz'</td>
+    <td class="table_row_1 table_column_4">5</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">25</td>
+    <td class="table_row_2 table_column_2">'Breckers Brothers'</td>
+    <td class="table_row_2 table_column_3">'Swing Jazz'</td>
+    <td class="table_row_2 table_column_4">4</td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <td class="table_row_3 table_column_1">87</td>
+    <td class="table_row_3 table_column_2">'Return to Forever'</td>
+    <td class="table_row_3 table_column_3">'Latin Jazz'</td>
+    <td class="table_row_3 table_column_4">8</td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <td class="table_row_4 table_column_1">96</td>
+    <td class="table_row_4 table_column_2">'The Jazz Messenger'</td>
+    <td class="table_row_4 table_column_3">'Free Jazz'</td>
+    <td class="table_row_4 table_column_4">3</td>
+  </tr>
+</table>
+
+</div>
+<div class="arrangement">
+
+<table id="concerts" class="mytable">
+    <caption>
+    concerts
+    </caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">idconc</th>
+    <th class="table_row_0 table_column_2">scene</th>
+    <th class="table_row_0 table_column_3">heure_debut</th>
+    <th class="table_row_0 table_column_4">heure_fin</th>
+    <th class="table_row_0 table_column_5">idgrp</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">10</td>
+    <td class="table_row_1 table_column_2">1</td>
+    <td class="table_row_1 table_column_3">'20h00'</td>
+    <td class="table_row_1 table_column_4">'20h45'</td>
+    <td class="table_row_1 table_column_5">12</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">24</td>
+    <td class="table_row_2 table_column_2">2</td>
+    <td class="table_row_2 table_column_3">'20h00'</td>
+    <td class="table_row_2 table_column_4">'20h45'</td>
+    <td class="table_row_2 table_column_5">15</td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <td class="table_row_3 table_column_1">36</td>
+    <td class="table_row_3 table_column_2">1</td>
+    <td class="table_row_3 table_column_3">'21h00'</td>
+    <td class="table_row_3 table_column_4">'22h00'</td>
+    <td class="table_row_3 table_column_5">96</td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <td class="table_row_4 table_column_1">45</td>
+    <td class="table_row_4 table_column_2">3</td>
+    <td class="table_row_4 table_column_3">'18h00'</td>
+    <td class="table_row_4 table_column_4">'18h30'</td>
+    <td class="table_row_4 table_column_5">87</td>
+  </tr>
+</table>
+</div>
+<div class="none">
+Figure 1 : Extrait des tables <code>groupes</code>, <code>musiciens</code> et <code>concerts</code>.
+</div>
+
+<div class="exo">
+    <ol>
+        <li>Citer les attributs de la table groupes.</li>
+        <li>Justifier que l’attribut <code>nom</code> de la table <code>musiciens</code> ne peut pas être une clé primaire.</li>
+        <li>En s'appuyant uniquement sur l’extrait des tables fourni dans la figure 1 écrire ce que renvoie la requête :
+            <pre><code class="language-sql">SELECT nom
+FROM groupes
+WHERE style = 'Latin Jazz';</code></pre>
+        </li>
+        <li>Le concert dont l’<code>idconc</code> est 36 finira à 22h30 au lieu de 22h00. Recopier sur la copie et compléter la requête SQL ci-dessous permettant de mettre à jour la relation concerts pour modifier l’horaire de fin de ce concert.
+<pre><code class="language-sql">UPDATE concerts
+SET ...
+WHERE ... ;</code></pre>
+        </li>
+        <li>Donner une requête SQL permettant de récupérer le nom de tous les groupes qui
+jouent sur la scène 1.</li>
+        <li>Fournir une requête SQL permettant d’ajouter dans la relation <code>groupes</code> le groupe 'Smooth Jazz Fourplay', de style ‘Free Jazz’, composé de 4 membres. Ce groupe aura un <code>idgrp</code> de 15.<br>
+Les données sont ensuite récupérées pour être analysées par la société qui produit
+les festivals de musique. Pour ce faire, elle utilise la programmation en Python afin
+d’effectuer certaines opérations plus complexes.<br>
+Elle stocke les données relatives aux musiciens sous forme d’un tableau de
+dictionnaires dans laquelle a été ajouté le nombre de concerts effectués par chaque
+musicien :
+<pre><code class="language-python">&gt;&gt;&gt; print(musiciens)
+[{'idmus': 12, 'nom': 'Parker', 'prenom': 'Charlie',
+'instru': 'trompette', 'idgrp' : 96, 'nb_concerts': 5},
+{'idmus': 13, 'nom': 'Parker', 'prenom': 'Charlie',
+'instru': 'trombone', 'idgrp' : 25, 'nb_concerts': 9},
+{'idmus': 58, 'nom': 'Dufler', 'prenom': 'Candy',
+'instru': 'saxophone', 'idgrp' : 96, 'nb_concerts': 4},
+{'idmus': 97, 'nom': 'Miles', 'prenom': 'Davis',
+'instru': 'saxophone', 'idgrp' : 87, 'nb_concerts': 2},
+...
+]
+&gt;</code></pre>
+        </li>
+        <li>Écrire la fonction <code>recherche_nom</code> ayant pour unique paramètre un tableau de dictionnaires (comme musiciens présenté précédemment) renvoyant un tableau
+contenant le nom de tous les musiciens ayant participé à au moins 4 concerts.</li>
+    </ol>
+</div>
+
+
+
+
+
+<h2 class="section-nocounter">Exercice 2 (3 points)</h2>
+<div class="none">
+    <b>L’exercice porte sur l’architecture matérielle, les réseaux et les systèmes
+d’exploitation.</b><br>
+Nous allons étudier les communications entre Bob et Alice. Ils communiquent au
+travers du réseau ci-dessous dont le protocole de routage est le protocole OSPF qui
+minimise le cout des communications :
+</div>
+<div class="arrangement">
+    <figure>
+        <img src="assets/fig2.png"/>
+        <figcaption>Figure 1 : Plan du réseau de communication entre Alice et Bob.</figcaption>
+</div>
+<div class="none">
+    LAN : réseau local ; WAN : réseau étendu ; R : routeur ; Sw : Switch <br>
+Une adresse IPv4 est composée de quatre octets soit 32 bits. Une adresse de sous-
+réseau avec la notation /n signifie que les n premiers bits de l’adresse correspondent
+à la partie « réseau » et les suivants à la partie « machine ».<br>
+L’adresse dont tous les bits de la partie « machine » sont à 0 est appelée adresse du
+réseau.<br>
+L’adresse dont tous les bits de la partie « machine » sont à 1 est appelée adresse de
+diffusion.<br>
+Ces adresses sont réservées et ne peuvent pas être attribuées à des machines.
+Le choix des routes empruntées par les paquets IP est uniquement basé sur le
+protocole OSPF. On prendra comme débit maximal de référence 10 000 Mbit/s.
+Le cout est alors calculé de la façon suivante : 
+\[\textrm{coût}=\frac{\textrm{débit maximal de référence}}{\textrm{débit du réseau concerné}}\]
+</div>
+<div class="exo">
+    <ol>
+        <li>La configuration IP partielle ci-dessous a été affichée sur l’un des ordinateurs :
+            <pre><code>IP hôte : 172.16.2.3
+IP passerelle : 172.16.2.253</code></pre>
+            Indiquer en justifiant si cette configuration appartient à l’ordinateur de Bob ou d’Alice.
+        </li>
+        <li>Le réseau WAN8 a un débit de 1 000 Mbit/s. Calculer le cout correspondant.</li>
+        <li>On donne les tables de routage des routeurs R1 à R5, dans lesquelles Pass. désigne
+la passerelle (qui correspond au routeur suivant) :
+<div class="arrangement">
+<table id="RouteurR1" class="mytable">
+    <caption>Routeur R1</caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Dest.</th>
+    <th class="table_row_0 table_column_2">Pass.</th>
+    <th class="table_row_0 table_column_3">Coût</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">LAN1</td>
+    <td class="table_row_1 table_column_2">-</td>
+    <td class="table_row_1 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">LAN2</td>
+    <td class="table_row_2 table_column_2">R2</td>
+    <td class="table_row_2 table_column_3">21</td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <td class="table_row_3 table_column_1">WAN1</td>
+    <td class="table_row_3 table_column_2">-</td>
+    <td class="table_row_3 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <td class="table_row_4 table_column_1">WAN2</td>
+    <td class="table_row_4 table_column_2">-</td>
+    <td class="table_row_4 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">WAN3</td>
+    <td class="table_row_5 table_column_2">R2</td>
+    <td class="table_row_5 table_column_3">10</td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">WAN4</td>
+    <td class="table_row_6 table_column_2">R2</td>
+    <td class="table_row_6 table_column_3">11</td>
+  </tr>
+  <tr class="table_row_tr_7">
+    <td class="table_row_7 table_column_1">WAN5</td>
+    <td class="table_row_7 table_column_2">R2</td>
+    <td class="table_row_7 table_column_3">10</td>
+  </tr>
+  <tr class="table_row_tr_8">
+    <td class="table_row_8 table_column_1">WAN6</td>
+    <td class="table_row_8 table_column_2">R2</td>
+    <td class="table_row_8 table_column_3">11</td>
+  </tr>
+  <tr class="table_row_tr_9">
+    <td class="table_row_9 table_column_1">WAN7</td>
+    <td class="table_row_9 table_column_2">R2</td>
+    <td class="table_row_9 table_column_3">11</td>
+  </tr>
+  <tr class="table_row_tr_10">
+    <td class="table_row_10 table_column_1">WAN8</td>
+    <td class="table_row_10 table_column_2">R2</td>
+    <td class="table_row_10 table_column_3">11</td>
+  </tr>
+</table>
+
+<table id="RouteurR2" class="mytable">
+    <caption>Routeur R2</caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Dest.</th>
+    <th class="table_row_0 table_column_2">Pass.</th>
+    <th class="table_row_0 table_column_3">Coût</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">LAN1</td>
+    <td class="table_row_1 table_column_2">R1</td>
+    <td class="table_row_1 table_column_3">10</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">LAN2</td>
+    <td class="table_row_2 table_column_2">R5</td>
+    <td class="table_row_2 table_column_3">11</td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <td class="table_row_3 table_column_1">WAN1</td>
+    <td class="table_row_3 table_column_2">-</td>
+    <td class="table_row_3 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <td class="table_row_4 table_column_1">WAN2</td>
+    <td class="table_row_4 table_column_2">R1</td>
+    <td class="table_row_4 table_column_3">10</td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">WAN3</td>
+    <td class="table_row_5 table_column_2">-</td>
+    <td class="table_row_5 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">WAN4</td>
+    <td class="table_row_6 table_column_2">R4</td>
+    <td class="table_row_6 table_column_3">1</td>
+  </tr>
+  <tr class="table_row_tr_7">
+    <td class="table_row_7 table_column_1">WAN5</td>
+    <td class="table_row_7 table_column_2">-</td>
+    <td class="table_row_7 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_8">
+    <td class="table_row_8 table_column_1">WAN6</td>
+    <td class="table_row_8 table_column_2">R5</td>
+    <td class="table_row_8 table_column_3">1</td>
+  </tr>
+  <tr class="table_row_tr_9">
+    <td class="table_row_9 table_column_1">WAN7</td>
+    <td class="table_row_9 table_column_2">R4</td>
+    <td class="table_row_9 table_column_3">1</td>
+  </tr>
+  <tr class="table_row_tr_10">
+    <td class="table_row_10 table_column_1">WAN8</td>
+    <td class="table_row_10 table_column_2">R5</td>
+    <td class="table_row_10 table_column_3">1</td>
+  </tr>
+</table>
+
+<table id="RouteurR3" class="mytable">
+    <caption>Routeur R3</caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Dest.</th>
+    <th class="table_row_0 table_column_2">Pass.</th>
+    <th class="table_row_0 table_column_3">Coût</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">LAN1</td>
+    <td class="table_row_1 table_column_2">R4</td>
+    <td class="table_row_1 table_column_3">21</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">LAN2</td>
+    <td class="table_row_2 table_column_2">R5</td>
+    <td class="table_row_2 table_column_3">20</td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <td class="table_row_3 table_column_1">WAN1</td>
+    <td class="table_row_3 table_column_2">R4</td>
+    <td class="table_row_3 table_column_3">11</td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <td class="table_row_4 table_column_1">WAN2</td>
+    <td class="table_row_4 table_column_2">-</td>
+    <td class="table_row_4 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">WAN3</td>
+    <td class="table_row_5 table_column_2">R4</td>
+    <td class="table_row_5 table_column_3">10</td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">WAN4</td>
+    <td class="table_row_6 table_column_2">-</td>
+    <td class="table_row_6 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_7">
+    <td class="table_row_7 table_column_1">WAN5</td>
+    <td class="table_row_7 table_column_2">R5</td>
+    <td class="table_row_7 table_column_3">10</td>
+  </tr>
+  <tr class="table_row_tr_8">
+    <td class="table_row_8 table_column_1">WAN6</td>
+    <td class="table_row_8 table_column_2">R5</td>
+    <td class="table_row_8 table_column_3">10</td>
+  </tr>
+  <tr class="table_row_tr_9">
+    <td class="table_row_9 table_column_1">WAN7</td>
+    <td class="table_row_9 table_column_2">R4</td>
+    <td class="table_row_9 table_column_3">10</td>
+  </tr>
+  <tr class="table_row_tr_10">
+    <td class="table_row_10 table_column_1">WAN8</td>
+    <td class="table_row_10 table_column_2">-</td>
+    <td class="table_row_10 table_column_3">-</td>
+  </tr>
+</table>
+
+</div>
+<div class="arrangement">
+
+<table id="RouteurR4" class="mytable">
+    <caption>Routeur R4</caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Dest.</th>
+    <th class="table_row_0 table_column_2">Pass.</th>
+    <th class="table_row_0 table_column_3">Coût</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">LAN1</td>
+    <td class="table_row_1 table_column_2">R2</td>
+    <td class="table_row_1 table_column_3">11</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">LAN2</td>
+    <td class="table_row_2 table_column_2">R2</td>
+    <td class="table_row_2 table_column_3">12</td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <td class="table_row_3 table_column_1">WAN1</td>
+    <td class="table_row_3 table_column_2">R2</td>
+    <td class="table_row_3 table_column_3">1</td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <td class="table_row_4 table_column_1">WAN2</td>
+    <td class="table_row_4 table_column_2">R3</td>
+    <td class="table_row_4 table_column_3">10</td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">WAN3</td>
+    <td class="table_row_5 table_column_2">-</td>
+    <td class="table_row_5 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">WAN4</td>
+    <td class="table_row_6 table_column_2">-</td>
+    <td class="table_row_6 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_7">
+    <td class="table_row_7 table_column_1">WAN5</td>
+    <td class="table_row_7 table_column_2">R2</td>
+    <td class="table_row_7 table_column_3">1</td>
+  </tr>
+  <tr class="table_row_tr_8">
+    <td class="table_row_8 table_column_1">WAN6</td>
+    <td class="table_row_8 table_column_2">R2</td>
+    <td class="table_row_8 table_column_3">2</td>
+  </tr>
+  <tr class="table_row_tr_9">
+    <td class="table_row_9 table_column_1">WAN7</td>
+    <td class="table_row_9 table_column_2">-</td>
+    <td class="table_row_9 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_10">
+    <td class="table_row_10 table_column_1">WAN8</td>
+    <td class="table_row_10 table_column_2">R2</td>
+    <td class="table_row_10 table_column_3">2</td>
+  </tr>
+</table>
+
+<table id="RouteurR5" class="mytable">
+    <caption>Routeur R5</caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Dest.</th>
+    <th class="table_row_0 table_column_2">Pass.</th>
+    <th class="table_row_0 table_column_3">Coût</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">LAN1</td>
+    <td class="table_row_1 table_column_2">R2</td>
+    <td class="table_row_1 table_column_3">11</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">LAN2</td>
+    <td class="table_row_2 table_column_2">R6</td>
+    <td class="table_row_2 table_column_3">10</td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <td class="table_row_3 table_column_1">WAN1</td>
+    <td class="table_row_3 table_column_2">R2</td>
+    <td class="table_row_3 table_column_3">1</td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <td class="table_row_4 table_column_1">WAN2</td>
+    <td class="table_row_4 table_column_2">R3</td>
+    <td class="table_row_4 table_column_3">10</td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">WAN3</td>
+    <td class="table_row_5 table_column_2">R2</td>
+    <td class="table_row_5 table_column_3">1</td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">WAN4</td>
+    <td class="table_row_6 table_column_2">R2</td>
+    <td class="table_row_6 table_column_3">2</td>
+  </tr>
+  <tr class="table_row_tr_7">
+    <td class="table_row_7 table_column_1">WAN5</td>
+    <td class="table_row_7 table_column_2">-</td>
+    <td class="table_row_7 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_8">
+    <td class="table_row_8 table_column_1">WAN6</td>
+    <td class="table_row_8 table_column_2">-</td>
+    <td class="table_row_8 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_9">
+    <td class="table_row_9 table_column_1">WAN7</td>
+    <td class="table_row_9 table_column_2">R2</td>
+    <td class="table_row_9 table_column_3">2</td>
+  </tr>
+  <tr class="table_row_tr_10">
+    <td class="table_row_10 table_column_1">WAN8</td>
+    <td class="table_row_10 table_column_2">-</td>
+    <td class="table_row_10 table_column_3">-</td>
+  </tr>
+</table>
+
+
+
+
+</div>
+Écrire sur votre copie la table de routage du routeur R6.
+        </li>
+        <li>Bob envoie un message à Alice.<br>
+Énumérer dans l’ordre tous les routeurs par lesquels transitera ce message.
+        </li>
+        <li>Un routeur tombe en panne, le nouveau cout pour la route entre Bob et Alice est de
+111. Déterminer le nom du routeur en panne.
+        </li>
+    </ol>
+</div>
+
+<h2 class="section-nocounter">Exercice 3 (6 points)</h2>
+<div class="none">
+    <b>L’exercice porte sur les arbres binaires de recherche et la programmation objet.</b><br>
+Dans un entrepôt de e-commerce, un robot mobile autonome exécute successivement
+les tâches qu’il reçoit tout au long de la journée.<br>
+La mémorisation et la gestion de ces tâches sont assurées par une structure de
+données.
+</div>
+<div class="exo">
+<ol>
+    <li>Dans l'hypothèse où les tâches devraient être extraites de cette structure (pour être exécutées) dans le même ordre qu’elles ont été mémorisées, préciser si ce
+fonctionnement traduit le comportement d’une file ou d’une pile. Justifier.
+    <br>
+    En réalité, selon l'urgence des tâches à effectuer, on associe à chacune d’elles, lors de la mémorisation, un indice de priorité (nombre entier) distinct : il n'y a pas de valeur en double. <br>
+        <b>Plus cet indice est faible, plus la tâche doit être traitée prioritairement.</b><br>
+La structure de données retenue est assimilée à un arbre binaire de recherche (ABR)
+dans lequel chaque nœud correspond à une tâche caractérisée par son indice de
+priorité.
+<div class="rappel">
+Rappel : Dans un arbre binaire de recherche, chaque nœud est caractérisé par une
+valeur (ici l'indice de priorité), telle que chaque nœud du sous-arbre gauche a une
+valeur strictement inférieure à celle du nœud considéré, et que chaque nœud du sous-
+arbre droit possède une valeur strictement supérieure à celle-ci. <br>
+Cette structure de données présente l'avantage de mettre efficacement en œuvre
+l'insertion ou la suppression de nœuds, ainsi que la recherche d'une valeur.
+</div>
+<div class="arrangement">
+    <figure >
+        <img src="assets/fig1arbre.png" style="--width-print:8cm;">
+        <figcaption>Figure 1 : Exemple d’un arbre binaire</figcaption>
+    </figure>
+</div>
+    </li>
+    <li>En utilisant le vocabulaire couramment utilisé pour les arbres, préciser le terme qui correspond :
+        <ol type="a">
+            <li>au nombre de tâches restant à effectuer, c’est-à-dire le nombre total de nœuds de l’arbre ;</li>
+            <li>au nœud représentant la tâche restant à effectuer la plus ancienne ;</li>
+            <li>au nœud représentant la dernière tâche mémorisée (la plus récente).</li>
+        </ol>
+    </li>
+    <li>Lorsque le robot reçoit une nouvelle tâche, on déclare un nouvel objet, instance de
+        la classe <code>Noeud</code>, puis on l’insère dans l’arbre binaire de recherche (instance de la
+        classe <code>ABR</code>) du robot. Ces 2 classes sont définies comme suit :
+        <pre class="line-numbers"><code class="language-python">class Noeud:
+    def __init__(self, tache, indice):
+        self.tache = tache #ce que doit accomplir le robot
+        self.indice = indice #indice de priorité (int)
+        self.gauche = ABR() #sous-arbre gauche vide (ABR)
+        self.droite = ABR() #sous-arbre droit vide (ABR)
+
+class ABR:
+    #arbre binaire de recherche initialement vide
+    def __init__(self):
+        self.racine = None #arbre vide 
+        #Remarque : si l'arbre n'est pas vide, racine est
+        #une instance de la classe Noeud
+
+    def est_vide(self):
+        """renvoie True si l'arbre autoréférencé est vide,
+        False sinon"""
+        return self.racine == None
+
+    def insere(self, nouveau_noeud):
+        """insere un nouveau noeud, instance de la classe
+        Noeud, dans l’ABR"""
+        if self.est_vide():
+            self.racine = nouveau_noeud
+        elif self.racine.indice ...... nouveau_noeud.indice
+            self.racine.gauche.insere(nouveau_noeud)
+        else:
+            self.racine.droite.insere(nouveau_noeud)
+</code></pre>
+<ol type="a">
+    <li>Donner les noms des attributs de la classe <code>Noeud</code>.</li>
+    <li>Expliquer en quoi la méthode <code>insere</code> est dite récursive et justifier rapidement qu’elle se termine.</li>
+    <li>Indiquer le symbole de comparaison manquant dans le test à la ligne 26 de la
+        méthode <code>insere</code> pour que l’arbre binaire de recherche réponde bien à la
+définition de l’encadré « Rappel » précédente.</li>
+    <li>On considère le robot dont la liste des tâches est représentée par l’arbre de la
+figure 1. Ce robot reçoit, successivement et dans l’ordre, des tâches d’indice de
+priorité 11, 5, 16 et 7, sans avoir accompli la moindre tâche entretemps.<br>
+Recopier et compléter la figure 1 après l’insertion de ces nouvelles tâches.</li>
+    </ol>
+    </li>
+    <li>Avant d’insérer une nouvelle tâche dans l’arbre binaire de recherche, il faut s’assurer que son indice de priorité n’est pas déjà présent.<br>
+        Écrire une méthode <code>est_present</code> de la classe ABR qui répond à la description :
+         <pre class="line-numbers"><code class="language-python">   def est_present(self, indice_recherche) :
+        """renvoie True si l’indice de priorité indice_recherche
+        (int) passé en paramètre est déjà l’indice d’un nœud
+        de l’arbre, False sinon"""
+        </code></pre></li>
+        <li>
+             Comme le robot doit toujours traiter la tâche dont l’indice de priorité est leplus petit, on envisage un parcours infixe de l’arbre binaire de recherche.
+             <ol type="a">
+                <li>Donner l’ordre des indices de priorité obtenus à l’aide d’un parcours infixe de l’arbre binaire de recherche de la figure 1.</li>
+                <li>Expliquer comment exploiter ce parcours pour déterminer la tâche prioritaire.</li>
+             </ol>
+        </li>
+        <li>Afin de ne pas parcourir tout l'arbre, il est plus efficace de rechercher la tâche du nœud situé le plus à gauche de l'arbre binaire de recherche : il correspond à la tâche prioritaire.<br>
+            Recopier et compléter la méthode récursive <code>tache_prioritaire</code> de la classe <code>ABR</code>:Afin de ne pas parcourir tout l'arbre, il est plus efficace de rechercher la tâche du
+nœud situé le plus à gauche de l'arbre binaire de recherche : il correspond à la tâche
+prioritaire.
+Recopier et compléter la méthode récursive tache_prioritaire de la classe ABR:
+
+          <pre class="line-numbers"><code class="language-python">    def tache_prioritaire(self):
+        """renvoie la tache du noeud situé le plus
+        à gauche de l'ABR supposé non vide"""
+        if self.racine...........est_vide():   #pas de nœud plus à gauche
+            return self.racine..........
+        else:
+            return self.racine.gauche..........()
+            </code></pre></li>
+
+    <li>
+    Une fois la tâche prioritaire effectuée, il est nécessaire de supprimer le nœud
+correspondant pour que le robot passe à la tâche suivante :
+        <ul>
+            <li>Si le nœud correspondant à la tâche prioritaire est une feuille, alors il est simplement supprimé de l'arbre (cette feuille devient un arbre vide)</li>
+            <li>Si le nœud correspondant à la tâche prioritaire a un sous-arbre droit non vide, alors ce sous-arbre droit remplace le nœud prioritaire qui est alors écrasé, même s'il s'agit de la racine.</li>
+        </ul>
+Dessiner alors, pour chaque étape, l'arbre binaire de recherche (seuls les indices de
+priorités seront représentés) obtenu pour un robot, initialement sans tâche, et qui a,
+successivement dans l'ordre :
+<ul>
+    <li>étape 1 : reçu une tâche d'indice de priorité 14 à accomplir</li>
+    <li>étape 2 : reçu une tâche d'indice de priorité 11 à accomplir</li>
+    <li>étape 3 : reçu une tâche d'indice de priorité 8 à accomplir</li>
+    <li>étape 4 : accompli sa tâche prioritaire</li>
+    <li>étape 5 : reçu une tâche d'indice de priorité 12 à accomplir</li>
+    <li>étape 6 : accompli sa tâche prioritaire</li>
+    <li>étape 7 : accompli sa tâche prioritaire</li>
+    <li>étape 8 : reçu une tâche d'indice de priorité 15 à accomplir</li>
+</ul>
+    </li>
+
+</ol>
+
+</div>
+
+
+</div>
+<h1 class="titre">NSI - Bac 2023 - Sujet 0A - Corrigé</h1>
+<div class="subbody">
+<div class="exo"><b>Corrigé :</b>
+    <ol>
+        <li>
+            Les attributs de la table groupes sont : <code>idgrp, nom, style, nb_pers</code>.
+        </li>
+        <li>
+            Le même nom peut apparaitre plusieurs fois (dans le cas d'homonymes), ce qui est interdit pour une clé primaire.
+        </li>
+        <li>
+            Cette requête renvoie : <code>'Weather Report'</code> et <code>'Return to Forever'.</code>
+        </li>
+        <li><pre><code class="language-sql">UPDATE concerts
+SET heure_fin = ‘22h30’
+WHERE idconc = 36</code></pre></li>
+        <li><pre><code class="language-sql">SELECT nom
+FROM groupes
+JOIN concerts ON concerts.idgrp = groupes.idgrp
+WHERE scene = 1</code></pre></li>
+        <li><pre><code class="language-sql">INSERT INTO groupes
+VALUES
+(15, 'Smooth Jazz Fourplay', ‘Free Jazz’, 4)</code></pre></li>
+        <li><pre><code class="language-python">def recherche_nom(tab):
+    t = []
+    for d in tab:
+        if d['nb_concerts'] &gt;= 4 and d['nom'] not in t
+            t.append(d['nom'])
+    return t</code></pre></li>
+    </ol>
+</div>
+<div class="exo">
+    <ol>
+        <li>Nous avons un hôte d’adresse IP <code>172.16.2.3/24</code> qui appartient au réseau d’adresse réseau <code>172.16.2.0</code>. C’est l’ordinateur d’Alice qui appartient à ce réseau (voir schéma).</li>
+        <li>\(\textrm{cout} = \frac{10000}{1000} = 10\)</li>
+        <li>
+            <table id="RouteurR6" class="mytable">
+                <caption>Routeur R6</caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Dest.</th>
+    <th class="table_row_0 table_column_2">Pass.</th>
+    <th class="table_row_0 table_column_3">Coût</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">LAN1</td>
+    <td class="table_row_1 table_column_2">R5</td>
+    <td class="table_row_1 table_column_3">21</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">LAN2</td>
+    <td class="table_row_2 table_column_2">-</td>
+    <td class="table_row_2 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <td class="table_row_3 table_column_1">WAN1</td>
+    <td class="table_row_3 table_column_2">R5</td>
+    <td class="table_row_3 table_column_3">11</td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <td class="table_row_4 table_column_1">WAN2</td>
+    <td class="table_row_4 table_column_2">R5</td>
+    <td class="table_row_4 table_column_3">20</td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">WAN3</td>
+    <td class="table_row_5 table_column_2">R5</td>
+    <td class="table_row_5 table_column_3">11</td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">WAN4</td>
+    <td class="table_row_6 table_column_2">R5</td>
+    <td class="table_row_6 table_column_3">12</td>
+  </tr>
+  <tr class="table_row_tr_7">
+    <td class="table_row_7 table_column_1">WAN5</td>
+    <td class="table_row_7 table_column_2">R5</td>
+    <td class="table_row_7 table_column_3">10</td>
+  </tr>
+  <tr class="table_row_tr_8">
+    <td class="table_row_8 table_column_1">WAN6</td>
+    <td class="table_row_8 table_column_2">-</td>
+    <td class="table_row_8 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_9">
+    <td class="table_row_9 table_column_1">WAN7</td>
+    <td class="table_row_9 table_column_2">-</td>
+    <td class="table_row_9 table_column_3">-</td>
+  </tr>
+  <tr class="table_row_tr_10">
+    <td class="table_row_10 table_column_1">WAN8</td>
+    <td class="table_row_10 table_column_2">R5</td>
+    <td class="table_row_10 table_column_3">10</td>
+  </tr>
+</table></li>
+<li>Bob  R1 → R2 → R5 → R6 → Alice</li>
+<li>Le nouveau chemin est R1 → R2 → R4 → R6. On évite le routeur R5, c’est donc le
+routeur 5 qui est en panne.</li>
+    </ol>
+</div>
+<div class="exo">
+    <ol>
+        <li>Il s’agit d’une structure FIFO, c'est-à-dire une file</li>
+        <li>
+            <ol type="a">
+                <li>il s’agit de la taille d’un arbre</li>
+                <li>il s’agit de la racine de l’arbre</li>
+                <li>il s’agit de la feuille d’un arbre</li>
+            </ol>
+        </li>
+        <li>
+            <ol type="a">
+                <li>attributs de la classe Noeud : tache, indice, gauche et droite</li>
+                <li>La méthode <code>insere</code> est dite récursive, car elle s’appelle elle-même. Danscette méthode récursive, on trouve bien le traitement du cas de base, ce qui
+permet d’affirmer que cette méthode se termine.</li>
+                <li>il s’agit du signe &gt; (strictement supérieur)</li>
+                <li><img src="assets/figarbrecorrige.png" style="--width-print:5cm;"></li>
+            </ol>
+        </li>
+        <li><pre class="line-numbers"><code class="language-python">    def est_present(self, indice_recherche) :
+        """renvoie True si l’indice de priorité indice_recherche
+        (int) passé en paramètre est déjà l’indice d’un nœud
+        de l’arbre, False sinon"""
+        if self.est_vide():
+            return False
+        if self.racine.indice == indice_recherche:
+            return True
+        if self.racine.indice &gt; indice_recherche :
+            return self.racine.gauche.est_present(indice_recherche)
+        else :
+            return self.racine.droite.est_present(indice_recherche)
+
+            </code></pre>
+        </li>
+        <li>
+            <ol type="a">
+                <li>parcours infixe : 6 - 8 - 10 - 12 - 13 - 14</li>
+                <li>Le parcours infixe permet d’obtenir les valeurs des nœuds d’un arbre binaire de recherche dans un ordre croissant. Le parcours infixe va donc permettre
+d’obtenir les tâches à accomplir dans l’ordre des priorités</li>
+            </ol>
+         </li>
+         <li>
+            <pre class="line-numbers"><code class="language-python">   def tache_prioritaire(self):
+        """renvoie la tache du noeud situé le plus
+        à gauche de l'ABR supposé non vide"""
+        if self.racine.gauche.est_vide():   #pas de nœud plus à gauche
+            return self.racine.tache
+        else:
+            return self.racine.gauche.tache_prioritaire()
+            </code></pre>
+         </li>
+    <li>
+        <img src="assets/fignoeudscorrige.png" style="--width-print:7cm;">
+
+    </li>
+
+
+    </ol>
+</div>
+
+
+</div>
 
 </body>
 

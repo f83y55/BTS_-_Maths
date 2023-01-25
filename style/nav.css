@@ -50,6 +50,8 @@
 
 .navbar-collapse {
     display: flex;
+    margin: 0;
+    padding: 0;
     align-items: var(--item-align);
     width: 0;
     flex-direction: var(--navbar-direction);
@@ -92,6 +94,9 @@
 .navbar-item {
     display: flex;
     max-height: var(--navbar-size-max-y);
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     padding-left: var(--navbar-padding);
     padding-right: var(--navbar-padding);
     flex-direction: var(--item-direction);
@@ -120,15 +125,23 @@ a {
 
 
 @media (max-width: 800px) {
-    
-.navbar-logo {
-    padding-top: 0.2em;
-}
+
 
 .navbar-text {
     display: none;
     height: 0;
     width: 0;
+}
+
+img.navbar-icon{
+    margin: 0;
+    padding: 0;
+    height: 1em;
+    width: 1em;
+}
+
+.navbar-icon{
+    text-align: center;
 }
 
 

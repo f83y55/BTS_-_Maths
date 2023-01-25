@@ -1,0 +1,11 @@
+Dest.;Pass.;Coût
+LAN1;R1;10
+LAN2;R5;11
+WAN1;-;-
+WAN2;R1;10
+WAN3;-;-
+WAN4;R4;1
+WAN5;-;-
+WAN6;R5;1
+WAN7;R4;1
+WAN8;R5;1
