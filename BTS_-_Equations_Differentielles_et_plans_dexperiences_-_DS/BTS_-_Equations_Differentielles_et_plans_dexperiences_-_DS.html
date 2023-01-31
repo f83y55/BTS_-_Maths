@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <link rel="shortcut icon" href="../icons/logo.svg">
+    <link rel="icon" href="../icons/logo.svg">
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+<script id="replace_with_navbar" src="../scripts/fetch/fetch.js"></script>
+    <div class="subbody">
+        <h1 class="titre">BTS - Equations Différentielles et plans d'expériences - DS - A</h1>
+
+    <h2 class="section-nocounter">Exercice 1 : Équations Différentielles (10 points)</h2>
+
+    <div class="none">
+On considère deux réactions totales et successives d'ordre 1 dans un
+milieu homogène. Celles-ci concernent trois produits A, B et C, selon le schéma
+est le suivant :
+
+\(
+\textrm{A}_{[f]} \overset{k_1}{\longrightarrow} \textrm{B}_{[g]} \overset{k_2}{\longrightarrow}	\textrm{C}_{[h]}
+\)
+où \(f\), \(g\) et \(h\) sont les concentrations relatives des produits A, B et
+C à l'instant \(t\) (en minutes) (\(t \geqslant 0\)), concentrations que l'on souhaite déterminer en fonction de \(t\).<br>
+
+Les conditions initiales sont les suivantes : \(f(0) =1\), \(g(0) = 0\) et
+\(h(0) =0\).
+</div>
+<div class="exo">
+<ol>
+  <li> L'étude cinétique permet d'abord d'écrire l'équation différentielle
+
+      \( \left\{\begin{array}{ccl} (E_1) &amp; : &amp; f'(t) + 0{,}5f(t) = 0 \\
+                                    ({ci}_i) &amp; : &amp; f(0)=1 \\ 
+                                    \end{array}\right. \)
+
+	<ul>
+    <li>Vrai ou faux (pas de justification demandée) : \((E_1)\) est homogène.</li>
+  <li> Déterminer les solutions générales de \((E_1)\).
+		  </li>
+  <li> Déterminer la solution \(f\) qui vérifie la condition initiale \((ci_1)\).
+  </li>
+</ul>
+  </li>
+  <li> L'étude cinétique permet ensuite d'écrire l'équation \((E_2)\) vérifiée par \(g\) :
+\( \left\{\begin{array}{ccl} (E_2) &amp; : &amp; g'(t) + g(t) = 0{,}5\textrm{e}^{-0{,}5t} \\
+                                    ({ci}_2) &amp; : &amp; g(0)=0 \\ 
+                                    \end{array}\right. \)<br>
+        On veut vérifier que \(g(t) =\textrm{e}^{-0,5t}-\textrm{e}^{-t}\) est solution de \((E_2)\). Pour cela :
+
+	<ul>
+  <li>Calculer \(g(0)\) </li>
+  <li> Calculer \(g'(t)\) pour tout \(t\). </li>
+  <li> Simplifier l'expression \(g'(t)+g(t)\) et conclure.</li>
+</ul>
+  </li>
+  <li> D'après le principe de conservation de la matière, on a, pour tout
+nombre réel \(t\) positif : \(f(t)+g(t)+h(t) =f(0)+g(0)+h(0).\)
+Exprimer alors \(h(t)\) en fonction de \(t\). 
+<!-- \(h(t) =1-2\textrm{e}^{-0{,}5t}+\text{e}^{-t}\) -->
+  </li>
+  <li> En remarquant que \(g'(t) = \text{e}^{-0,5t} \left(-0,5 + \text{e}^{-0,5t} \right),\), déterminer l'instant \(t\) pour lequel \(g\) atteint un maximum.
+  </li>
+</ol>
+
+</div>
+
+    <h2 class="section-nocounter">Exercice 2 : Plans d'Expérience (10 points)</h2>
+
+
+<div class="none">
+    <table id="tab1" class="mytable">
+    <caption>
+        <b>Niveaux</b>
+    </caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Niveau</th>
+    <th class="table_row_0 table_column_2">Dilution</th>
+    <th class="table_row_0 table_column_4">Surface</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">-1</td>
+    <td class="table_row_1 table_column_2">10%</td>
+    <td class="table_row_1 table_column_4">5cm²</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">1</td>
+    <td class="table_row_2 table_column_2">90%</td>
+    <td class="table_row_2 table_column_4">10cm²</td>
+  </tr>
+</table>
+
+Un technicien étudie le courant d'électrolyse traversant une cellule
+contenant une solution d'un électrolyte donné. <br>
+Il souhaite optimiser ce courant en faisant varier deux facteurs :
+<ul>
+    <li>la dilution de la solution, comprise entre 10% et 90% ;</li>
+    <li>la surface de l'électrode comprise entre 5 et 10 cm²;</li>
+</ul>
+pour cela, il va réaliser un plan d'expérience 2² avec interaction, 
+construit selon l'algorithme de Yates.<br>
+<table id="tab2" class="mytable">
+    <caption><b>résultats des expériences</b></caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Expérience</th>
+    <th class="table_row_0 table_column_2">Dilution</th>
+    <th class="table_row_0 table_column_4">Surface</th>
+    <th class="table_row_0 table_column_5">Courant</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">1</td>
+    <td class="table_row_1 table_column_2">10%</td>
+    <td class="table_row_1 table_column_4">5cm²</td>
+    <td class="table_row_1 table_column_5">15%</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">2</td>
+    <td class="table_row_2 table_column_2">90%</td>
+    <td class="table_row_2 table_column_4">5cm²</td>
+    <td class="table_row_2 table_column_5">9%</td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">3</td>
+    <td class="table_row_5 table_column_2">10%</td>
+    <td class="table_row_5 table_column_4">10cm²</td>
+    <td class="table_row_5 table_column_5">17%</td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">4</td>
+    <td class="table_row_6 table_column_2">90%</td>
+    <td class="table_row_6 table_column_4">10cm²</td>
+    <td class="table_row_6 table_column_5">11%</td>
+  </tr>
+</table>
+
+
+Le courant traversant le circuit est ensuite mesuré et est exprimé par le
+rapport de ce courant à un courant servant de référence, ce qui permet de
+l'exprimer en pourcentage. Cette valeur \(Y\) est modélisée par une
+expression de la forme :
+
+\(Y=a_0+a_1 X_1+a_2X_2+a_{1 2}X_1X_2 + \varepsilon\)
+
+\(\varepsilon\) est une variable aléatoire qui suit une loi normale de
+moyenne nulle. Elle sera ignorée dans les calculs. <br>
+<ul>
+    <li>\(X_1\) représente la dilution ;</li>
+    <li>\(X_2\) la surface de l'électrode ;</li>
+</ul>
+
+
+<br>
+
+</div>
+
+<div class="exo">
+
+
+<ol>
+  <li> Compléter la matrice des effets sur le tableau ci-après.
+  </li>
+  <li> Calculer une estimation ponctuelle des coefficients du modèle et écrire l'expression complète du modèle.
+  </li>
+  <li> Certains effets sont-ils à négliger (justifier) ?
+  </li>
+  <li> Exprimer \(Y\) en fonction de \(X_2\) dans le cas d'une dilution de 50%.
+  </li>
+  <li> Que conseilleriez-vous au technicien afin d'obtenir un courant maximum ?
+  </li>
+</ol>
+
+<table id="tab3" class="mytable" style="--cell-width-print:0.8cm;--cell-height-print:0.8cm;">
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Expériences</th>
+    <th class="table_row_0 table_column_2">Global</th>
+    <th class="table_row_0 table_column_3">\(X_1\)</th>
+    <th class="table_row_0 table_column_4">\(X_2\)</th>
+    <th class="table_row_0 table_column_5">\(X_1X_2\)</th>
+    <th class="table_row_0 table_column_6">Passage du courant </th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">1</td>
+    <td class="table_row_1 table_column_2"></td>
+    <td class="table_row_1 table_column_3"></td>
+    <td class="table_row_1 table_column_4"></td>
+    <td class="table_row_1 table_column_5"></td>
+    <td class="table_row_1 table_column_6">15% </td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">2</td>
+    <td class="table_row_2 table_column_2"></td>
+    <td class="table_row_2 table_column_3"></td>
+    <td class="table_row_2 table_column_4"></td>
+    <td class="table_row_2 table_column_5"></td>
+    <td class="table_row_2 table_column_6">9% </td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">3</td>
+    <td class="table_row_5 table_column_2"></td>
+    <td class="table_row_5 table_column_3"></td>
+    <td class="table_row_5 table_column_4"></td>
+    <td class="table_row_5 table_column_5"></td>
+    <td class="table_row_5 table_column_6">17% </td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">4</td>
+    <td class="table_row_6 table_column_2"></td>
+    <td class="table_row_6 table_column_3"></td>
+    <td class="table_row_6 table_column_4"></td>
+    <td class="table_row_6 table_column_5"></td>
+    <td class="table_row_6 table_column_6">11% </td>
+  </tr>
+</table>
+</div>
+
+
+
+</div>
+
+<!-- sujet B -->
+    <div class="subbody">
+    <a href="assets/print.pdf" download>
+        <h1 class="titre">BTS - Equations Différentielles et plans d'expériences - DS - B</h1>
+    </a>
+
+    <h2 class="section-nocounter">Exercice 1 : Équations Différentielles (10 points)</h2>
+
+    <div class="none">
+On considère deux réactions totales et successives d'ordre 1 dans un
+milieu homogène. Celles-ci concernent trois produits A, B et C, selon le schéma
+est le suivant :
+
+\(
+\textrm{A}_{[f]} \overset{k_1}{\longrightarrow} \textrm{B}_{[g]} \overset{k_2}{\longrightarrow}	\textrm{C}_{[h]}
+\)
+où \(f\), \(g\) et \(h\) sont les concentrations relatives des produits A, B et
+C à l'instant \(t\) (en minutes) (\(t \geqslant 0\)), concentrations que l'on souhaite déterminer en fonction de \(t\).<br>
+
+Les conditions initiales sont les suivantes : \(f(0) =1\), \(g(0) = 0\) et
+\(h(0) =0\).
+</div>
+<div class="exo">
+<ol>
+  <li> L'étude cinétique permet d'abord d'écrire l'équation différentielle
+
+      \( \left\{\begin{array}{ccl} (E_1) &amp; : &amp; f'(t) + 0{,}5f(t) = 0 \\
+                                    ({ci}_i) &amp; : &amp; f(0)=1 \\ 
+                                    \end{array}\right. \)
+
+	<ul>
+    <li>Vrai ou faux (pas de justification demandée) : \((E_1)\) est homogène.</li>
+  <li> Déterminer les solutions générales de \((E_1)\).
+		  </li>
+  <li> Déterminer la solution \(f\) qui vérifie la condition initiale \((ci_1)\).
+  </li>
+</ul>
+  </li>
+  <li> L'étude cinétique permet ensuite d'écrire l'équation \((E_2)\) vérifiée par \(g\) :
+\( \left\{\begin{array}{ccl} (E_2) &amp; : &amp; g'(t) + g(t) = 0{,}5\textrm{e}^{-0{,}5t} \\
+                                    ({ci}_2) &amp; : &amp; g(0)=0 \\ 
+                                    \end{array}\right. \)<br>
+        On veut vérifier que \(g(t) =\textrm{e}^{-0,5t}-\textrm{e}^{-t}\) est solution de \((E_2)\). Pour cela :
+
+	<ul>
+  <li>Calculer \(g(0)\) </li>
+  <li> Calculer \(g'(t)\) pour tout \(t\). </li>
+  <li> Simplifier l'expression \(g'(t)+g(t)\) et conclure.</li>
+</ul>
+  </li>
+  <li> D'après le principe de conservation de la matière, on a, pour tout
+nombre réel \(t\) positif : \(f(t)+g(t)+h(t) =f(0)+g(0)+h(0).\)
+Exprimer alors \(h(t)\) en fonction de \(t\). 
+<!-- \(h(t) =1-2\textrm{e}^{-0{,}5t}+\text{e}^{-t}\) -->
+  </li>
+  <li> En remarquant que \(g'(t) = \text{e}^{-0,5t} \left(-0,5 + \text{e}^{-0,5t} \right),\), déterminer l'instant \(t\) pour lequel \(g\) atteint un maximum.
+  </li>
+</ol>
+
+</div>
+
+    <h2 class="section-nocounter">Exercice 2 : Plans d'Expérience (10 points)</h2>
+
+
+<div class="none">
+    <table id="tab1" class="mytable">
+    <caption>
+        <b>Niveaux</b>
+    </caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Niveau</th>
+    <th class="table_row_0 table_column_2">Dilution</th>
+    <th class="table_row_0 table_column_3">Température</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">-1</td>
+    <td class="table_row_1 table_column_2">10%</td>
+    <td class="table_row_1 table_column_3">50°C</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">1</td>
+    <td class="table_row_2 table_column_2">90%</td>
+    <td class="table_row_2 table_column_3">80°C</td>
+  </tr>
+</table>
+
+Un technicien étudie le courant d'électrolyse traversant une cellule
+contenant une solution d'un électrolyte donné. <br>
+Il souhaite optimiser ce courant en faisant varier trois facteurs :
+<ul>
+    <li>la dilution de la solution, comprise entre 10% et 90% ;</li>
+    <li>la température de la solution, comprise entre 50°C et 80°C ;</li>
+    <li>la surface de l'électrode comprise entre 5 et 10 cm²;</li>
+</ul>
+pour cela, il va réaliser un plan d'expérience 2²,
+construit selon l'algorithme de Yates.<br>
+<table id="tab2" class="mytable">
+    <caption><b>résultats des expériences</b></caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Expérience</th>
+    <th class="table_row_0 table_column_2">Dilution</th>
+    <th class="table_row_0 table_column_3">Température</th>
+    <th class="table_row_0 table_column_5">Courant</th>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">1</td>
+    <td class="table_row_5 table_column_2">10%</td>
+    <td class="table_row_5 table_column_3">50°C</td>
+    <td class="table_row_5 table_column_5">17%</td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">2</td>
+    <td class="table_row_6 table_column_2">90%</td>
+    <td class="table_row_6 table_column_3">50°C</td>
+    <td class="table_row_6 table_column_5">11%</td>
+  </tr>
+  <tr class="table_row_tr_7">
+    <td class="table_row_7 table_column_1">3</td>
+    <td class="table_row_7 table_column_2">10%</td>
+    <td class="table_row_7 table_column_3">80°C</td>
+    <td class="table_row_7 table_column_5">64%</td>
+  </tr>
+  <tr class="table_row_tr_8">
+    <td class="table_row_8 table_column_1">4</td>
+    <td class="table_row_8 table_column_2">90% </td>
+    <td class="table_row_8 table_column_3">80°C</td>
+    <td class="table_row_8 table_column_5">54%  </td>
+  </tr>
+</table>
+
+
+Le courant traversant le circuit est ensuite mesuré et est exprimé par le
+rapport de ce courant à un courant servant de référence, ce qui permet de
+l'exprimer en pourcentage. Cette valeur \(Y\) est modélisée par une
+expression de la forme :
+
+\(Y=a_0+a_1 X_1+a_2X_2+a_{1 2}X_1X_2 + \varepsilon\)<br>
+
+\(\varepsilon\) est une variable aléatoire qui suit une loi normale de
+moyenne nulle. Elle sera ignorée dans les calculs. <br>
+<ul>
+    <li>\(X_1\) représente la dilution ;</li>
+    <li>\(X_2\) la température ;</li>
+</ul>
+
+
+<br>
+
+</div>
+
+<div class="exo">
+
+
+<ol>
+  <li> Compléter la matrice des effets sur le tableau ci-après.
+  </li>
+  <li> Calculer une estimation ponctuelle des coefficients du modèle et écrire l'expression complète du modèle.
+  </li>
+  <li> Certains effets sont-ils à négliger (justifier) ?
+  </li>
+  <li> Exprimer \(Y\) en fonction de \(X_2\) dans le cas d'une dilution de 50%.
+  </li>
+  <li> Que conseilleriez-vous au technicien afin d'obtenir un courant maximum ?
+  </li>
+</ol>
+
+<table id="tab3" class="mytable" style="--cell-width-print:0.8cm;--cell-height-print:0.8cm;">
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Expériences</th>
+    <th class="table_row_0 table_column_2">Global</th>
+    <th class="table_row_0 table_column_3">\(X_1\)</th>
+    <th class="table_row_0 table_column_4">\(X_2\)</th>
+    <th class="table_row_0 table_column_5">\(X_{1 2}\)</th>
+    <th class="table_row_0 table_column_6">Passage du courant </th>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">1</td>
+    <td class="table_row_5 table_column_2"></td>
+    <td class="table_row_5 table_column_3"></td>
+    <td class="table_row_5 table_column_4"></td>
+    <td class="table_row_5 table_column_5"></td>
+    <td class="table_row_5 table_column_6">17% </td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">2</td>
+    <td class="table_row_6 table_column_2"></td>
+    <td class="table_row_6 table_column_3"></td>
+    <td class="table_row_6 table_column_4"></td>
+    <td class="table_row_6 table_column_5"></td>
+    <td class="table_row_6 table_column_6">11% </td>
+  </tr>
+  <tr class="table_row_tr_7">
+    <td class="table_row_7 table_column_1">3</td>
+    <td class="table_row_7 table_column_2"></td>
+    <td class="table_row_7 table_column_3"></td>
+    <td class="table_row_7 table_column_4"></td>
+    <td class="table_row_7 table_column_5"></td>
+    <td class="table_row_7 table_column_6">64% </td>
+  </tr>
+  <tr class="table_row_tr_8">
+    <td class="table_row_8 table_column_1">4</td>
+    <td class="table_row_8 table_column_2"></td>
+    <td class="table_row_8 table_column_3"></td>
+    <td class="table_row_8 table_column_4"></td>
+    <td class="table_row_8 table_column_5"></td>
+    <td class="table_row_8 table_column_6">54% </td>
+  </tr>
+</table>
+</div>
+
+
+
+</div>
+<!--Sujet C-->
+    <div class="subbody">
+    <a href="assets/print.pdf" download>
+        <h1 class="titre">BTS - Equations Différentielles et plans d'expériences - DS - C</h1>
+    </a>
+
+    <h2 class="section-nocounter">Exercice 1 : Équations Différentielles (10 points)</h2>
+
+    <div class="none">
+On considère deux réactions totales et successives d'ordre 1 dans un
+milieu homogène. Celles-ci concernent trois produits A, B et C, selon le schéma
+est le suivant :
+
+\(
+\textrm{A}_{[f]} \overset{k_1}{\longrightarrow} \textrm{B}_{[g]} \overset{k_2}{\longrightarrow}	\textrm{C}_{[h]}
+\)
+où \(f\), \(g\) et \(h\) sont les concentrations relatives des produits A, B et
+C à l'instant \(t\) (en minutes) (\(t \geqslant 0\)), concentrations que l'on souhaite déterminer en fonction de \(t\).<br>
+
+Les conditions initiales sont les suivantes : \(f(0) =1\), \(g(0) = 0\) et
+\(h(0) =0\).
+</div>
+<div class="exo">
+<ol>
+  <li> L'étude cinétique permet d'abord d'écrire l'équation différentielle
+
+      \( \left\{\begin{array}{ccl} (E_1) &amp; : &amp; f'(t) + 0{,}5f(t) = 0 \\
+                                    ({ci}_i) &amp; : &amp; f(0)=1 \\ 
+                                    \end{array}\right. \)
+
+	<ul>
+    <li>Vrai ou faux (pas de justification demandée) : \((E_1)\) est homogène.</li>
+  <li> Déterminer les solutions générales de \((E_1)\).
+		  </li>
+  <li> Déterminer la solution \(f\) qui vérifie la condition initiale \((ci_1)\).
+  </li>
+</ul>
+  </li>
+  <li> L'étude cinétique permet ensuite d'écrire l'équation \((E_2)\) vérifiée par \(g\) :
+\( \left\{\begin{array}{ccl} (E_2) &amp; : &amp; g'(t) + g(t) = 0{,}5\textrm{e}^{-0{,}5t} \\
+                                    ({ci}_2) &amp; : &amp; g(0)=0 \\ 
+                                    \end{array}\right. \)<br>
+        On veut vérifier que \(g(t) =\textrm{e}^{-0,5t}-\textrm{e}^{-t}\) est solution de \((E_2)\). Pour cela :
+
+	<ul>
+  <li>Calculer \(g(0)\) </li>
+  <li> Calculer \(g'(t)\) pour tout \(t\). </li>
+  <li> Simplifier l'expression \(g'(t)+g(t)\) et conclure.</li>
+</ul>
+  </li>
+  <li> D'après le principe de conservation de la matière, on a, pour tout
+nombre réel \(t\) positif : \(f(t)+g(t)+h(t) =f(0)+g(0)+h(0).\)
+Exprimer alors \(h(t)\) en fonction de \(t\). 
+<!-- \(h(t) =1-2\textrm{e}^{-0{,}5t}+\text{e}^{-t}\) -->
+  </li>
+  <li> En remarquant que \(g'(t) = \text{e}^{-0,5t} \left(-0,5 + \text{e}^{-0,5t} \right),\), déterminer l'instant \(t\) pour lequel \(g\) atteint un maximum.
+  </li>
+</ol>
+
+</div>
+
+    <h2 class="section-nocounter">Exercice 2 : Plans d'Expérience (10 points)</h2>
+
+
+<div class="none">
+    <table id="tab1" class="mytable">
+    <caption>
+        <b>Niveaux</b>
+    </caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Niveau</th>
+    <th class="table_row_0 table_column_2">Dilution</th>
+    <th class="table_row_0 table_column_3">Température</th>
+    <th class="table_row_0 table_column_4">Surface</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">-1</td>
+    <td class="table_row_1 table_column_2">10%</td>
+    <td class="table_row_1 table_column_3">50°C</td>
+    <td class="table_row_1 table_column_4">5cm²</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">1</td>
+    <td class="table_row_2 table_column_2">90%</td>
+    <td class="table_row_2 table_column_3">80°C</td>
+    <td class="table_row_2 table_column_4">10cm²</td>
+  </tr>
+</table>
+
+Un technicien étudie le courant d'électrolyse traversant une cellule
+contenant une solution d'un électrolyte donné. <br>
+Il souhaite optimiser ce courant en faisant varier trois facteurs :
+<ul>
+    <li>la dilution de la solution, comprise entre 10% et 90% ;</li>
+    <li>la température de la solution, comprise entre 50°C et 80°C ;</li>
+    <li>la surface de l'électrode comprise entre 5 et 10 cm²;</li>
+</ul>
+pour cela, il va réaliser un plan d'expérience 2³,
+sans tenir compte des interactions, 
+construit selon l'algorithme de Yates.<br>
+<table id="tab2" class="mytable">
+    <caption><b>résultats des expériences</b></caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Expérience</th>
+    <th class="table_row_0 table_column_2">Dilution</th>
+    <th class="table_row_0 table_column_3">Température</th>
+    <th class="table_row_0 table_column_4">Surface</th>
+    <th class="table_row_0 table_column_5">Courant</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">1</td>
+    <td class="table_row_1 table_column_2">10%</td>
+    <td class="table_row_1 table_column_3">50°C</td>
+    <td class="table_row_1 table_column_4">5cm²</td>
+    <td class="table_row_1 table_column_5">15%</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">2</td>
+    <td class="table_row_2 table_column_2">90%</td>
+    <td class="table_row_2 table_column_3">50°C</td>
+    <td class="table_row_2 table_column_4">5cm²</td>
+    <td class="table_row_2 table_column_5">9%</td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <td class="table_row_3 table_column_1">3</td>
+    <td class="table_row_3 table_column_2">10%</td>
+    <td class="table_row_3 table_column_3">80°C</td>
+    <td class="table_row_3 table_column_4">5cm²</td>
+    <td class="table_row_3 table_column_5">61%</td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <td class="table_row_4 table_column_1">4</td>
+    <td class="table_row_4 table_column_2">90%</td>
+    <td class="table_row_4 table_column_3">80°C</td>
+    <td class="table_row_4 table_column_4">5cm²</td>
+    <td class="table_row_4 table_column_5">49%</td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">5</td>
+    <td class="table_row_5 table_column_2">10%</td>
+    <td class="table_row_5 table_column_3">50°C</td>
+    <td class="table_row_5 table_column_4">10cm²</td>
+    <td class="table_row_5 table_column_5">17%</td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">6</td>
+    <td class="table_row_6 table_column_2">90%</td>
+    <td class="table_row_6 table_column_3">50°C</td>
+    <td class="table_row_6 table_column_4">10cm²</td>
+    <td class="table_row_6 table_column_5">11%</td>
+  </tr>
+  <tr class="table_row_tr_7">
+    <td class="table_row_7 table_column_1">7</td>
+    <td class="table_row_7 table_column_2">10%</td>
+    <td class="table_row_7 table_column_3">80°C</td>
+    <td class="table_row_7 table_column_4">10cm²</td>
+    <td class="table_row_7 table_column_5">64%</td>
+  </tr>
+  <tr class="table_row_tr_8">
+    <td class="table_row_8 table_column_1">8</td>
+    <td class="table_row_8 table_column_2">90% </td>
+    <td class="table_row_8 table_column_3">80°C</td>
+    <td class="table_row_8 table_column_4">10cm²</td>
+    <td class="table_row_8 table_column_5">54%  </td>
+  </tr>
+</table>
+</div>
+<div class="none">
+Le courant traversant le circuit est ensuite mesuré et est exprimé par le
+rapport de ce courant à un courant servant de référence, ce qui permet de
+l'exprimer en pourcentage. Cette valeur \(Y\) est modélisée par une
+expression de la forme :
+
+\(Y=a_0+a_1 X_1+a_2X_2+a_3X_3 + \varepsilon\)
+
+où l'on ne tient pas compte des interactions.<br>
+
+\(\varepsilon\) est une variable aléatoire qui suit une loi normale de
+moyenne nulle. Elle sera ignorée dans les calculs. <br>
+<ul>
+    <li>\(X_1\) représente la dilution ;</li>
+    <li>\(X_2\) la température ;</li>
+    <li>\(X_3\) la surface de l'électrode ;</li>
+</ul>
+
+
+<br>
+
+</div>
+
+<div class="exo">
+
+
+<ol>
+  <li> Compléter la matrice des effets sur le tableau ci-après.
+  </li>
+  <li> Calculer une estimation ponctuelle des coefficients du modèle et écrire l'expression complète du modèle.
+  </li>
+  <li> Certains effets sont-ils à négliger (justifier) ?
+  </li>
+  <li> Exprimer \(Y\) en fonction de \(X_2\) dans le cas d'une dilution de 50%.
+  </li>
+  <li> Que conseilleriez-vous au technicien afin d'obtenir un courant maximum ?
+  </li>
+</ol>
+
+<table id="tab3" class="mytable" style="--cell-width-print:0.8cm;--cell-height-print:0.8cm;">
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Expériences</th>
+    <th class="table_row_0 table_column_2">Global</th>
+    <th class="table_row_0 table_column_3">\(X_1\)</th>
+    <th class="table_row_0 table_column_4">\(X_2\)</th>
+    <th class="table_row_0 table_column_5">\(X_3\)</th>
+    <th class="table_row_0 table_column_6">Passage du courant </th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">1</td>
+    <td class="table_row_1 table_column_2"></td>
+    <td class="table_row_1 table_column_3"></td>
+    <td class="table_row_1 table_column_4"></td>
+    <td class="table_row_1 table_column_5"></td>
+    <td class="table_row_1 table_column_6">15% </td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">2</td>
+    <td class="table_row_2 table_column_2"></td>
+    <td class="table_row_2 table_column_3"></td>
+    <td class="table_row_2 table_column_4"></td>
+    <td class="table_row_2 table_column_5"></td>
+    <td class="table_row_2 table_column_6">9% </td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <td class="table_row_3 table_column_1">3</td>
+    <td class="table_row_3 table_column_2"></td>
+    <td class="table_row_3 table_column_3"></td>
+    <td class="table_row_3 table_column_4"></td>
+    <td class="table_row_3 table_column_5"></td>
+    <td class="table_row_3 table_column_6">61% </td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <td class="table_row_4 table_column_1">4</td>
+    <td class="table_row_4 table_column_2"></td>
+    <td class="table_row_4 table_column_3"></td>
+    <td class="table_row_4 table_column_4"></td>
+    <td class="table_row_4 table_column_5"></td>
+    <td class="table_row_4 table_column_6">49% </td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">5</td>
+    <td class="table_row_5 table_column_2"></td>
+    <td class="table_row_5 table_column_3"></td>
+    <td class="table_row_5 table_column_4"></td>
+    <td class="table_row_5 table_column_5"></td>
+    <td class="table_row_5 table_column_6">17% </td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">6</td>
+    <td class="table_row_6 table_column_2"></td>
+    <td class="table_row_6 table_column_3"></td>
+    <td class="table_row_6 table_column_4"></td>
+    <td class="table_row_6 table_column_5"></td>
+    <td class="table_row_6 table_column_6">11% </td>
+  </tr>
+  <tr class="table_row_tr_7">
+    <td class="table_row_7 table_column_1">7</td>
+    <td class="table_row_7 table_column_2"></td>
+    <td class="table_row_7 table_column_3"></td>
+    <td class="table_row_7 table_column_4"></td>
+    <td class="table_row_7 table_column_5"></td>
+    <td class="table_row_7 table_column_6">64% </td>
+  </tr>
+  <tr class="table_row_tr_8">
+    <td class="table_row_8 table_column_1">8</td>
+    <td class="table_row_8 table_column_2"></td>
+    <td class="table_row_8 table_column_3"></td>
+    <td class="table_row_8 table_column_4"></td>
+    <td class="table_row_8 table_column_5"></td>
+    <td class="table_row_8 table_column_6">54% </td>
+  </tr>
+</table>
+</div>
+
+
+
+</div>
+
+
+</body>
+
+</html>
