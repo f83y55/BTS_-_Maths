@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <link rel="shortcut icon" href="../icons/logo.svg">
+    <link rel="icon" href="../icons/logo.svg">
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+<script id="replace_with_navbar" src="../scripts/fetch/fetch.js"></script>
+        <h1 class="titre">BTS - MathsSTI - TD Spectre 2</h1>
+
+<h2 class="section-nocounter">Rappels</h2>
+<div class="defi">
+        Un <b>développement en série de Fourier</b> d'un signal périodique s'écrit :
+        \(  \displaystyle\begin{array}{ccl}
+          f(t) &amp;=&amp; a_0 + a_1\cos(\omega t) + b_1\sin(\omega t) + \cdots + a_n\cos(n\omega t) + b_n\sin(n\omega t) + \cdots \\
+               &amp;=&amp; a_0+\displaystyle\sum_{n=1}^{+\infty}\left(a_n\cos(n\omega t) + b_n\sin(n\omega t)\right) \\
+          \end{array} \)
+        <ul>
+            <li> \(a_0 = \frac{1}{T}\displaystyle\int_k^{k+T}\,f(t)\,\textrm{d}t\) représente la composante continue du signal ;</li>
+            <li> les autres coefficients \(a_n\) et \(b_n\) sont rattachés à \(\cos\) et \(\sin\) ; ils indiquent la valeur max de l'harmonique de rang n ;</li>
+            <li> ils peuvent être en nombre infini (mais ils tendent à devenir de plus en plus petits lorsque n grandit, globalement)</li>
+            </ul>
+    </div>
+    <div class="prop">
+        <ul>
+            <li>L'harmonique de rang n s'écrit : \(h_n(t)=a_n\cos(n\omega t) + b_n\sin(n\omega t)\);</li>
+            <li>a pour valeur max <span class="surl">\(A_n = \sqrt{a_n^2+b_n^2}\)</span> ;</li>
+            <li>comme c'est une sinusoïde, elle a pour valeur efficace <span class="surl">\(H_n=\dfrac{A_n}{\sqrt{2}}=\sqrt{\dfrac{a_n^2+b_n^2}{2}}\)</span> ;</li>
+            <li>\(F_{\textrm{eff}} = \displaystyle\sqrt{\frac{1}{T}\int_k^{k+T}\,[f(t)]^2\,\textrm{d}t}\) est la valeur efficace de \(f\)</li>
+            <li><b>Th. de Parseval : \(F_{\textrm{eff}}^2 = a_0^2+\displaystyle\sum_{n=1}^\infty H_n^2\)</b> </li>
+            </ul>
+    </div>
+
+
+<h2 class="section">Valeurs efficaces et spectre - Créneau</h2>
+<div class="exo">
+    On s'intéresse au signal créneau \(f(t)\) ci-contre, avec \(A=1\) pour valeur max.<br>
+    <img src="assets/square.png" style="--width-print:5cm;float:right;">
+    <ol>
+        <li>Lire la période \(T\) et calculer la pulsation \(\omega\) et la valeur moyenne \(a_0\).</li>
+        <li>Quelle est la parité du signal ? Que peut-on en déduire pour les \(a_n\) \(n \geqslant 1\) ? </li>
+        <li>Justifier que la valeur efficace du signal est 1.</li>
+        <li>Utiliser <a href="assets/fig1.html"  target="blank">Geogebra</a> (page dynamique sur le <a href="f83y55.github.io/BTS_-_Maths" class="href-print">site</a>) pour obtenir les valeurs des coefficients \(a_n\) et remplir le tableau qui suit avec des valeurs approchées au centième.<br>
+            On rappelle que \(S_n\) donne le cumul des valeurs efficaces des rangs 0 jusqu'à n compris.</li>
+        <li>Entourer la valeur de n pour laquelle \(S_n\) dépasse 95% de la valeur efficace du signal.</li>
+    </ol>
+    </div>
+    <div class="arrangement">
+<table id="tab1" class="mytable" style="width:100%;">
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1"></th>
+    <th class="table_row_0 table_column_2">\( n=0 \)</th>
+    <th class="table_row_0 table_column_3">\( n=1 \)</th>
+    <th class="table_row_0 table_column_4">\( n=2 \)</th>
+    <th class="table_row_0 table_column_5">\( n=3 \)</th>
+    <th class="table_row_0 table_column_6">\( n=4 \)</th>
+    <th class="table_row_0 table_column_7">\( n=5 \)</th>
+    <th class="table_row_0 table_column_8">\( n=6 \)</th>
+    <th class="table_row_0 table_column_9">\( n=7 \)</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <th class="table_row_1 table_column_1">\( a_n \)</th>
+    <td class="table_row_1 table_column_2">0,5</td>
+    <td class="table_row_1 table_column_3"></td>
+    <td class="table_row_1 table_column_4"></td>
+    <td class="table_row_1 table_column_5"></td>
+    <td class="table_row_1 table_column_6"></td>
+    <td class="table_row_1 table_column_7"></td>
+    <td class="table_row_1 table_column_8"></td>
+    <td class="table_row_1 table_column_9"></td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <th class="table_row_2 table_column_1">\( b_n \)</th>
+    <td class="table_row_2 table_column_2">xxxxx</td>
+    <td class="table_row_2 table_column_3"></td>
+    <td class="table_row_2 table_column_4"></td>
+    <td class="table_row_2 table_column_5"></td>
+    <td class="table_row_2 table_column_6"></td>
+    <td class="table_row_2 table_column_7"></td>
+    <td class="table_row_2 table_column_8"></td>
+    <td class="table_row_2 table_column_9"></td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <th class="table_row_3 table_column_1">\( H_n \)</th>
+    <td class="table_row_3 table_column_2">1</td>
+    <td class="table_row_3 table_column_3"></td>
+    <td class="table_row_3 table_column_4"></td>
+    <td class="table_row_3 table_column_5"></td>
+    <td class="table_row_3 table_column_6"></td>
+    <td class="table_row_3 table_column_7"></td>
+    <td class="table_row_3 table_column_8"></td>
+    <td class="table_row_3 table_column_9"></td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <th class="table_row_4 table_column_1">\( S_n \)</th>
+    <td class="table_row_4 table_column_2"></td>
+    <td class="table_row_4 table_column_3"></td>
+    <td class="table_row_4 table_column_4"></td>
+    <td class="table_row_4 table_column_5"></td>
+    <td class="table_row_4 table_column_6"></td>
+    <td class="table_row_4 table_column_7"></td>
+    <td class="table_row_4 table_column_8"></td>
+    <td class="table_row_4 table_column_9"></td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <th class="table_row_5 table_column_1">\( \frac{S_n}{V_{\textrm{eff}}} \) en %</th>
+    <td class="table_row_5 table_column_2"></td>
+    <td class="table_row_5 table_column_3"></td>
+    <td class="table_row_5 table_column_4"></td>
+    <td class="table_row_5 table_column_5"></td>
+    <td class="table_row_5 table_column_6"></td>
+    <td class="table_row_5 table_column_7"></td>
+    <td class="table_row_5 table_column_8"></td>
+    <td class="table_row_5 table_column_9"></td>
+  </tr>
+</table>
+</div>
+
+<h2 class="section">Valeurs efficaces et spectre - Triangle</h2>
+<div class="exo">
+    <ol>
+        <li>On veut un signal triangulaire de valeur max 1 et de période 2, pair.<br>
+            Compléter par \(1+t\) ; \(1-t\) ; et 0 les ... dans la formule suivante, à entrer dans <a href="assets/fig2.html" target="blank">Geogebra</a> :<br>
+            <code>f(t) = Si(-1&lt;t&lt;0, ... , ...) +  Si(0&lt;t&lt;1, ... , ...)</code><br>
+            de manière à tracer un tel signal sur [-1;1].
+        </li>
+        <li>De la même manière que dans la partie précédente, compléter le tableau suivant en utilisant en utilisant Geogebra.<br>
+            On rappelle que la valeur efficace d'un signal triangulaire est sa valeur max divisée par \(\sqrt{3}\).
+        </li>
+        <li>
+            Tracer \( a_0 + a_1\cos(\omega t) + b_1\sin(\omega t) + a_2\cos(2\omega t) + b_2\sin(2\omega t) + a_3\cos(3\omega t) + b_3\sin(3\omega t) \)
+        </li>
+    </ol>
+</div>
+    <div class="arrangement">
+<table id="tab1" class="mytable" style="width:100%;">
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1"></th>
+    <th class="table_row_0 table_column_2">\( n=0 \)</th>
+    <th class="table_row_0 table_column_3">\( n=1 \)</th>
+    <th class="table_row_0 table_column_4">\( n=2 \)</th>
+    <th class="table_row_0 table_column_5">\( n=3 \)</th>
+    <th class="table_row_0 table_column_6">\( n=4 \)</th>
+    <th class="table_row_0 table_column_7">\( n=5 \)</th>
+    <th class="table_row_0 table_column_8">\( n=6 \)</th>
+    <th class="table_row_0 table_column_9">\( n=7 \)</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <th class="table_row_1 table_column_1">\( a_n \)</th>
+    <td class="table_row_1 table_column_2"></td>
+    <td class="table_row_1 table_column_3"></td>
+    <td class="table_row_1 table_column_4"></td>
+    <td class="table_row_1 table_column_5"></td>
+    <td class="table_row_1 table_column_6"></td>
+    <td class="table_row_1 table_column_7"></td>
+    <td class="table_row_1 table_column_8"></td>
+    <td class="table_row_1 table_column_9"></td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <th class="table_row_2 table_column_1">\( b_n \)</th>
+    <td class="table_row_2 table_column_2">xxxxx</td>
+    <td class="table_row_2 table_column_3"></td>
+    <td class="table_row_2 table_column_4"></td>
+    <td class="table_row_2 table_column_5"></td>
+    <td class="table_row_2 table_column_6"></td>
+    <td class="table_row_2 table_column_7"></td>
+    <td class="table_row_2 table_column_8"></td>
+    <td class="table_row_2 table_column_9"></td>
+  </tr>
+  <tr class="table_row_tr_3">
+    <th class="table_row_3 table_column_1">\( H_n \)</th>
+    <td class="table_row_3 table_column_2"></td>
+    <td class="table_row_3 table_column_3"></td>
+    <td class="table_row_3 table_column_4"></td>
+    <td class="table_row_3 table_column_5"></td>
+    <td class="table_row_3 table_column_6"></td>
+    <td class="table_row_3 table_column_7"></td>
+    <td class="table_row_3 table_column_8"></td>
+    <td class="table_row_3 table_column_9"></td>
+  </tr>
+  <tr class="table_row_tr_4">
+    <th class="table_row_4 table_column_1">\( S_n \)</th>
+    <td class="table_row_4 table_column_2"></td>
+    <td class="table_row_4 table_column_3"></td>
+    <td class="table_row_4 table_column_4"></td>
+    <td class="table_row_4 table_column_5"></td>
+    <td class="table_row_4 table_column_6"></td>
+    <td class="table_row_4 table_column_7"></td>
+    <td class="table_row_4 table_column_8"></td>
+    <td class="table_row_4 table_column_9"></td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <th class="table_row_5 table_column_1">\( \frac{S_n}{V_{\textrm{eff}}} \) en %</th>
+    <td class="table_row_5 table_column_2"></td>
+    <td class="table_row_5 table_column_3"></td>
+    <td class="table_row_5 table_column_4"></td>
+    <td class="table_row_5 table_column_5"></td>
+    <td class="table_row_5 table_column_6"></td>
+    <td class="table_row_5 table_column_7"></td>
+    <td class="table_row_5 table_column_8"></td>
+    <td class="table_row_5 table_column_9"></td>
+  </tr>
+</table>
+</div>
+
+
+
+
+
+
+</body>
+
+</html>
