@@ -1,0 +1,73 @@
+\documentclass[a4paper,12pt]{article} \usepackage{FBarticle} \mapage{Probabilités 2}{931} % document papier
+%\documentclass[9pt]{beamer}  \usepackage{FBbeamer} % \mapage{704}{Fonctions exponentielles} % présentation
+\begin{document}
+%\titre{titre}{BTS Blanc 2019}{Épreuve de Mathématiques}
+
+\titre{Probabilités 2}{Corrigé}{ --\Large Lois normale, binomiale, continues}
+
+
+\section*{Partie A : Étude des dimensions des tablettes}
+
+\begin{enumerate}[1.]
+\item 
+	\begin{enumerate}[a)]
+	\item On utilise \texttt{NormCD} ou \texttt{NormFrep} sur la calculatrice :\\
+	$P\left(\, 241,9\,\leqslant\, L\leqslant 243,1\, \right)\approx 0,9973$
+	\item Il y a $99,73\%$ de chances pour qu'une tablette soit compatible avec son étui.
+	\end{enumerate}
+\item 
+	\begin{enumerate}[a)]
+	\item 
+		\begin{center}\begin{tabular}{|c||c|c|c|c|} \hline
+		$\alpha$                 &~~~~$0,27$~~~~&~~~~$0,28$~~~~&~~~~$0,29$~~~~&~~~~$0,30$~~~~\\ \hline
+		$P\left(\, 166,8-\alpha\,\leqslant\, l\leqslant 166,8+\alpha\, \right)$& $0,9931$ & $0,9949$ & $0,9963$ & $0,9973$ \\ \hline
+		\end{tabular}\end{center}
+	\item On a $P\left(\, 166,8-\alpha\,\leqslant\, l\leqslant 166,8+\alpha\, \right)>0,995$ a partir de $\alpha=0,29$.
+	L'intervalle associé est donc $[166,8-0,29\,;\,166,8+0,29]=[166,51\,;\,168,09]$.
+	\end{enumerate}
+\end{enumerate}
+
+\section*{Partie B : Étude d'un défaut de l'étui}
+
+\begin{enumerate}[1.]
+\item $R$ suit une loi binomiale de paramètres $n=100$ et $p=0,015$.
+\item On utilise \texttt{BinomPD} ou \texttt{BinomFdP} sur la calculatrice :
+$P(R=2)\approx 0,253$, arrondie à $10^{-3}$. La probabilité qu'un lot de $100$ étuis en contienne deux défectueux des d'environ $0,253$.
+\item On utilise \texttt{BinomCD} ou \texttt{BinomFrep} sur la calculatrice :
+$P(R>5)=1-P(R\leqslant 5)\approx 0,004<0,02$, donc c'est vrai.
+\item $E(R)=np=1,5$ étuis défectueux, en moyenne.
+\item On utilise \texttt{BinomCD} ou \texttt{BinomFrep} sur la calculatrice :
+$P_{R\geqslant 6}(R=6)=\dfrac{P(\left\{R=6\right\}\cap\left\{R\geqslant6\right\})}{P(R\geqslant6)}=\dfrac{P(R=6)}{1-P(R\leqslant 5)}\approx\dfrac{0,0033}{0,0041}=0,805$
+
+\end{enumerate}
+
+\section*{Partie C : Étude des délais de livraison}
+
+\begin{enumerate}[1.]
+\item $P(0\leqslant D\leqslant15)=\displaystyle\int_0^{15}\,\dfrac{1}{8}\e^{\frac{-1}{8}t}\,\textrm{d}t=\left[-\e^{\frac{-1}{8}t}\right]_0^{15}=1-\e^{\frac{-15}{8}}\approx0,847$.
+\item
+	\begin{enumerate}[a)]
+	\item On utilise la dérivée du produit et de l'exponentielle :\\
+	$G'(t)
+	=\left({-t}{\e^{\frac{-1}{8}t}}-8\e^{\frac{-1}{8}t}\right)'
+	=-1\e^{\frac{-1}{8}t}-t\left(\frac{-1}{8}\right)\e^{\frac{-1}{8}t}-8\left(\frac{-1}{8}\right)\e^{\frac{-1}{8}t}
+	=\left(\cancel{-1}+\frac{t}{8}+\cancel{1}\right)\e^{\frac{-1}{8}t}
+	$\\
+	Donc la fonction $G$ est une primitive de $t \mapsto \frac{1}{8}t\e^{\frac{-1}{8}t}$.
+	\item 
+	$I(x)
+	=\displaystyle\int_0^{15}\,G'(t)\,\textrm{d}t
+	=G(x)-G(0)
+	=(-x-8)\e^{\frac{-1}{8}x}+8
+	$
+	\end{enumerate}
+	\item 
+	\begin{enumerate}[a)]
+	\item L'exponentielle tend vers $0$ lorsque $x\to+\infty$ et l'emporte, donc la limite en $+\infty$ de $I$ est $8$.
+	\item Le délai de livraison moyen est de $8$ jours.
+	\end{enumerate}
+\end{enumerate}
+
+
+
+\end{document}
