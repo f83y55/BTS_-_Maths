@@ -227,6 +227,10 @@ img:active {
     --width:100%;
     overflow-x: scroll;
 }
+.barm {
+    font-family: Monospace;
+    color: violet;
+}
 
 #fullpage {
   display: none;

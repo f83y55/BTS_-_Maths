@@ -629,7 +629,7 @@ class ABR:
         Noeud, dans l’ABR"""
         if self.est_vide():
             self.racine = nouveau_noeud
-        elif self.racine.indice ...... nouveau_noeud.indice
+        elif self.racine.indice ...... nouveau_noeud.indice:
             self.racine.gauche.insere(nouveau_noeud)
         else:
             self.racine.droite.insere(nouveau_noeud)
@@ -705,28 +705,38 @@ successivement dans l'ordre :
 </div>
 <h1 class="titre">NSI - Bac 2023 - Sujet 0A - Corrigé</h1>
 <div class="subbody">
-<div class="exo"><b>Corrigé :</b>
+<div class="exo"><span class="barm">(total 12 pts) </span>
+
     <ol>
-        <li>
+        <li><span class="barm">(1 pt) </span>
             Les attributs de la table groupes sont : <code>idgrp, nom, style, nb_pers</code>.
         </li>
-        <li>
+        <li><span class="barm">(1 pt) </span>
+
             Le même nom peut apparaitre plusieurs fois (dans le cas d'homonymes), ce qui est interdit pour une clé primaire.
         </li>
-        <li>
+        <li><span class="barm">(1 pt) </span>
+
             Cette requête renvoie : <code>'Weather Report'</code> et <code>'Return to Forever'.</code>
         </li>
-        <li><pre><code class="language-sql">UPDATE concerts
+        <li><span class="barm">(2 pts) </span>
+<pre><code class="language-sql">UPDATE concerts
 SET heure_fin = ‘22h30’
 WHERE idconc = 36</code></pre></li>
-        <li><pre><code class="language-sql">SELECT nom
+        <li><span class="barm">(2 pts) </span>
+
+            <pre><code class="language-sql">SELECT nom
 FROM groupes
 JOIN concerts ON concerts.idgrp = groupes.idgrp
 WHERE scene = 1</code></pre></li>
-        <li><pre><code class="language-sql">INSERT INTO groupes
+        <li><span class="barm">(2 pts) </span>
+
+            <pre><code class="language-sql">INSERT INTO groupes
 VALUES
 (15, 'Smooth Jazz Fourplay', ‘Free Jazz’, 4)</code></pre></li>
-        <li><pre><code class="language-python">def recherche_nom(tab):
+        <li><span class="barm">(3 pts) </span>
+
+            <pre><code class="language-python">def recherche_nom(tab):
     t = []
     for d in tab:
         if d['nb_concerts'] &gt;= 4 and d['nom'] not in t
@@ -734,11 +744,15 @@ VALUES
     return t</code></pre></li>
     </ol>
 </div>
-<div class="exo">
+<div class="exo"><span class="barm">(total 7 pts) </span>
+
     <ol>
-        <li>Nous avons un hôte d’adresse IP <code>172.16.2.3/24</code> qui appartient au réseau d’adresse réseau <code>172.16.2.0</code>. C’est l’ordinateur d’Alice qui appartient à ce réseau (voir schéma).</li>
-        <li>\(\textrm{cout} = \frac{10000}{1000} = 10\)</li>
-        <li>
+        <li><span class="barm">(1 pt) </span>
+Nous avons un hôte d’adresse IP <code>172.16.2.3/24</code> qui appartient au réseau d’adresse réseau <code>172.16.2.0</code>. C’est l’ordinateur d’Alice qui appartient à ce réseau (voir schéma).</li>
+        <li><span class="barm">(1 pt) </span>
+\(\textrm{cout} = \frac{10000}{1000} = 10\)</li>
+        <li><span class="barm">(2 pts) </span>
+
             <table id="RouteurR6" class="mytable">
                 <caption>Routeur R6</caption>
   <tr class="table_row_tr_0">
@@ -797,31 +811,45 @@ VALUES
     <td class="table_row_10 table_column_3">10</td>
   </tr>
 </table></li>
-<li>Bob  R1 → R2 → R5 → R6 → Alice</li>
-<li>Le nouveau chemin est R1 → R2 → R4 → R6. On évite le routeur R5, c’est donc le
+<li><span class="barm">(1 pt) </span>
+Bob  R1 → R2 → R5 → R6 → Alice</li>
+<li><span class="barm">(2 pts) </span>
+Le nouveau chemin est R1 → R2 → R4 → R6. On évite le routeur R5, c’est donc le
 routeur 5 qui est en panne.</li>
     </ol>
 </div>
-<div class="exo">
+<div class="exo"><span class="barm">(total 19 pts) </span>
+
     <ol>
-        <li>Il s’agit d’une structure FIFO, c'est-à-dire une file</li>
+        <li><span class="barm">(1 pt) </span>
+Il s’agit d’une structure FIFO, c'est-à-dire une file</li>
+
         <li>
             <ol type="a">
-                <li>il s’agit de la taille d’un arbre</li>
-                <li>il s’agit de la racine de l’arbre</li>
-                <li>il s’agit de la feuille d’un arbre</li>
+                <li><span class="barm">(1 pt) </span>
+il s’agit de la taille d’un arbre</li>
+                <li><span class="barm">(1 pt) </span>
+il s’agit de la racine de l’arbre</li>
+                <li><span class="barm">(1 pt) </span>
+il s’agit de la feuille d’un arbre</li>
             </ol>
         </li>
         <li>
             <ol type="a">
-                <li>attributs de la classe Noeud : tache, indice, gauche et droite</li>
-                <li>La méthode <code>insere</code> est dite récursive, car elle s’appelle elle-même. Danscette méthode récursive, on trouve bien le traitement du cas de base, ce qui
+                <li><span class="barm">(1 pt) </span>
+attributs de la classe Noeud : tache, indice, gauche et droite</li>
+                <li><span class="barm">(1 pt) </span>
+La méthode <code>insere</code> est dite récursive, car elle s’appelle elle-même. Danscette méthode récursive, on trouve bien le traitement du cas de base, ce qui
 permet d’affirmer que cette méthode se termine.</li>
-                <li>il s’agit du signe &gt; (strictement supérieur)</li>
-                <li><img src="assets/figarbrecorrige.png" style="--width-print:5cm;"></li>
+                <li><span class="barm">(1 pt) </span>
+il s’agit du signe &gt; (strictement supérieur)</li>
+                <li><span class="barm">(2 pts) </span>
+<img src="assets/figarbrecorrige.png" style="--width-print:5cm;"></li>
             </ol>
         </li>
-        <li><pre class="line-numbers"><code class="language-python">    def est_present(self, indice_recherche) :
+        <li><span class="barm">(3 pts) </span>
+
+            <pre class="line-numbers"><code class="language-python">    def est_present(self, indice_recherche) :
         """renvoie True si l’indice de priorité indice_recherche
         (int) passé en paramètre est déjà l’indice d’un nœud
         de l’arbre, False sinon"""
@@ -838,12 +866,15 @@ permet d’affirmer que cette méthode se termine.</li>
         </li>
         <li>
             <ol type="a">
-                <li>parcours infixe : 6 - 8 - 10 - 12 - 13 - 14</li>
-                <li>Le parcours infixe permet d’obtenir les valeurs des nœuds d’un arbre binaire de recherche dans un ordre croissant. Le parcours infixe va donc permettre
+                <li><span class="barm">(1 pt) </span>
+parcours infixe : 6 - 8 - 10 - 12 - 13 - 14</li>
+                <li><span class="barm">(1 pt) </span>
+Le parcours infixe permet d’obtenir les valeurs des nœuds d’un arbre binaire de recherche dans un ordre croissant. Le parcours infixe va donc permettre
 d’obtenir les tâches à accomplir dans l’ordre des priorités</li>
             </ol>
          </li>
-         <li>
+         <li><span class="barm">(3 pts) </span>
+
             <pre class="line-numbers"><code class="language-python">   def tache_prioritaire(self):
         """renvoie la tache du noeud situé le plus
         à gauche de l'ABR supposé non vide"""
@@ -853,7 +884,8 @@ d’obtenir les tâches à accomplir dans l’ordre des priorités</li>
             return self.racine.gauche.tache_prioritaire()
             </code></pre>
          </li>
-    <li>
+    <li><span class="barm">(2 pts) </span>
+
         <img src="assets/fignoeudscorrige.png" style="--width-print:7cm;">
 
     </li>
