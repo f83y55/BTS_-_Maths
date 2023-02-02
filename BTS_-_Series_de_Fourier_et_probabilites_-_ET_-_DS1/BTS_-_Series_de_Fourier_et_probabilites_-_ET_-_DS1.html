@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <link rel="shortcut icon" href="../icons/logo.svg">
+    <link rel="icon" href="../icons/logo.svg">
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <script id="replace_with_navbar" src="../scripts/fetch/fetch.js"></script>
+        <h1 class="titre">BTS - Séries de Fourier et probabilités - ET - DS1</h1>
+
+    <h2 class="section-nocounter">Exercice 1 - Fourier (4 points)</h2>
+
+    <div class="exo"><b>Signaux à tracer :</b><br>
+Tracer, ci-dessous, sur au moins deux périodes, les signaux dont les caractéristiques sont données ci-après :
+
+<ol>
+  <li>  \(h\) est un signal impair et \(4\)-périodique défini sur \(\left[ 0; 2 \right]\) par
+\(h(t)=\left|\begin{array}{l}  0 \textrm{ sur } \left[ 0 ; 1 \right[  \\
+				-1   \textrm{ sur } \left[ 1 ; 2\right]  \\
+                \end{array} \right.\)
+                <div class="arrangement"><img src="assets/signalvide2.png"/></div>
+  </li>
+  <li>  \(u\) est un signal pair et \(4\)-périodique défini sur \(\left[ 0; 2 \right]\) par \(u(t)=\left|\begin{array}{l}  t \textrm{ sur } \left[ 0 ; 1 \right[  \\
+				2-t   \textrm{ sur } \left[ 1 ; 2\right]  \\
+				      	\end{array} \right.\)
+                
+                <div class="arrangement"><img src="assets/signalvide2.png"/></div>
+</li>
+</ol>
+</div>
+
+
+
+    <h2 class="section-nocounter">Exercice 2 - Fourier (8 points)</h2>
+
+    <div class="exo">
+
+On considère la fonction \(f\), périodique de période \(T\), dont une représentation graphique est donnée par la figure ci-dessous :<br>
+<div class="arrangement"><img src="assets/fig1.png" style="--float:right;--width-print:8cm;"/></div>
+
+
+<ol>
+  <li> Déterminer la période \(T\) de la fonction \(f\).
+	  </li>
+  <li> Déterminer la valeur moyenne \(a_0\) de la fonction \(f\).<br>
+	  </li>
+  <li> Pour tout entier \(n\geq1\), on a \(b_n=0\). 
+      Justifier cette affirmation.
+	  </li>
+      <li> Pour tout entier \(n\geq1\), on a \(a_n=\dfrac{4}{T}\displaystyle\int_0^\frac{T}{2}\,f(t)\cos(n\omega t)\,\textrm{d}t\).<br> 
+  Démontrer, en calculant, que pour tout \(n\geq1\), on a :
+	\(a_n=\dfrac{4\sin\left(\dfrac{\pi}{3}n\right)}{\pi n}\)
+	  </li>
+</ol>
+
+</div>
+
+    <h2 class="section-nocounter">Exercice 3 - Probabilités (8 points)</h2>
+    <div class="none">
+
+        <p>En prévision d'une élection entre deux candidats A et B, un institut de sondage recueille les intentions de vote de futurs électeurs.<br>
+
+        Parmi les 1200 personnes qui ont répondu au sondage, 47% affirment vouloir voter pour le candidat A et les autres pour le candidat B.</p>
+        <p>
+Compte-tenu du profil des candidats, l'institut de sondage estime que 10% des personnes
+déclarant vouloir voter pour le candidat A ne disent pas la vérité et votent en réalité pour
+le candidat B, tandis que 20% des personnes déclarant vouloir voter pour le candidat B ne
+disent pas la vérité et votent en réalité pour le candidat A.<br>
+</p>
+On choisit au hasard une personne ayant répondu au sondage et on note :<br>
+<ul>
+    <li> A l'événement «La personne interrogée affirme vouloir voter pour le candidat A» ;</li>
+    <li> B l'événement «La personne interrogée affirme vouloir voter pour le candidat B» ;</li>
+    <li> V l'événement «La personne interrogée dit la vérité».</li>
+</ul>
+
+</div>
+<div class="exo">
+
+<ol>
+    <li>Construire un arbre de probabilités traduisant la situation.</li>
+    <li>Calculer la probabilité que la personne interrogée dise la vérité.</li>
+    <li>Sachant que la personne interrogée dit la vérité, calculer la probabilité qu'elle
+affirme vouloir voter pour le candidat A.</li>
+    <li>Démontrer que la probabilité que la personne choisie vote effectivement pour le candidat A est 0,529.</li>
+</ol>
+
+</div>
+
+
+</body>
+
+</html>
