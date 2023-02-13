@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <text
+     dominant-baseline="middle"
+     text-anchor="middle"
+     x="15"
+     y="15"
+     font-family="Verdana"
+     fill="grey"
+     stroke="black"
+     stroke-width="2"
+     font-size="15px"
+     id="text4">
+        Bonjour ! \( \pi \)
+  </text>  
+  <path
+    id="mypath"
+    d="M15,15 L80,80"
+    stroke="#999" 
+    stroke-width="2"
+    />
+  <text>
+    <textPath 
+      href="#mypath"
+      dominant-baseline="middle"
+      text-anchor="middle"
+      startOffset="50%"
+      >
+      Quick.
+    </textPath>
+  </text>
+
+
+<marker id="circlered" refX="2" refY="2"
+        markerWidth="2" markerHeight="2">
+      <circle cx="2" cy="2" r="10" fill="red" />
+    </marker>
+
+  <rect x="70" y="50" width="5" height="5" fill="lightblue">
+	  <point id="A" x="100%" y="50%" marker="url(#circlered)"/>
+	</rect>
+
+        <rect x="90" y="90" width="5" height="5" fill="lightgreen">
+	  <point id="B" x="0%" y="50%" marker="url(#circlered)"/>
+	</rect>
+
+	<line fill="grey"
+     stroke="black" stroke-width="3" marker-start="url(#circlered)" marker-end="url(#circlered)"/>
+</svg>
