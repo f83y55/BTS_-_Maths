@@ -64,13 +64,9 @@ pre {
 }
 
 ul, ol {margin: 0;}
+li {padding: var(--padding);}
 a {color: inherit; text-decoration: underline;}
 
-
-/*A Revoir*/
-li li::before {
-    color : lighter;
-    }
 
 
 figure {
@@ -202,7 +198,7 @@ img:active {
     border: 1px solid;
     border-color: rgba(0, 0, 0, min(calc(3*var(--border-opacity)),1));
     padding: var(--mytable-padding);
-    overflow-x: scroll;
+    overflow-x: hidden;
 }
 
 .mytable tr:first-child>th:first-child, .mytable tr:first-child>td:first-child 
@@ -230,6 +226,9 @@ img:active {
 .barm {
     font-family: Monospace;
     color: violet;
+}
+.hidden-web {
+    display: none;
 }
 
 #fullpage {
@@ -308,7 +307,6 @@ img:active {
       --shadow: 0.2em;
       --margin : 0.2em;
       --padding : 0.5em;
-      --float : right;
       --width-print: auto;
       --height-print: auto;
     }
@@ -316,7 +314,7 @@ img:active {
     nav {display: none;}
 
     html, body, .subbody {
-        display: block;
+        display: flex;
         font-family : var(--font-family); 
         font-size: var(--font-size);
     }
@@ -324,15 +322,14 @@ img:active {
     /*body                           {max-width: 210mm; max-height: 297mm;}*/
     .pagebreak                       {page-break-before: always;}
     .subbody+.subbody                {page-break-after: always;}
-    .titre, .section, .section-nocounter, .subsection, .subsection-nocounter, .subsubsection                                    {page-break-after: avoid!important;}
-    .titre+div, .section+div, .section-nocounter+div, .subsection+div, .subsection-nocounter+div, .subsubsection+div            {page-break-before: avoid!important;}
+    .titre+div, .section+div, .section-nocounter+div, .subsection+div, .subsection-nocounter+div, .subsubsection+div            {page-break-after: avoid!important;}
     .mytable, table, figure, img     {page-break-inside: avoid!important;}
-    div                              {page-break-inside: avoid;}
+    /*div                              {page-break-inside: avoid;}*/
     .mytable td>ol, .mytable td>ul, .mytable td>img, .mytable td>figure 
                                      {text-align: left;float: none;}
 
-    .mytable, img, img:active, figcaption {
-        --float-print: var(--float);
+    .mytable, img, img:active, canvas, figcaption {
+        --float-print: right;
         --width-print: auto;
         --height-print: auto;
         --cell-width-print: auto;
@@ -353,7 +350,7 @@ img:active {
     .mytable th, .mytable td {
         height: var(--cell-height-print);
         width: var(--cell-width-print);
-    }
+        }
 
     .surl {
         background-color: transparent;
@@ -405,6 +402,11 @@ img:active {
     .arrangement {
         flex-direction: row;
     }
+
+    .hidden-web {
+        display: inherit;
+    }
+
 
 
     .href-print::after{
