@@ -314,17 +314,17 @@ img:active {
     nav {display: none;}
 
     html, body, .subbody {
-        display: flex;
+        display: initial;
         font-family : var(--font-family); 
         font-size: var(--font-size);
     }
 
     /*body                           {max-width: 210mm; max-height: 297mm;}*/
-    .pagebreak                       {page-break-before: always;}
+    .pagebreak                       {page-break-after: always;}
     .subbody+.subbody                {page-break-after: always;}
-    .titre+div, .section+div, .section-nocounter+div, .subsection+div, .subsection-nocounter+div, .subsubsection+div            {page-break-after: avoid!important;}
-    .mytable, table, figure, img     {page-break-inside: avoid!important;}
-    /*div                              {page-break-inside: avoid;}*/
+    .titre+div, .section+div, .section-nocounter+div, .subsection+div, .subsection-nocounter+div, .subsubsection+div            {page-break-after: avoid;}
+    .mytable, table, figure, img     {page-break-inside: avoid;}
+    div                              {page-break-inside: avoid;}
     .mytable td>ol, .mytable td>ul, .mytable td>img, .mytable td>figure 
                                      {text-align: left;float: none;}
 

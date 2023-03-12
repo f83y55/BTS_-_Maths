@@ -15,8 +15,299 @@
 <script id="replace_with_navbar" src="../scripts/fetch/fetch.js"></script>
         <h1 class="titre">BTS - Statistique Inférentielle - Cours</h1>
 
+        <h2 class="section">Résultats préliminaires</h2>
+        <h3 class="subsection">Introduction</h3>
+        <div class="none">
+            <p>
+            <b>But : </b>On étudie un caractère réel (par exemple : taille, énergie, ...) sur une population en cherchant, à partir d'un échantillon de cette population, à retrouver les indicateurs du caractère (moyenne, écart-type, ...).
+            </p>
+            <p>
+            <b>Inférence : </b>Opération logique par laquelle on admet une proposition en vertu de sa liaison avec d'autres propositions déjà tenues pour vraies (le Robert).
+            </p>
+        </div>
+        <h3 class="subsection">Rappels</h3>
+        <div class="prop"><b>Rappels :</b>
+        <ul><li>
+            Lorsque \(X\) est une variable aléatoire :
+            <ul>
+                <li>\(\textrm{Var}(X) = \mathbb{E}(X^2)-\left(\mathbb{E}(X)\right)^2\) et \(\sigma(X) = \sqrt{\textrm{Var}(X)}\) &nbsp; (variance et écart-type)</li>
+            </ul></li>
+         <li>
+            si a et b sont deux constantes :
+            <ul>
+                <li>\(\mathbb{E}(aX+b)=a\mathbb{E}(X)+b\)</li>
+                <li>\(\textrm{Var}(aX+b)=a^2\textrm{Var}(X)\)</li>
+            </ul>
+        </li><li>
+            Lorsque \(S = X_1 + \cdots + X_n\) est une somme de variables aléatoires :
+            <ul>
+                <li>\(\mathbb{E}(S) = \mathbb{E}(X_1)+\cdots+\mathbb{E}(X_n)\) : les espérances s'ajoutent ; </li>
+                <li>\(\textrm{Var}(S) = \textrm{Var}(X_1)+\cdots+\textrm{Var}(X_n)\) : les variances s'ajoutent <b>si les variables aléatoires sont indépendantes</b>.</li>
+            </ul>
+        </li>
+        </ul>
+            </div>
+            <div class="exo">
+                Montrer que si \(X\) est une variable aléatoire d'espérance \(\mu\) et d'écart-type \(\sigma\), alors \(Z = \dfrac{X-\mu}{\sigma} \) est une variable aléatoire d'espérance 0 (on dit centée) et d'écart-type 1 (on dit réduite).<br>
+                Exprimer \(X\) en fonction de \(Z\) et compléter (a, b sont des constantes):
+                \(a\leqslant Z \leqslant b \Leftrightarrow \ldots\ldots\ldots \leqslant X \leqslant \ldots\ldots\ldots\)
+            </div>
+            <div class="exo">
+                \(X_1 , \ldots , X_n\) sont des variables aléatoires indépendantes. On note \(\overline{X}=\frac{1}{n}\left(X_1+\cdots+X_n\right)\).
+                <ol>
+                    <li>Montrer que \(\mathbb{E}\left(\overline{X}\right)=\frac{1}{n}\left(\mathbb{E}(X_1)+\cdots+\mathbb{E}(X_n)\right)\) et que \(\textrm{Var}\left(\overline{X}\right)=\frac{1}{n^2}\left(\textrm{Var}(X_1)+\cdots+\textrm{Var}(X_n)\right)\)</li>
+                    <li>En déduire que si tous les \(X_i\) ont même moyenne \(\mu\), même variance \(v\) et donc même écart-type \(\sigma\), on a :
+                        <ul>
+                            <li>\(\mathbb{E}\left(\overline{X}\right)=\mu\) ;</li>
+                            <li>\(\textrm{Var}\left(\overline{X}\right)=\dfrac{v}{n}\) ; en déduire que \(\sigma\left(\overline{X}\right)=\dfrac{\sigma}{\sqrt{n}}\)</li>
+                            </ul>
+                            </li>
+                    <li>Montrer que si les \(X_i\) suivent une loi de Bernoulli (\(X=1\) avec une probabilité \(p\), sinon \(X=0\)), alors :
+                        <ul>
+                            <li>\(\mathbb{E}(S)=np\) et \(\sigma(S)=\sqrt{np(1-p)}\) : en effet, une variable aléatoire suivant une loi binomiale est une somme de variables aléatoire indépendantes suivant une loi de Bernoulli de même paramètre \(p\).</li>
+                            <li>\(\mathbb{E}\left(\overline{X}\right) = p\)</li>
+                            <li>\(\sigma\left(\overline{X}\right) = \sqrt{\dfrac{p(1-p)}{n}} \)
+                            </li>
+                            </ul>
+
+                    </li>
+                </ol>
+            </div>
+            <div class="pagebreak"></div>
+
+        <h2 class="section">Modèle</h2>
+        <div class="defi">
+            <ul>
+                <li> Une <b>population</b> de taille N est modélisée par un ensemble de variables aléatoires \(\left\{Y_1,\dots,Y_N\right\}\), qui représentent le caractère mesuré sur chaque individu. <br> On suppose, sauf cas particulier, que ces variables aléatoires suivent la même loi et sont indépendantes.</li>
+                <li> On sélectionne n individus, qui forment un <b>échantillon</b> de taille n&lt;N ; on a donc un ensemble de variables aléatoires \(\left\{X_1,\ldots,X_n\right\}\), tel que, par exemple, \(X_1=Y_3\), \(X_2=Y_{14}\), ... </li>
+                <li> Une <b>réalisation</b> de cette échantillon consiste à donner à chaque variable aléatoire de l'échantillon une valeur réelle, selon la loi suivie par cette variable aléatoire : on mesure le caractère étudié sur l'échantillon. <br>
+                Une réalisation d'un n-échantillon se traduit donc par l'obtention de n valeurs : \(x_1,\ldots,x_n\) (notées en minuscule).</li>
+                <li> On appelle <b>estimateur</b> sur un échantillon de taille n fonction (à valeurs réelles) de n variables \(h(x_1,\ldots,x_n)\) ; <br>
+                    par exemple \(h(x_1,\ldots,x_n)=\frac{1}{n}\left(x_1+\cdots+x_n\right)\) (formule de la moyenne, notée \(\overline{x}\) en statistiques), ou bien \(h(x_1,\ldots,x_n)=x_1\times x_2\) (peu d'utilité).</li>
+                <li> \(h(X_1,\ldots,X_n)\) étant une variable aléatoire, on peut noter \(\mathbb{E}(f)\), si elle existe, l'<b>espérance</b> de l'estimateur \(f\). </li>
+                <li> Par essence, l'estimateur vise à approcher un paramètre de la population (par exemple la moyenne du caractère observé sur la population, une proportion, ...).<br>
+                    Ainsi, lorsque \(k\) est la notation du paramètre approché, on <b>peut noter</b> l'estimateur \(\widehat{k}\) (avec un accent circonflexe), lorsqu'il n'y a pas d'ambigüité.</li>
+                <li>Pour mesurer l'erreur entre l'estimation et la réalité, on utilise le <b>biais</b> \(\mathbb{B}\), défini par \(\mathbb{B}\left(\widehat{k}\right) = \mathbb{E}\left(\widehat{k}\right)-k\). <br>
+                    Lorsque son biais est nul, on dit que l'estimateur est <b>sans biais</b>.</li>
+        </div>
+        <div class="prop"> L'estimateur \(\widehat{\overline{x}} = \frac{1}{n}\left(x_1+\cdots+x_n\right)\) est sans biais. <br>
+            <b>Démonstration : </b> On note \(\mu\) la moyenne sur la population entière.<br>
+            \(\mathbb{B}\left(\widehat{\overline{X}}\right)
+            = \mathbb{E}\left(\frac{1}{n}\left(X_1+\cdots+X_n\right)\right)-\mu
+            = \frac{1}{n}\left(\mathbb{E}\left((X_1\right)+\cdots+\mathbb{E}\left(X_n\right)\right)-\mu
+            = \frac{1}{n}\left(\mu+\cdots+\mu\right)-\mu
+            = \frac{1}{\cancel{n}}\cancel{n}\mu-\mu=0 \)
+</div>
+<div class="exo">
+    On note \(\overline{X}\) la variable aléatoire définie par \(\overline{X}=\frac{1}{n}\left(X_1+\cdots+X_n\right)\) et on note \(V\) la variable aléatoire définie par \(V=\overline{X^2}-\overline{X}^2\).<br>
+    On suppose que \(X_1,\ldots,X_n\) ont toutes pour espérance \(\mu\) et pour variance \(v\).<br>
+    Démontrer que \(\mathbb{E}(V)=\dfrac{n-1}{n}v\) ; (utiliser \(\mathbb{E}(T^2)=\textrm{Var}(T)+\mathbb{E}(T)^2\)) ;<br>
+    en déduire que le calcul de la variance sur l'échantillon ne fournit pas un estimateur sans biais de la variance sur la population ;<br>
+    en déduire qu'un estimateur sans biais de la variance sur la population est donné par \(\dfrac{n}{n-1}V\).
+    </div>
+    <div class="defi"> <b>Écart-type ponctuel (ou corrigé)</b><br>
+        On utilise l'<b>écart-type ponctuel ou corrigé</b> \(s_n=\sqrt{\frac{n}{n-1}}\sigma_n\) comme estimateur de l'écart-type sur la population globale ; \(\sigma_n\) étant l'écart-type calculé sur un échantillon de taille n.
+</div>
+        <h2 class="section">Intervalle de confiance</h2>
+    <div class="none">
+                   On ne connaît pas la valeur moyenne µ d'un caractère observé sur la population.<br>
+        Pour calculer l'<b>intervalle de confiance</b> \(I_c\) de la moyenne µ <b>de risque 𝛼</b>
+        (ou <b>de confiance 1-𝛼</b>) à partir d'un échantillon E de taille n :
 
 
-</body>
+            <table class="mytable">
+                <tr>
+                    <th>confiance 1-𝛼</th>
+                    <td>0,99</td>
+                    <td>0,98</td>
+                    <td>0,95</td>
+                    <td>0,90</td>
+                </tr>
+                <tr>
+                    <th>risque 𝛼</th>
+                    <td>0,01</td>
+                    <td>0,02</td>
+                    <td>0,05</td>
+                    <td>0,10</td>
+                </tr>
+                <tr>
+                    <th>z</th>
+                    <td>2,58</td>
+                    <td>2,33</td>
+                    <td>1,96</td>
+                    <td>1,65</td>
+                </tr>
+            </table>
+        </div>
+        <div class="meth"><b>Intervalle de confiance d'une moyenne</b><br>
+             <ol>
+                <li>on détermine la valeur \(z\) telle que \(P(-z\leqslant Z \leqslant z) = 1-\alpha\),  (\(Z\) désignant une variable aléatoire suivant une loi normale centrée réduite) ;</li>
+                <li> on calcule la moyenne \(\overline{x}\) sur l'échantillon E.
+                    <ul>
+                        <li>si l'on connaît l'écart-type \(\sigma\) sur la population : <span class="surl">\(I_c = \left[\overline{x}-z\frac{\sigma}{\sqrt{n}} ; \overline{x}+z\frac{\sigma}{\sqrt{n}} \right] \)</span>
+                        </li>
+                        <li>si l'on ne connait pas l'écart-type sur la population, on utilise l'écart-type ponctuel \(s_n\) (corrigé) et :  <span class="surl">\(I_c = \left[\overline{x}-z\frac{s_n}{\sqrt{n}} ; \overline{x}+z\frac{s_n}{\sqrt{n}} \right] \)</span>
+</li>
+                    </ul>
+                </li>
+            </ol>
+ </div>
+  <div class="exo"><b>Intervalle de confiance d'une moyenne</b><br>
+    Une machine produit des tubes dont la longueur doit être fixée. On prélève 100 tubes dans la production : 
+    <table class="mytable">
+        <tr>
+            <th>Longueur</th>
+            <td>[994;998[</td>
+            <td>[998;1002[</td>
+            <td>[1002;1006[</td>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <td>26</td>
+            <td>70</td>
+            <td>4</td>
+        </tr>
+    </table>
+    <!-- µ=999.12 et sigma=2.01, s=2.02 -->
+    On s'intéresse à la longueur moyenne µ des tubes sur l'ensemble de la production.
+    <ol>
+                <li>Déterminer un intervalle de confiance au risque de 5%. </li>
+                <li>Déterminer un intervalle de confiance au risque de 1%. </li>
+                <li>1000mm est-il une moyenne réaliste ?</li>
+            </ol>
+        </div>
+        <div class="none">
+            On ne connaît pas la valeur p d'une proportion observée sur la population.<br>
+        Pour calculer l'<b>intervalle de confiance</b> \(I_c\) de la proportion p, <b>de risque 𝛼</b>
+        (ou <b>de confiance 1-𝛼</b>) à partir d'un échantillon E de taille n :
+        </div>
+        <div class="meth"><b>Intervalle de confiance d'une proportion</b><br>
+            <ol>
+                <li>on détermine la fréquence f observée sur l'échantillon E ;</li>
+                <li>lorsque p n'est pas très proche de 0 ou 1 et que n\(\geqslant\)30, on utilise la loi normale centrée réduite  pour déterminer la valeur \(z\) telle que \(P(-z\leqslant Z \leqslant z) = 1-\alpha\), sinon on utilise une loi binomiale (cf exercice) ;</li>
+                <li> 
+                    \(\sqrt{\frac{f(1-f)}{n-1}}\) étant une estimation ponctuelle de l'écart-type sur la population on a :  <span class="surl">\(I_c = \left[f-z\sqrt{\frac{f(1-f)}{n-1}} ; f+z\sqrt{\frac{f(1-f)}{n-1}} \right] \)</span>
+</li>
+                    </ul>
+                </li>
+            </ol>
+ </div>
+
+
+
+
+
+<div class="exo"><b>Intervalle de confiance d'une proportion</b><br>
+            D'après un sondage sur n=2501 personnes, \(\widehat{p}=51\%\) souhaitent voter pour le candidat A. On note \(p\) la proportion de personnes votantes pour A dans la population.
+            <ol>
+                <li>Déterminer un intervalle de confiance au risque de 5%. </li>
+                <li>Le candidat A est-il presque sûr (à 95%) d'être élu ?</li>
+                <li>Déterminer la taille n qu'aurait dû avoir l'échantillon si la réponse à la question précédente est négative</li>
+            </ol>
+        </div>
+
+        <h2 class="section">Tests de validité d'hypothèse</h2>
+        <div class="none">
+            On veut tester l'hypothèse qu'une certaine valeur \(a\), existante mais non connue, sur une population donnée, correspond bien à une valeur fixée \(A\), ou bien a «changé».
+        </div>
+        <div class="meth">
+
+            <ul>
+                <li>
+                    On prélève un échantillon de taille n dans la population.
+                </li>
+                <li> 
+                    On énonce l'hypothèse nulle, notée H<sub>0</sub>, qui correspond à une situation «inchangée» : \(H_0 : a=A\).
+                </li>
+                <li> 
+                    On détermine l'hypothèse alternative, notée H<sub>1</sub>, qui est l'hypothèse que l'on peut montrer avec le test : 3 possibilités.
+                </li>
+                <li> On fixe un niveau de confiance/risque et on détermine l'intervalle de test, noté \(I_t\), qui correspond à l'intervalle de confiance de risque \(\alpha\) sauf dans le cas d'un test unilatéral où on remplace une de ses bornes par l'infini.<br>
+                    L'extérieur de cet intervalle est appelé <b>zone critique</b>.
+                </li>
+                <li>
+                    On applique la <b>règle de décision</b> qui suit :
+                    <ul>
+                        <li>
+                            si \(\widehat{a}\), obtenu sur l'échantillon, appartient à \(I_t\), <b>on accepte \(H_0\) au niveau de confiance \(1-\alpha\)</b> ;
+                        </li>
+                        <li>
+ sinon \(\widehat{a}\) est dans la zone critique, et <b>on rejette \(H_0\) au seuil \(\alpha\)</b>.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="arrangement">
+                     <table class="mytable" style="float: none;">
+                    <tr>
+                    <th>test unilatéral à gauche</th> 
+                    <th>test bilatéral</th> 
+                    <th>test unilatéral à droite</th> 
+                    </tr>
+                    <tr>
+                        <td>\(H_1 : a\leqslant A\) </td>
+                        <td>\(H_1 : a\neq A\) </td>
+                        <td>\(H_1 : a\geqslant A\) </td>
+                    <tr>
+                        <td>\(I_t=\left[A-h;+\infty\right[\)</td>
+                        <td>\(I_t=\left[A-h;+A+h\right]\)</td>
+                        <td>\(I_t=\left[-\infty; A+h\right[\)</td>
+
+                    </tr>
+                    <tr>
+                    <td><img src="assets/figug.svg" style="--width-print:5.5cm;"></td>
+                    <td><img src="assets/figb.svg" style="--width-print:5.5cm;"></td>
+                    <td><img src="assets/figud.svg" style="--width-print:5.5cm;"></td>
+                    </tr>
+                    </table>
+                    </div>
+
+        </div>
+        <div class="exo">
+            Proposer un test visant à vérifier si le rythme cardiaque ralentit suite à un don du sang.
+        </div>
+        <div class="defi"><b>Erreur de première et deuxième espèce ; puissance</b>
+(lors d’un test, il y a un risque de se tromper)
+<table class="mytable">
+    <tr>
+        <td>Décision \ réalité</td>
+        <th> H<sub>0</sub> vraie</th>
+        <th> H<sub>1</sub> vraie</th>
+    </tr>
+        <th>H<sub>0</sub> acceptée</th>
+        <td>bonne décision \((1-\alpha)\)</td>
+        <td>risque \(\beta\) 2<sup>nde</sup> espèce</td>
+    </tr>
+   </tr>
+        <th>H<sub>1</sub> acceptée</th>
+        <td>risque \(\alpha\) 1<sup>re</sup> espèce</td>
+        <td>bonne décision \((1-\beta) = \)puissance</td>
+    </tr>
+</table>
+<ul>
+    <li>
+        l'erreur de <b>première espèce \(\alpha\)</b> correspond au risque de rejeter H<sub>0</sub> alors qu’elle est vraie (faux positif).
+        </li>
+        <li>l'erreur de <b>deuxième espèce \(\beta\)</b> correspond au risque d’accepter H<sub>0</sub> alors qu’elle est fausse (faux négatif). 
+            </li>
+            <li>
+                La <b>puissance du test</b> est le risque de rejeter H<sub>0</sub> alors qu’on doit en effet rejeter H<sub>0</sub>. </li>
+            </ul>
+
+
+
+        </div>
+        <div class="exo"><b>Test bilatéral relatif à une proportion : Jeu de pile ou face</b><br>
+            Pour vérifier qu'une pièce est bien équilibrée (non truquée), on jette n=100 fois cette pièce et on note \(X\) la variable aléatoire comptant le nombre de pile obtenus ; le but de l'exercice est de construire un test.
+            <ol>
+                <li>Formuler l'hypothèse nulle H<sub>0</sub> correspondant à une pièce bien équilibrée ; quelle est l'hypothèse alternative H<sub>1</sub> dans le cas d'un test bilatéral.</li>
+                <li>Calculer un intervalle de confiance au risque α de 5%, en récisant la zone critique, et en utilisant :
+                    <ul><li>une loi binomiale</li><li>une loi normale ; y a-t-il réellement une différence ?</li></ul></li>
+                <li>Énoncer la règle de decision.</li>
+                <li>On sait qu'il existe sur le marché des pièces truquées qui donnent pile dans 2 cas sur 3. Déterminer le risque β de seconde espèce (accepter que la pièce ne soit pas truquée sachant qu'elle l'est) et donner la puissance du test. </li>
+                <li>Recommencer dans le cas d'un dé (X compte le nombre de 6), on fixe le test à 50 lancers. Y a-t-il une différence entre l'utilisation de la loi normale et binomiale pour l'intervalle de fluctuation, dans ce cas ?</li>
+            </ol>
+        </div>
+
+ </body>
 
 </html>
