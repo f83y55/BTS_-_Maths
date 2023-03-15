@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <link rel="shortcut icon" href="../icons/logo.svg">
+    <link rel="icon" href="../icons/logo.svg">
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+    <script id="coloration" async src="../scripts/prism/prism.js"></script>
+</head>
+
+<body>
+<script id="replace_with_navbar" src="../scripts/fetch/fetch.js"></script>
+        <h1 class="titre">NSI - Bac 2022 - Sujet 1A</h1>
+
+        <h2 class="section-nocounter">Exercice 1</h2>
+        <div class="none">
+        <b>mots clés : </b> Base de données, SQL
+        </div>
+        <h3 class="subsection-nocounter">Partie 1</h3>
+        <div class="none">
+            <ol>
+                <li>Une clé primaire est un attribut d'une table qui permet de distinguer chacun des enregistrements de <b>cette même table</b>. Une clé étrangère est un attribut d'une table qui référence une clé primaire d'une <b>autre table</b>. </li>
+                <li>Les acteurs et les films disposant chacun d'une table propre, la table des rôles fait référence à deux attributs de ces tables.</li>
+            </ol>
+        </div>
+        <h3 class="subsection-nocounter">Partie 2</h3>
+<div class="none">
+            <ol>
+                <li><pre><code class="language-mysql">SELECT titre, annee FROM Film ;</code></pre></li>
+                <li><pre><code class="language-mysql">INSERT INTO Acteur 
+VALUES (1250, "YOUSSOUF", "Fathia") ;</code></pre></li>
+                <li>L'existence d'une clé étrangère #Idacteur dans la table Joue_Role empêche l'effacement de l'acteur ; on peut le modifier avec :
+                    <pre><code class="language-mysql">ALTER TABLE Joue_Role
+ADD CONSTRAINT Idacteur,
+FOREIGN KEY Idacteur REFERENCES Acteur.Idacteur
+ON DELETE CASCADE ;
+                </code></pre></li>
+                <li><pre><code class="language-mysql">SELECT realisateur_nom, realisateur_prenom FROM Realisateur
+JOIN Film ON Realisateur.Idrealisateur = Film.Idrealisateur
+WHERE Film.titre="Léon" ;</code></pre></li>
+                <li><pre><code class="language-mysql">SELECT acteur_nom, acteur_prenom FROM Acteur
+JOIN Joue_Role ON Acteur.Idacteur = Joue_Role.Idacteur
+JOIN Film ON Joue_Role.Idfilm = Film.Id.Idfilm
+WHERE Film.titre="Intouchables"</code></pre></li>
+            </ol>
+        </div>
+
+        <div class="pagebreak"></div>
+
+        <h2 class="section-nocounter">Exercice 2</h2>
+        <div class="none">
+        <b>mots clés : </b> Architecture matérielle, Architecture réseau, Routage
+        </div>
+        <h3 class="subsection-nocounter">Partie 1</h3>
+        <div class="none">
+        <ol>
+            <li>Le Raspberry Pi B à une RAM de 8Gio (d'après le tableau).</li>
+            <li>Un SSD est un support de stockage de donnès (accès assez rapides).</li>
+            <li>Un SoC consomme peu d'énergie et est peu cher.</li>
+        </ol>
+        </div>
+        <h3 class="subsection-nocounter">Partie 2</h3>
+        <div class="none">
+        <ol>
+            <li>D'après le masque 255.255.255.0, l'adresse du réseau «services» est 192.168.254.0 .</li>
+            <li>Seul le dernier des 4 nombres est utilisable, d'après le masque ; on a donc :
+            256 - 1 adresse réseau (192.168.254.0) - 1 adresse broadcast (192.168.254.0) - 2 interfaces routeur.</li>
+            <li>Le routeur 2 : 192.168.254.2 est la passerelle d'accès à internet.</li>
+        </ol>
+        </div>
+        <h3 class="subsection-nocounter">Partie 3</h3>
+        <div class="none">
+        <ol>
+            <li>Sur le schéma, le serveur DNS a pour IP 192.168.0.253, ce qui d'après la table ARP, correspond à l'adresse MAC 8A:FD:54:49:D0:CC.</li>
+            <li>Dans la couche transport : le protocole est UDP.</li>
+            <li>Dans la couche application : 192.168.254.201</li>
+            </ol>
+            </div>
+
+        <h3 class="subsection-nocounter">Partie 4</h3>
+        <div class="none">
+        <ol>
+            <li><table class="mytable">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Table de routage du routeur R4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>Destination</th>
+                        <th>Routeur suivant</th>
+                        <th>Distance</th>
+                    </tr>
+                    <tr>
+                        <th>R1</th>
+                        <td>R2</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th>R2</th>
+                        <td>R2</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <th>R3</th>
+                        <td>R2</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th>R5</th>
+                        <td>R6</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th>R6</th>
+                        <td>R6</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+                </table>
+</li>
+<li>Trajet : R1-R4-R6, soit 2 sauts</li>
+</ol>
+</div>
+
+</body>
+
+</html>
