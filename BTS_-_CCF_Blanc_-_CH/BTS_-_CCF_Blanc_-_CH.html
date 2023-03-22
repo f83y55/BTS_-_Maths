@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <link rel="shortcut icon" href="../icons/logo.svg">
+    <link rel="icon" href="../icons/logo.svg">
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+    <script language="javascript" type="text/javascript" src="../scripts/quadrillage/quadrillage.js"></script>
+
+</head>
+
+<body>
+<script id="replace_with_navbar" src="../scripts/fetch/fetch.js"></script>
+        <h1 class="titre">BTS - CCF Blanc - CH</h1>
+        <div class="none"><b class="hidden-web">Prénom NOM classe :</b>
+    <table id="rep0">
+            <script>
+                quadrillage("rep0", 1.5, 13, "right");
+            </script>
+      </table>
+</div>
+
+    <h2 class="section-nocounter">Exercice 1 : Plan d'expérience (10 points)</h2>
+
+
+<div class="none">
+    <table id="tab1" class="mytable">
+    <caption>
+        <b>Niveaux</b>
+    </caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Niveau</th>
+    <th class="table_row_0 table_column_2">Température</th>
+    <th class="table_row_0 table_column_4">Durée</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">-1</td>
+    <td class="table_row_1 table_column_2">50°C</td>
+    <td class="table_row_1 table_column_4">10 min</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">1</td>
+    <td class="table_row_2 table_column_2">100°C</td>
+    <td class="table_row_2 table_column_4">20 min</td>
+  </tr>
+</table>
+Pour établir un modèle du rendement en trichlorométhane, on réalise un plan factoriel d’expériences 2<sup>2</sup> (avec interaction) portant sur deux facteurs \(X_1\) et \(X_2\). Ce plan d’expériences est construit selon l’algorithme de Yates.
+<ul>
+    <li>\(X_1\) représente la température dans le réacteur, de 50°C à 100°C ;</li>
+    <li>\(X_2\) représente la durée de passage dans le réacteur, de 10 minutes à 20 minutes ;</li>
+</ul>
+</div>
+<div class="none">
+<table id="tab2" class="mytable">
+    <caption><b>résultats des expériences</b></caption>
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Expérience</th>
+    <th class="table_row_0 table_column_2">Température</th>
+    <th class="table_row_0 table_column_4">Durée</th>
+    <th class="table_row_0 table_column_5">Rendement</th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">1</td>
+    <td class="table_row_1 table_column_2">50°C</td>
+    <td class="table_row_1 table_column_4">10 min</td>
+    <td class="table_row_1 table_column_5">0,05</td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">2</td>
+    <td class="table_row_2 table_column_2">100°C</td>
+    <td class="table_row_2 table_column_4">10 min</td>
+    <td class="table_row_2 table_column_5">0,10</td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">3</td>
+    <td class="table_row_5 table_column_2">50°C</td>
+    <td class="table_row_5 table_column_4">20 min</td>
+    <td class="table_row_5 table_column_5">0,15</td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">4</td>
+    <td class="table_row_6 table_column_2">100°C</td>
+    <td class="table_row_6 table_column_4">20 min</td>
+    <td class="table_row_6 table_column_5">0,25</td>
+  </tr>
+</table>
+
+On suppose que le rendement Y du phénomène est modélisé par une expression de
+la forme :
+\[Y=a_0+a_1 X_1+a_2X_2+a_{1 2}X_1X_2 + \varepsilon\]
+où \(\varepsilon\) est une variable aléatoire qui suit une loi normale de
+moyenne nulle. Elle sera ignorée dans les calculs. <br>
+
+<br>
+
+</div>
+
+
+
+<div class="none">
+<ol>
+    <li> Compléter la matrice des effets sur le tableau ci-après :<br>
+        <table id="tab3" class="mytable" style="--cell-width-print:0.8cm;--cell-height-print:0.8cm;float:none;">
+  <tr class="table_row_tr_0">
+    <th class="table_row_0 table_column_1">Expériences</th>
+    <th class="table_row_0 table_column_2">Global</th>
+    <th class="table_row_0 table_column_3">\(X_1\)</th>
+    <th class="table_row_0 table_column_4">\(X_2\)</th>
+    <th class="table_row_0 table_column_5">\(X_1X_2\)</th>
+    <th class="table_row_0 table_column_6">\(Y\) </th>
+  </tr>
+  <tr class="table_row_tr_1">
+    <td class="table_row_1 table_column_1">1</td>
+    <td class="table_row_1 table_column_2"></td>
+    <td class="table_row_1 table_column_3"></td>
+    <td class="table_row_1 table_column_4"></td>
+    <td class="table_row_1 table_column_5"></td>
+    <td class="table_row_1 table_column_6"></td>
+  </tr>
+  <tr class="table_row_tr_2">
+    <td class="table_row_2 table_column_1">2</td>
+    <td class="table_row_2 table_column_2"></td>
+    <td class="table_row_2 table_column_3"></td>
+    <td class="table_row_2 table_column_4"></td>
+    <td class="table_row_2 table_column_5"></td>
+    <td class="table_row_2 table_column_6"></td>
+  </tr>
+  <tr class="table_row_tr_5">
+    <td class="table_row_5 table_column_1">3</td>
+    <td class="table_row_5 table_column_2"></td>
+    <td class="table_row_5 table_column_3"></td>
+    <td class="table_row_5 table_column_4"></td>
+    <td class="table_row_5 table_column_5"></td>
+    <td class="table_row_5 table_column_6"> </td>
+  </tr>
+  <tr class="table_row_tr_6">
+    <td class="table_row_6 table_column_1">4</td>
+    <td class="table_row_6 table_column_2"></td>
+    <td class="table_row_6 table_column_3"></td>
+    <td class="table_row_6 table_column_4"></td>
+    <td class="table_row_6 table_column_5"></td>
+    <td class="table_row_6 table_column_6"> </td>
+  </tr>
+</table>
+  </li>
+  <li> Calculer une estimation ponctuelle des coefficients du modèle et écrire l'expression complète du modèle.
+      <div style="clear: both;"><table id="rep1a"></table>
+      <script> quadrillage("rep1a", 8, 16.5, "none"); </script></div>
+      <div class="pagebreak"></div>
+      <div style="clear: both;"><table id="rep1b"></table>
+      <script> quadrillage("rep1b", 11, 16.5, "none"); </script></div>
+
+  </li>
+   <li> Certains effets sont-ils à négliger (discuter) ?
+      <div><table id="rep2"></table>
+      <script>quadrillage("rep2", 6, 16, "none");</script></div>
+      
+  </li>
+  <li> Exprimer \(Y\) en fonction de \(X_1\) dans le cas d'une durée de 15 minutes.
+      <div><table id="rep3"></table>
+      <script>quadrillage("rep3", 7.5, 16, "none");</script></div>
+
+  </li>
+</ol>
+
+
+</div>
+
+
+<h2 class="section-nocounter">Exercice 2 : Étude de la cinétique d’une réaction en chaîne (10 points)</h2>
+<div class="none">
+    <p>
+    On considère un réacteur dans lequel on fait réagir du CH<sub>4</sub> dans du Cl<sub>2</sub> en excès.<br>
+    Dans ce cas, on peut modéliser les réactions par des cinétiques d’ordre 1 :<br>
+    CH<sub>4</sub> → CH<sub>3</sub>Cl → CH<sub>2</sub>Cl<sub>2</sub> → ... (la réaction peut se poursuivre avec d'autres réactifs)
+    </p>
+    <p>
+    Le temps t est exprimé en minutes. <br>
+    Les valeurs approchées seront arrondies au centième le plus proche. <br>
+    [CH<sub>4</sub>](t) étant la concentration en CH<sub>4</sub> à l’instant t , on pose \( f(t) = \frac{\left[CH_4\right](t)}{\left[CH_4\right](0)}\), de manière à ce que l'on ait \(f(0)=100\%=1\).<br>
+Les lois cinétiques donnent l’équation différentielle suivante :
+\[ (E_1) :  f'(t) + 4f(t) = 0 \]
+<ol> 
+    <li> 
+        <ol type="a">
+            <li> Donner la solution générale de l’équation différentielle \((E_1)\). 
+            <div><table id="rep4"></table>
+            <script>quadrillage("rep4", 11, 16, "none");</script></div></li>
+
+            <li> Déterminer la solution de l’équation \((E_1)\) qui vérifie la condition initiale \(f(0) = 1\).
+            <div><table id="rep5"></table>
+            <script>quadrillage("rep5", 7, 16, "none");</script></div></li>
+
+        </ol>
+    </li>
+    <li>
+        [CH<sub>3</sub>Cl] étant la concentration en CH<sub>3</sub>Cl à l’instant t , on pose \(g(t) = [CH_3](t)\).
+        À l’instant t = 0, la concentration en CH<sub>3</sub>Cl est nulle, donc \(g(0) = 0\).<br>
+Les lois cinétiques donnent l’équation différentielle suivante :
+\[(E_2) :  y' + 3y = 4\textrm{e}^{-4t}\]
+<ol type="a">
+            <li> Écrire les solutions de l’équation différentielle homogène associée \(y' + 3y = 0\) (inutile de détailler).
+             <div><table id="rep6"></table>
+            <script>quadrillage("rep6", 1, 16, "none");</script></div></li>
+
+            <li> On pose \(s(t)=A\textrm{e}^{-4t}\) où \(A\) est une constante réelle.<br>
+                Calculer \(s'(t)+3s(t)\) en fonction de \(A\) et de \(t\).
+                       <div><table id="rep7"></table>
+            <script>quadrillage("rep7", 7, 16, "none");</script></div></li>
+
+            <li>En déduire pour quelle valeur de \(A\) la fonction \(s\) est une solution particulière de l’équation \((E_2)\).
+                       <div><table id="rep8"></table>
+            <script>quadrillage("rep8", 4, 16, "none");</script></div></li>
+
+</ol></li>
+            <li>En déduire les solutions générales de l’équation différentielle \((E_2)\).
+                       <div><table id="rep9"></table>
+            <script>quadrillage("rep9", 1.5, 16, "none");</script></div></li>
+
+            <li>Déterminer la solution de l’équation différentielle \((E_2)\) qui vérifie la condition initiale \(g(0) = 0\)
+           <div><table id="rep10"></table>
+            <script>quadrillage("rep10", 6, 16, "none");</script></div></li>
+
+            </ol>
+
+<h2 class="section-nocounter">Exercice 3 : Probabilités (10 points)</h2>
+<div class="none">
+Un amplificateur audio (ancien) contient deux composants essentiels à son fonctionnement : un potentiomètre (résistance variable) et un tube à vide (ancètre du transistor).
+<h3 class="subsection-nocounter">Partie A : temps de bon fonctionnement du potentiomètre</h3>
+<div class="none">
+    Le temps de bon fonctionnement (sans entretien), en années, d'un potentiomètre, est une variable aléatoire R positive qui suit, dans des conditions normales d'utilisation, une loi continue dont la densité est la fonction \(f(t)=0{,}05\textrm{e}^{-0{,}05t}\).
+<ol>
+    <li>Hachurer, sur les diagrammes suivants, les surfaces dont les aires correspondent aux probabilités suivantes : 
+        <ol type="a">
+            <li>\(P(2&lt;R&lt;10)\);</li>
+            <li>Probabilité que le potentiomètre ne tombe pas en panne durant les 20 premières années. </li>
+            </ul>
+            <div class="arrangement">
+                <b>a.</b><img src="assets/fig1.svg" style="--width-print:8cm"><b>b.</b><img src="assets/fig1.png" style="--width-print:8cm">
+            </div>
+            </li>
+            </ol>
+            <li>En utilisant le calcul intégral ou bien en expliquant la méthode numérique utilisée, calculer les deux probabilités énoncées à la question précédente. Arrondir au centième.
+                <div><table id="rep11"></table>
+            <script>quadrillage("rep11", 8, 16, "none");</script></div>
+            <!-- P(2&lt;R&lt;10) = 0,298 P(R &gt; 20) = 0,368 -->
+            </li>
+            <li> Ces potentiomètres sont vendus par lots de 20, et on estime que la probabilité qu'un potentiomètre, pris au hasard dans la production (assez importante pour que cela soit assimilé à un tirage avec remise), soit encrassé en moins de 2 ans est 10%.<br>
+                <ol type="a">
+                    <li>En moyenne, dans un lot, combien de potentiomètres sont encrassés au bout de 2 ans ?
+                        <div><table id="rep12"></table>
+            <script>quadrillage("rep12", 1, 16, "none");</script></div>
+                    </li>
+
+                    <li>Donner la loi (ainsi que ses paramètres) à utiliser pour calculer la probabilité P que 5 potentiomètres ou plus, dans un lot pris au hasard, soient encrassés au bout de 2 ans. Donner une valeur de P <!-- P = 0,043 --> arrondie au centième (il n'est pas nécessaire de justifier).<div><table id="rep13"></table>
+            <script>quadrillage("rep13", 3.5, 16, "none");</script></div>
+                    </li>
+                </ol>
+            </li>
+
+
+        
+    </li>
+</ol>
+
+
+
+</div>
+<h3 class="subsection-nocounter">Partie B : temps de bon fonctionnement du tube à vide</h3>
+<div class="none">
+La durée de vie X, en années, d'un tube à vide suit une loi normale de moyenne µ=8 et d'écart-type 2. On donnera les résultats en pourcentage, arrondis à 1% près.
+    <ol>
+        <li>Déterminer la probabilité que le tube tombe en panne entre la 4<sup>ème</sup> et la 12<sup>ème</sup> année.
+            <div><table id="rep14"></table>
+            <script>quadrillage("rep14", 3, 16, "none");</script></div>
+        </li>
+        <li>Déterminer la probabilité que le tube tombe en panne entre la 8<sup>ème</sup> et la 16<sup>ème</sup> année.
+            <div><table id="rep15"></table>
+            <script>quadrillage("rep15", 3, 16, "none");</script></div>
+
+        </li>
+    </ol>
+</div>
+
+<h3 class="subsection-nocounter">Partie C : interactions</h3>
+<div class="none">
+    On étudie un amplificateur en fonctionnement intensif depuis deux ans ;<br>
+    on admet que la probabilité que le tube V fonctionne est de 0,98 ; dans ce cas, la probabilité que le potentiomètre R fonctionne est de 0,96. Lorsque le tube ne fonctionne pas, la probabilité que le potentiomètre ne fonctionne pas est de 0,1.<br>
+    Arrondir les calculs au millième.
+    <ol><li>Représenter cette situation par un arbre de probabilités.</li>
+        <li>Calculer la probabilité qu'au moins un des deux éléments V ou R ne fonctionne pas.</li> <!-- 0,059 -->
+        <li>Calculer la probabilité que V ne fonctionne pas sachant que R fonctionne</li>
+         <!-- 0,019 -->
+    </ol>
+<div><table id="rep16"></table>
+            <script>quadrillage("rep16", 11, 16, "none");</script></div>
+
+
+</div>
+</body>
+
+</html>
