@@ -1,6 +1,6 @@
 :root {
   /* Theme WEB */
-  --navbar-size : max(4em, 10vw, 10vh);
+  --navbar-size : min(4em, 10vw, 10vh);
   --font-family: Helvetica, Ubuntu, Verdana, Geneva, Tahoma, sans-serif; /*'Times New Roman', Times, serif, Verdana, Helvetica, sans-serif;*/
   --font-family-titles: Impact;
   --font-size: 16pt; /*10pt*/
@@ -287,7 +287,7 @@ img:active {
       --line-height: auto;
       --color-section : darkred;
       --color-subsection : darkgreen;
-      --color-subsubsection : darkblue;
+      --color-subsubsection : darkviolet;
       --color-title: #503010;
       --color-exo: #103050;
       --color-defi: #503010;
@@ -314,7 +314,7 @@ img:active {
     nav {display: none;}
 
     html, body, .subbody {
-        display: flex;
+        display: inline-block;
         font-family : var(--font-family); 
         font-size: var(--font-size);
     }
@@ -365,7 +365,7 @@ img:active {
 
     .subsection, .subsection-nocounter {color: var(--color-subsection); margin: var(--margin);}
 
-    .subsubsection, .subsubsection-nocounter{color: var(--color-subsubsection); margin: var(--margin);}
+    .subsubsection, .subsection-nocounter{color: var(--color-subsubsection); margin: var(--margin);}
     .exo, .exo-nocounter, .defi, .theo {border: var(--border); border-radius: var(--border-radius);}
 
     .exo, .exo-nocounter {
@@ -392,8 +392,8 @@ img:active {
     .titre {
         margin-top: 0;
         margin-bottom: 1em; 
-        color: var(--color-bg-title); 
-        border-color: var(--color-bg-title);
+        color: var(--color-title); 
+        border-color: var(--color-title);
     }
 
     .titre, .prop, .rema, .exem, .meth, .theo, .defi, .exo, .exo-nocounter {margin: var(--margin); padding: var(--padding);

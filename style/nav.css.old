@@ -4,8 +4,8 @@
     --navbar-font: Helvetica, Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
     --navbar-text: #fff;
     --navbar-padding:0.5em;
-    --navbar-bg-1: #c0c0c050;
-    --navbar-bg-2: #90909050;
+    --navbar-bg-1: #fbb33250;
+    --navbar-bg-2: #00ff0050;
     --navbar-direction: row;    /* row, column */
     --item-direction: column;    /* row, column */
     --item-align: center;    /* start, end, center */
