@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cours BTS</title>
+    <link rel="shortcut icon" href="../icons/logo.svg">
+    <link rel="icon" href="../icons/logo.svg">
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"/>
+    <script id="MathJax-script" async src="../scripts/MathJax-master/es5/tex-mml-chtml.js"></script>
+    <script id="Quadrillage-script" async src="../scripts/quadrillage/quadrillage.js"></script>
+</head>
+
+<body>
+    <script id="replace_with_navbar" src="../scripts/fetch/fetch.js"></script>
+
+<div class="subbody">
+        <h1 class="titre">BTS - CCF Blanc - ET - Sujet A</h1>
+        <div class="none"><b class="hidden-web">Prénom NOM classe :</b>
+    <table id="rep0">
+            <script>
+                quadrillage("rep0", 1.5, 13, "right");
+            </script>
+      </table>
+</div>
+<h2 class="section-nocounter">Exercice 1 : Équations différentielles et intégrales (10 points)</h2>
+<div class="none">
+    <p>
+Une société fabrique des filtres du premier ordre ; <br>
+ces filtres sont constitués d'une inductance L=0,04 henry (notation henry : H) et d'une résistance R=2 ohm (notation ohm : Ω), assemblées en série.
+</p>
+<ul>
+  <li> on applique une tension d'entrée constante v<sub>e</sub> = 24 volt (V), en régime continu à l'ensemble du montage ; 
+  </li>
+  <li> on note la tension de sortie v<sub>s</sub>(t), exprimée en volt, en fonction du temps t, exprimé en seconde (s) aux bornes de la résistance R ;
+  </li>
+  <li> on mesure aussi l'intensité i(t), exprimée en ampère (A), en fonction du temps t, en seconde (s) dans le circuit.
+</li>
+</ul>
+
+<p>
+Les lois de l'électricité régissant l'évolution du courant i(t) dans le circuit en fonction du temps t donnent la relation suivante : 
+\[(E_1) :  0{,}04i'(t)+2i(t)=24\]
+Cette relation n'est pas à démontrer ; on admet de plus que i(0)=0.
+</p>
+<ol>
+  <li> Déterminer une solution particulière constante de l'équation différentielle \((E_1)\).
+      <div style="clear: both;"><table id="rep1"></table>
+      <script> quadrillage("rep1", 2.5, 16.5, "none"); </script></div>
+   </li>
+  <li> Écrire les solutions de l'équation différentielle homogène \(0,04y'+2y=0\) puis en déduire les solutions générales de l'équation différentielle \((E_1)\).
+            <div style="clear: both;"><table id="rep2"></table>
+      <script> quadrillage("rep2", 4.5, 16.5, "none"); </script></div>
+
+  </li>
+  <li> En utilisant la condition initiale, démontrer que : \(i(t)=12-12\textrm{e}^{-50t}\)
+          <div style="clear: both;"><table id="rep3"></table>
+      <script> quadrillage("rep3", 4.5, 16.5, "none"); </script></div>
+  </li>
+  <li> On a représenté i(t) sur le graphique suivant, on a tracé l'asymptote à la courbe de i. <img src="assets/fig1.svg" style="--width-print:10cm"> 
+
+      <ul>
+          <li>Graphiquement, tracer la tangente à la courbe de i(t) en t=0 ; vérifier que cette tangente et l'asymptote à la courbe se coupent au point d'abscisse 𝜏=0,02 ;</li>
+          <li>hachurer la zone correspondant au régime permanent (t&gt;5𝜏).</li>
+        </ul></li>
+  <li> Développer \(\left(12-12\textrm{e}^{-50t}\right)^2\)</li>
+        <div style="clear: both;"><table id="rep4"></table>
+      <script> quadrillage("rep4", 5, 16.5, "none"); </script></div>
+  <li> En déduire que \(F(t)=144t+5{,}76\textrm{e}^{-50t}-1{,}44\textrm{e}^{-100t}\) est une primitive de \(\left(i(t)\right)^2\).
+        <div style="clear: both;"><table id="rep5"></table>
+      <script> quadrillage("rep5", 5.5, 16.5, "none"); </script></div>
+ </li>
+    <li> Calculer l'energie E fournie pendant la résistance R durant le régime transitoire :
+        \(E = \frac{1}{R}\displaystyle\int_{0}^{5𝜏}\,i^2(t)\,\textrm{d}t\)
+      <div style="clear: both;"><table id="rep1a"></table>
+      <script> quadrillage("rep1a", 7.5, 16.5, "none"); </script></div>
+        </li>
+</ol>
+</div>
+
+
+<h2 class="section-nocounter">Exercice 2 : Probabilités (10 points)</h2>
+<div class="none">
+Un amplificateur audio (ancien) contient deux composants essentiels à son fonctionnement : un potentiomètre (résistance variable) et un tube à vide (ancètre du transistor).
+</div>
+<h3 class="subsection-nocounter">Partie A : temps de bon fonctionnement du potentiomètre</h3>
+<div class="none">
+    Le temps de bon fonctionnement (sans entretien), en années, d'un potentiomètre, est une variable aléatoire R positive qui suit, dans des conditions normales d'utilisation, une loi continue dont la densité est la fonction \(f(t)=0{,}05\textrm{e}^{-0{,}05t}\).
+<ol>
+    <li>Hachurer, sur les diagrammes suivants, les surfaces dont les aires correspondent aux probabilités suivantes : 
+        <ol type="a">
+            <li>\(P(2&lt;R&lt;10)\);</li>
+            <li>Probabilité que le potentiomètre ne tombe pas en panne durant les 20 premières années. </li>
+            </ul>
+            <div class="arrangement">
+                <b>a.</b><img src="assets/fig3.svg" style="--width-print:8cm"><b>b.</b><img src="assets/fig3.svg" style="--width-print:8cm">
+            </div>
+            </li>
+            </ol>
+            <li>En utilisant le calcul intégral ou bien en expliquant la méthode numérique utilisée, calculer une seule (au choix) des deux probabilités énoncées à la question précédente. Arrondir au centième.
+                <div><table id="rep11"></table>
+            <script>quadrillage("rep11", 8, 16, "none");</script></div>
+            <!-- P(2&lt;R&lt;10) = 0,298 P(R &gt; 20) = 0,368 -->
+            </li>
+            <li> Ces potentiomètres sont vendus par lots de 20, et on estime que la probabilité qu'un potentiomètre, pris au hasard dans la production (assez importante pour que cela soit assimilé à un tirage avec remise), soit encrassé en moins de 2 ans est 10%.<br>
+                <ol type="a">
+                    <li>En moyenne, dans un lot, combien de potentiomètres sont encrassés au bout de 2 ans ?
+                        <div><table id="rep12"></table>
+            <script>quadrillage("rep12", 1, 16, "none");</script></div>
+                    </li>
+
+                    <li>Donner la loi (ainsi que ses paramètres) à utiliser pour calculer la probabilité P que 5 potentiomètres ou plus, dans un lot pris au hasard, soient encrassés au bout de 2 ans. Donner une valeur de P <!-- P = 0,043 --> arrondie au centième (il n'est pas nécessaire de justifier).<div><table id="rep13"></table>
+            <script>quadrillage("rep13", 3, 16, "none");</script></div>
+                    </li>
+                </ol>
+            </li>
+
+
+        
+    </li>
+</ol>
+</div>
+
+<h3 class="subsection-nocounter">Partie B : temps de bon fonctionnement du tube à vide</h3>
+<div class="none">
+La durée de vie X, en années, d'un tube à vide suit une loi normale de moyenne µ=8 et d'écart-type 2. On donnera les résultats en pourcentage, arrondis à 1% près.
+    <ol>
+        <li>Déterminer la probabilité que le tube tombe en panne entre la 4<sup>ème</sup> et la 12<sup>ème</sup> année.
+            <div><table id="rep14"></table>
+            <script>quadrillage("rep14", 3, 16, "none");</script></div>
+        </li>
+        <li>Déterminer la probabilité que le tube tombe en panne entre la 8<sup>ème</sup> et la 16<sup>ème</sup> année.
+            <div><table id="rep15"></table>
+            <script>quadrillage("rep15", 3, 16, "none");</script></div>
+
+        </li>
+    </ol>
+</div>
+
+<h3 class="subsection-nocounter">Partie C : interactions</h3>
+<div class="none">
+    On étudie un amplificateur en fonctionnement intensif depuis deux ans ;<br>
+    on admet que la probabilité que le tube V fonctionne est de 0,98 ; dans ce cas, la probabilité que le potentiomètre R fonctionne est de 0,96. Lorsque le tube ne fonctionne pas, la probabilité que le potentiomètre ne fonctionne pas est de 0,1.<br>
+    Arrondir les calculs au millième.
+    <ol><li>Représenter cette situation par un arbre de probabilités.</li>
+        <li>Calculer la probabilité qu'au moins un des deux éléments V ou R ne fonctionne pas.</li> <!-- 0,059 -->
+        <li>Calculer la probabilité que V ne fonctionne pas sachant que R fonctionne</li>
+         <!-- 0,019 -->
+    </ol>
+<div><table id="rep16"></table>
+            <script>quadrillage("rep16", 12, 16.5, "none");</script></div>
+
+
+</div>
+</div>
+
+</div>
+
+<div class="pagebreak"></div>
+
+<div class="subbody">
+        <h1 class="titre">BTS - CCF Blanc - ET - Sujet B</h1>
+        <div class="none"><b class="hidden-web">Prénom NOM classe :</b>
+    <table id="rep0B">
+            <script>
+                quadrillage("rep0B", 1.5, 13, "right");
+            </script>
+      </table>
+</div>
+<h2 class="section-nocounter">Exercice 1 : Équations différentielles et intégrales (10 points)</h2>
+<div class="none">
+    <p>
+Une société fabrique des filtres du premier ordre ; <br>
+ces filtres sont constitués d'une inductance L=0,02 henry (notation henry : H) et d'une résistance R=1 ohm (notation ohm : Ω), assemblées en série.
+</p>
+<ul>
+  <li> on applique une tension d'entrée constante v<sub>e</sub> = 12 volt (V), en régime continu à l'ensemble du montage ; 
+  </li>
+  <li> on note la tension de sortie v<sub>s</sub>(t), exprimée en volt, en fonction du temps t, exprimé en seconde (s) aux bornes de la résistance R ;
+  </li>
+  <li> on mesure aussi l'intensité i(t), exprimée en ampère (A), en fonction du temps t, en seconde (s) dans le circuit.
+</li>
+</ul>
+
+<p>
+Les lois de l'électricité régissant l'évolution du courant i(t) dans le circuit en fonction du temps t donnent la relation suivante : 
+\[(E_1) :  0{,}02i'(t)+i(t)=12\]
+Cette relation n'est pas à démontrer ; on admet de plus que i(0)=0.
+</p>
+<ol>
+  <li> Déterminer une solution particulière constante de l'équation différentielle \((E_1)\).
+      <div style="clear: both;"><table id="rep1B"></table>
+      <script> quadrillage("rep1B", 2.5, 16.5, "none"); </script></div>
+   </li>
+  <li> Écrire les solutions de l'équation différentielle homogène \(0,02y'+y=0\) puis en déduire les solutions générales de l'équation différentielle \((E_1)\).
+            <div style="clear: both;"><table id="rep2B"></table>
+      <script> quadrillage("rep2B", 4.5, 16.5, "none"); </script></div>
+
+  </li>
+  <li> En utilisant la condition initiale, démontrer que : \(i(t)=12-12\textrm{e}^{-50t}\)
+          <div style="clear: both;"><table id="rep3B"></table>
+      <script> quadrillage("rep3B", 4.5, 16.5, "none"); </script></div>
+  </li>
+  <li> On a représenté i(t) sur le graphique suivant, on a tracé l'asymptote à la courbe de i. <img src="assets/fig1.svg" style="--width-print:10cm"> 
+
+      <ul>
+          <li>Graphiquement, tracer la tangente à la courbe de i(t) en t=0 ; vérifier que cette tangente et l'asymptote à la courbe se coupent au point d'abscisse 𝜏=0,02 ;</li>
+          <li>hachurer la zone correspondant au régime permanent (t&gt;5𝜏).</li>
+        </ul></li>
+  <li> Développer \(\left(12-12\textrm{e}^{-50t}\right)^2\)</li>
+        <div style="clear: both;"><table id="rep4B"></table>
+      <script> quadrillage("rep4B", 5, 16.5, "none"); </script></div>
+  <li> En déduire que \(F(t)=144t+5{,}76\textrm{e}^{-50t}-1{,}44\textrm{e}^{-100t}\) est une primitive de \(\left(i(t)\right)^2\).
+        <div style="clear: both;"><table id="rep5B"></table>
+      <script> quadrillage("rep5B", 5.5, 16.5, "none"); </script></div>
+ </li>
+    <li> Calculer l'energie E fournie pendant la résistance R durant le régime transitoire :
+        \(E = \frac{1}{R}\displaystyle\int_{0}^{5𝜏}\,i^2(t)\,\textrm{d}t\)
+      <div style="clear: both;"><table id="rep1aB"></table>
+      <script> quadrillage("rep1aB", 7.5, 16.5, "none"); </script></div>
+        </li>
+</ol>
+</div>
+
+<h2 class="section-nocounter">Exercice 2 : Probabilités (10 points)</h2>
+<div class="none">
+Un amplificateur audio (ancien) contient deux composants essentiels à son fonctionnement : un potentiomètre (résistance variable) et un tube à vide (ancètre du transistor).
+</div>
+<h3 class="subsection-nocounter">Partie A : temps de bon fonctionnement du potentiomètre</h3>
+<div class="none">
+    Le temps de bon fonctionnement (sans entretien), en années, d'un potentiomètre, est une variable aléatoire R positive qui suit, dans des conditions normales d'utilisation, une loi continue dont la densité est la fonction \(f(t)=0{,}05\textrm{e}^{-0{,}05t}\).
+<ol>
+    <li>Hachurer, sur les diagrammes suivants, les surfaces dont les aires correspondent aux probabilités suivantes : 
+        <ol type="a">
+            <li>\(P(5&lt;R&lt;35)\);</li>
+            <li>Probabilité que le potentiomètre ne tombe pas en panne durant les 10 premières années. </li>
+            </ul>
+            <div class="arrangement">
+                <b>a.</b><img src="assets/fig3.svg" style="--width-print:8cm"><b>b.</b><img src="assets/fig3.svg" style="--width-print:8cm">
+            </div>
+            </li>
+            </ol>
+            <li>En utilisant le calcul intégral ou bien en expliquant la méthode numérique utilisée, calculer une seule (au choix) des deux probabilités énoncées à la question précédente. Arrondir au centième.
+                <div><table id="rep11B"></table>
+            <script>quadrillage("rep11B", 8, 16, "none");</script></div>
+            <!-- P(2&lt;R&lt;10) = 0,298 P(R &gt; 20) = 0,368 -->
+            </li>
+            <li> Ces potentiomètres sont vendus par lots de 40, et on estime que la probabilité qu'un potentiomètre, pris au hasard dans la production (assez importante pour que cela soit assimilé à un tirage avec remise), soit encrassé en moins de 2 ans est 10%.<br>
+                <ol type="a">
+                    <li>En moyenne, dans un lot, combien de potentiomètres sont encrassés au bout de 2 ans ?
+                        <div><table id="rep12B"></table>
+            <script>quadrillage("rep12B", 1, 16, "none");</script></div>
+                    </li>
+
+                    <li>Donner la loi (ainsi que ses paramètres) à utiliser pour calculer la probabilité P que 5 potentiomètres ou plus, dans un lot pris au hasard, soient encrassés au bout de 2 ans. Donner une valeur de P <!-- P = 0,043 --> arrondie au centième (il n'est pas nécessaire de justifier).<div><table id="rep13B"></table>
+            <script>quadrillage("rep13B", 3, 16, "none");</script></div>
+                    </li>
+                </ol>
+            </li>
+
+
+        
+    </li>
+</ol>
+
+
+
+</div>
+<h3 class="subsection-nocounter">Partie B : temps de bon fonctionnement du tube à vide</h3>
+<div class="none">
+La durée de vie X, en années, d'un tube à vide suit une loi normale de moyenne µ=10 et d'écart-type 2. On donnera les résultats en pourcentage, arrondis à 1% près.
+    <ol>
+        <li>Déterminer la probabilité que le tube tombe en panne entre la 4<sup>ème</sup> et la 16<sup>ème</sup> année.
+            <div><table id="rep14B"></table>
+            <script>quadrillage("rep14B", 3, 16, "none");</script></div>
+        </li>
+        <li>Déterminer la probabilité que le tube tombe en panne entre la 8<sup>ème</sup> et la 10<sup>ème</sup> année.
+            <div><table id="rep15B"></table>
+            <script>quadrillage("rep15B", 3, 16, "none");</script></div>
+
+        </li>
+    </ol>
+</div>
+
+<h3 class="subsection-nocounter">Partie C : interactions</h3>
+<div class="none">
+    On étudie un amplificateur en fonctionnement intensif depuis deux ans ;<br>
+    on admet que la probabilité que le tube V fonctionne est de 0,95 ; dans ce cas, la probabilité que le potentiomètre R fonctionne est de 0,9. Lorsque le tube ne fonctionne pas, la probabilité que le potentiomètre ne fonctionne pas est de 0,2.<br>
+    Arrondir les calculs au millième.
+    <ol><li>Représenter cette situation par un arbre de probabilités.</li>
+        <li>Calculer la probabilité qu'au moins un des deux éléments V ou R ne fonctionne pas.</li> <!-- 0,059 -->
+        <li>Calculer la probabilité que V fonctionne sachant que R ne fonctionne pas.</li>
+         <!-- 0,019 -->
+    </ol>
+<div><table id="rep16B"></table>
+            <script>quadrillage("rep16B", 11, 16.5, "none");</script></div>
+
+
+</div>
+</div>
+
+</div>
+
+
+
+</body>
+
+</html>
